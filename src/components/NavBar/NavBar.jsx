@@ -1,5 +1,6 @@
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import CartWidget from './CartWidget';
+import ItemListContainer from './ItemListContainer';
 
 
 export default function NavBar() {
@@ -22,21 +23,23 @@ export default function NavBar() {
         className="d-inline-block align-top"
         alt="React Bootstrap logo"
       />CULTURA ALCOHÓLICA</Navbar.Brand>
-    <Nav className="me-auto">
-        
 
         {/* NAV LINKS */}
 
+        <Nav className="me-auto">
 
-      <Nav.Link href="#cerveceria">Cervecería</Nav.Link>
-      <Nav.Link href="#licoreria">Licorería</Nav.Link>
-      <Nav.Link href="#vineria">Vinería</Nav.Link>
-      <Nav.Link href="#accesorios">Accesorios</Nav.Link>
+        <ItemListContainer section="Cervecería" />     
+        <ItemListContainer section="Licorería" />       
+        <ItemListContainer section="Vinería" />    
+        <ItemListContainer section="Accesorios" />
+
     </Nav>
+
+      
 
     {/* ICON -- CART SHOPPING */}
 
-    <CartWidget></CartWidget>
+    <CartWidget />
 
     </Container>
     
