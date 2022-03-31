@@ -17,7 +17,7 @@ export default function NavBar() {
 
 
     <Navbar.Brand href="#home"><img
-        src="logo.png"
+        src='logo.png'
         width="100"
         height="100"
         className="d-inline-block align-top"
