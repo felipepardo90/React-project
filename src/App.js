@@ -9,7 +9,7 @@ export default function App() {
     
     <>
     <NavBar />
-    <ItemCount stock="5" initial="1"></ItemCount>
+    <ItemCount stock={5} initial={1}></ItemCount>
     
     </>
     
