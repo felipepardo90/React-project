@@ -1,44 +1,41 @@
 import { Navbar, Container, Nav } from 'react-bootstrap'
+import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 import CartWidget from './CartWidget';
-import ItemListContainer from './ItemListContainer';
 
 
-export default function NavBar() {
+const NavBar =()=>{
 
   return (
     
     <>
-<Navbar bg="dark" variant="dark">
+<Navbar bg="dark" variant="dark" collapseOnSelect expand='lg'>
   
     <Container>
 
+         {/* LOGO */}
 
-        {/* LOGO */}
-
-
-    <Navbar.Brand href="#home"><img
-        src='logo.png'
+      <Navbar.Brand href="#home"><img
+        src='/logo.png'
         width="100"
         height="100"
         className="d-inline-block align-top"
-        alt="React Bootstrap logo"
-      />CULTURA ALCOHÓLICA</Navbar.Brand>
+        alt="Cultura Logo"
+      /></Navbar.Brand>
 
-        {/* NAV LINKS */}
+      {/* NAV LINKS */}
 
-        <Nav className="me-auto">
-        <Nav.Link href="#Cervecería">Cervecería</Nav.Link>
-        <Nav.Link href="#Vinería">Vinería</Nav.Link>
-        <Nav.Link href="#Licorería">Licorería</Nav.Link>
-        <Nav.Link href="#Accesorios">Accesorios</Nav.Link>
+      <Nav defaultActiveKey="/home" as="ul">
+          <NavbarCollapse className='justify-content-end'>
+            <Nav.Link href="#Cervecería">Cervecería</Nav.Link>
+            <Nav.Link href="#Vinería">Vinería</Nav.Link>
+            <Nav.Link href="#Licorería">Licorería</Nav.Link>
+            <Nav.Link href="#Accesorios">Accesorios</Nav.Link>
+          </NavbarCollapse>
+        </Nav>
 
-    </Nav>
+        <CartWidget />{/* ICON -- CART SHOPPING */}
 
-      
-
-    {/* ICON -- CART SHOPPING */}
-
-    <CartWidget />
+        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
 
     </Container>
     
@@ -46,3 +43,5 @@ export default function NavBar() {
     </>
   );
 }
+
+export default NavBar

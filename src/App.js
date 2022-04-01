@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import ItemListContainer from './components/ItemListContainer';
 
 export default function App() {
 
@@ -8,6 +9,8 @@ export default function App() {
     
     <>
     <NavBar />
+
+    <ItemListContainer></ItemListContainer>
     
     </>
     

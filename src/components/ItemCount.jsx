@@ -37,9 +37,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <>
         <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
     <ButtonGroup className="me-2" aria-label="First group">
-      <Button variant="secondary" onClick={incNum}>+</Button>{' '}
-      <p> --- {count} --- </p>
+      
       <Button variant="secondary" onClick={count>0?decNum:null}>-</Button>{' '}
+      <p> --- {count} --- </p>
+      <Button variant="secondary" onClick={incNum}>+</Button>{' '}
       <Button variant="secondary" onClick={reset}>Agregar al carrito</Button>{' '}
     </ButtonGroup>
     
