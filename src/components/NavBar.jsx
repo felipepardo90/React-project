@@ -27,11 +27,10 @@ export default function NavBar() {
         {/* NAV LINKS */}
 
         <Nav className="me-auto">
-
-        <ItemListContainer section="Cervecería" />     
-        <ItemListContainer section="Licorería" />       
-        <ItemListContainer section="Vinería" />    
-        <ItemListContainer section="Accesorios" />
+        <Nav.Link href="#Cervecería">Cervecería</Nav.Link>
+        <Nav.Link href="#Vinería">Vinería</Nav.Link>
+        <Nav.Link href="#Licorería">Licorería</Nav.Link>
+        <Nav.Link href="#Accesorios">Accesorios</Nav.Link>
 
     </Nav>
 

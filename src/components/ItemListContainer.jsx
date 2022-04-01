@@ -1,12 +1,12 @@
-import { Nav } from 'react-bootstrap'
+import ItemCount from './ItemCount'
 
-const ItemListContainer = props => {
+const ItemListContainer = () => {
 
 
     return(
 
         <>
-      <Nav.Link href="#">{props.section}</Nav.Link>
+    <ItemCount stock={5} initial={1}></ItemCount>
       </>
     )
 }
