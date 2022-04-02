@@ -8,12 +8,16 @@ const ItemListContainer = () => {
     return(
 
         <>
+        <main>
+          
         <Container>
 
     <ItemCount stock={5} initial={1}></ItemCount>
     <ItemList></ItemList>
 
         </Container>
+
+        </main>
       </>
 
     )

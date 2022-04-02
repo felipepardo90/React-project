@@ -1,6 +1,4 @@
 import React from "react"
-import { Button } from "react-bootstrap"
-import ItemCount from "./ItemCount"
 
 const ItemList = () =>{
 

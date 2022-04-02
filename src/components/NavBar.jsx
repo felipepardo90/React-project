@@ -1,6 +1,7 @@
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 import CartWidget from './CartWidget';
+import logo from '../logo.png'
 
 
 const NavBar =()=>{
@@ -15,7 +16,7 @@ const NavBar =()=>{
          {/* LOGO */}
 
       <Navbar.Brand href="#home"><img
-        src='/logo.png'
+        src={logo}
         width="100"
         height="100"
         className="d-inline-block align-top"
