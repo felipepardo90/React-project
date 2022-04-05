@@ -3,14 +3,14 @@
     "product_name": "Cerveza Heineken",
     "price": "$1.068",
     "image": "https://http2.mlstatic.com/D_NQ_NP_838997-MLA42766305706_072020-O.webp/100px180",
-    "stock": "10 unidades",
+    "stock": 10,
     "description": "Original Pure Malt Lager Porrón 330ml 6u"
   }, {
     "id": 2,
     "product_name": "Cerveza Andes",
     "price": "$1.140",
     "image": "https://http2.mlstatic.com/D_NQ_NP_654410-MLA44839773937_022021-O.webp/100px180",
-    "stock": "5 unidades",
+    "stock": 5,
     "description": "Origen Roja Vienna Lager lata 473ml 6u"
 
   }, {
@@ -18,13 +18,13 @@
     "product_name": "Cerveza Imperial",
     "price": "$812,98",
     "image": "https://http2.mlstatic.com/D_NQ_NP_884305-MLA45214205389_032021-O.webp/100px180",
-    "stock": "8 unidades",
+    "stock": 8,
     "description": "Lager lata 473ml 6u"
   }, {
     "id": 4,
     "product_name": "Cerveza Temple",
     "price": "$1.086,82",
     "image": "https://http2.mlstatic.com/D_NQ_NP_687361-MLA44839723921_022021-O.webp/100px180",
-    "stock": "12 unidades",
+    "stock": 12,
     "description": "Scottish Ale roja lata 473ml 6u"
   }]

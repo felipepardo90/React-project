@@ -2,7 +2,7 @@ import React from 'react'
 import { Card } from "react-bootstrap"
 import ItemCount from "./ItemCount"
 
-export default function Item(id, product_name, price, description, stock, image) {
+export default function Item({id, product_name, price, description, stock, image}) {
 
   return (
 
@@ -11,12 +11,10 @@ export default function Item(id, product_name, price, description, stock, image)
   <Card.Body>
     <Card.Title>{product_name}</Card.Title>
     <Card.Text>
-        <div>
-        <h4>{price}</h4> {stock}
+        {price},{stock} elementos en stock <br/>
         {description}
-        </div>
     </Card.Text>
-    <ItemCount stock={stock}/>
+    <ItemCount initial={0} stock={stock}/>
   </Card.Body>
 </Card>
 

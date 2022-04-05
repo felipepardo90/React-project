@@ -11,7 +11,7 @@ export default function ItemListContainer() {
 
     useEffect(()=>{
       customFetch (3000, products)
-      .then(resultado => setItems[resultado])
+      .then(resultado => setItems(resultado))
       .catch(error => console.log(error))
       
     }, [items])

@@ -6,22 +6,3 @@
 }
 
 
-
-
-.numberCount{
-    height: 10px;
-    
-    padding: 20px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: red;
-}
-
-.contNumb {
-    padding: 20px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
