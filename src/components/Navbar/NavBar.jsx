@@ -35,6 +35,7 @@ export default function NavBar (){
       </Nav>
 
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+      
       <CartWidget />{/* ICON -- CART SHOPPING */}
 
   </Container>

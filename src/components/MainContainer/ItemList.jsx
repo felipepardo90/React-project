@@ -1,23 +1,22 @@
 import React from "react"
-import { Card } from "react-bootstrap"
-import ItemCount from "./ItemCount"
+import Item from './Item'
 
-export default function ItemList() {
+export default function ItemList({products}) {
 
     return(
-        <>
-        <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="https://http2.mlstatic.com/D_NQ_NP_838997-MLA42766305706_072020-O.webp/100px180" />
-  <Card.Body>
-    <Card.Title> Cerveza Heineken</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <ItemCount stock={5} initial={1} />
-  </Card.Body>
-</Card>
-        </>
+        products.map(p =>(
+          
+          <Item 
+
+          key={p.id}
+          name={p.product_name}
+          price={p.price}
+          image={p.image}
+          stock={p.stock}
+          description={p.description}
+          
+          />
+        ))
     )
      
 
