@@ -1,8 +1,10 @@
+import React from "react"
 import { Button, ButtonToolbar, ButtonGroup } from 'react-bootstrap'
 import { useState } from 'react'
+import './ItemListContainer.module.css'
 
 
-const ItemCount = ({stock, initial, onAdd}) => {
+export default function ItemCount({stock, initial, onAdd}) {
 
     const Counter = (initial) =>{
     
@@ -28,20 +30,21 @@ const ItemCount = ({stock, initial, onAdd}) => {
         
         <>
         <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
-    <ButtonGroup className="me-2" aria-label="First group">
+          <ButtonGroup className="me-2" aria-label="First group">
       
-      <Button variant="secondary" onClick={decNum}>-</Button>{' '}
-      <p> --- {count} --- </p>
-      <Button variant="secondary" onClick={incNum}>+</Button>{' '}
-      <Button variant="secondary" onClick={reset}>Agregar al carrito</Button>{' '}
-    </ButtonGroup>
+             <Button variant="primary" className="buttonCount" onClick={decNum}>-</Button>{' '}
+             <div style={{padding: '20px 30px', backgroundColor: 'red', display:'flex', alignItems:'center', justifyContent:'center'}}><p style={{height:'10px'}}>{count}</p></div>
+             <Button variant="primary" onClick={incNum}>+</Button>{' '}
+             <Button variant="primary" onClick={reset}>Agregar al carrito</Button>{' '}
+             
+          </ButtonGroup>
     
-  </ButtonToolbar>
+        </ButtonToolbar>
         </>
     )
 }
 
-export default ItemCount
+
 
 
 

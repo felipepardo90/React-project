@@ -1,0 +1,8 @@
+.itemList {
+    background-color: rgb(247, 236, 236);
+}
+
+.buttonCount {
+    width: 100%;
+    background-color: red !important;
+}
