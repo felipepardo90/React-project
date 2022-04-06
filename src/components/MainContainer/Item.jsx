@@ -2,15 +2,16 @@ import React from 'react'
 import { Card } from "react-bootstrap"
 import ItemCount from "./ItemCount"
 import './ItemListContainer.module.css'
+import s from './ItemListContainer.module.css'
 
 export default function Item({id, name, price, description, stock, image}) {
 
   return (
 
-         <Card style={{ width: '18rem'}} key={id}>
+         <Card style={{ width: '20rem', display:'flex'}} key={id}>
   <Card.Img variant="top" src={image} />
   <Card.Body>
-  <Card.Title>{name}</Card.Title>
+  <Card.Title className={s.card__title}>{name}</Card.Title>
     <Card.Text>
         {price},{stock} elementos en stock <br/>
         {description}

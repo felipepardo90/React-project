@@ -1,14 +1,20 @@
 .mainContainer {
-    background-color: rgba(255, 242, 219, 0.801);
+    background-color: rgba(226, 171, 76, 0.801);
     padding: 2rem;
     width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: space-around;
-    gap: 10px;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
-Card {
-    background-color: red;
+.card__title{
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
 
