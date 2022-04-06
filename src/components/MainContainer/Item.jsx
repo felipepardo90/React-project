@@ -9,7 +9,7 @@ export default function Item({id, product_name, price, description, stock, image
          <Card style={{ width: '18rem' }} key={id}>
   <Card.Img variant="top" src={image} />
   <Card.Body>
-    <Card.Title>{product_name}</Card.Title>
+  <Card.Title>{product_name}</Card.Title>
     <Card.Text>
         {price},{stock} elementos en stock <br/>
         {description}
