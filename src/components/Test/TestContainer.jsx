@@ -1,34 +1,33 @@
-import React, {useEffect, useState} from 'react'
-import Test from './Test'
+// import React, {useEffect, useState} from 'react'
+// import Test from './Test'
 
-export default function TestContainer() {
+// export default function TestContainer() {
 
-    const [universidades, setUniversidades] = useState([])
+//     const [universidades, setUniversidades] = useState([])
 
-    useEffect(() => {
+//     useEffect(() => {
 
-        const requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
+//         const requestOptions = {
+//             method: 'GET',
+//             redirect: 'follow'
+//         };
 
-        fetch("http://universities.hipolabs.com/search?country=United+States&cant=100", requestOptions)
-            .then(response => response.json())
-            .then(result => {
-                //se ejecutan si salio todo bien
-                console.log(result)
-                setUniversidades(result)
-            })
-            .catch(error => {
-                //si hubo un error
-                console.log('error', error)
-            });
+//         fetch("http://universities.hipolabs.com/search?country=United+States&cant=100", requestOptions)
+//             .then(response => response.json())
+//             .then(result => {
+//                 //se ejecutan si salio todo bien
+//                 console.log(result)
+//                 setUniversidades(result)
+//             })
+//             .catch(error => {
+//                 //si hubo un error
+//                 console.log('error', error)
+//             });
 
         
-    }, [])
+//     }, [])
 
-    return (
-<></>
-        // <Test universidades={universidades}/>
-    )
-}
+//     return (
+//         <Test universidades={universidades}/>
+//     )
+// }
