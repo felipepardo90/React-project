@@ -7,20 +7,11 @@
     gap: 16px;
 }
 
-.card{
-   background-color: gray;
-   font-family: sans-serif;
-   font-weight: 300;
-   display: flex;
-   flex-wrap: wrap;
-   
-   overflow: hidden;
-}
 
-.card__img{
-    height: 250px;
-    position: relative;
-    border: 5px double gray;
+.detailContainer {
+    display: flex;
+    justify-content: space-between;
+
 }
 
 

@@ -1,22 +1,23 @@
-// import React, { useState, useEffect } from "react";
-// import customFetch from "../utils/customFetch";
-// import ItemDetail from "./ItemDetail";
-// import item from '../utils/products.json'
+import React, { useState, useEffect } from "react";
+import customFetch from "../utils/customFetch";
+import products from "../utils/products.json";
+import ItemDetail from "./ItemDetail";
 
-// export default function ItemDetailContainer() {
-//   const [item, setItem] = useState({});
+export default function ItemDetailContainer() {
+  const [items, setItems] = useState([]);
 
-//   useEffect(() => {
-//     customFetch().then((res) => {
-//       setItem(res);
-//     });
-//   }, []);
+  useEffect(() => {
+    customFetch(2000, products)
+      .then((resultado) => setItems(resultado))
+      .catch((error) => console.log(error));
+  }, []);
 
-// //   console.log(item);
+  console.log(items);
 
-//   return (
-//     <>
-//       <ItemDetail item={item} />
-//     </>
-//   );
-// }
+  return (
+    <>
+     <ItemDetail products={items}/>
+
+    </>
+  );
+}
