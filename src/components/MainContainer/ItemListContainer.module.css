@@ -1,20 +1,27 @@
 .mainContainer {
-    background-color: rgba(226, 171, 76, 0.801);
+    background-color: rgb(125, 191, 231);
     padding: 2rem;
     width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: space-around;
     gap: 16px;
-    flex-wrap: wrap;
 }
 
-.card__title{
-    
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 22px;
-    margin-bottom: 8px;
-    font-weight: 600;
+.card{
+   background-color: gray;
+   font-family: sans-serif;
+   font-weight: 300;
+   display: flex;
+   flex-wrap: wrap;
+   
+   overflow: hidden;
 }
+
+.card__img{
+    height: 250px;
+    position: relative;
+    border: 5px double gray;
+}
+
 
 

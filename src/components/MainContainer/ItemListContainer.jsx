@@ -20,10 +20,9 @@ export default function ItemListContainer() {
 
     return(
 
-<Container>
-  <div className={s.mainContainer}>
+<Container className={s.mainContainer}>
+
   <ItemList products={items} />
-  </div>
   
 </Container>
 

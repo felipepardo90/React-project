@@ -8,8 +8,11 @@ export default function ItemList({products}) {
           
           <Item 
 
-          {...p}
-          
+          key={p.id}
+          name={p.name}
+          price={p.price}
+          image={p.image}
+          stock={p.stock}
           />
         ))
     )
