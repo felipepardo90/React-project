@@ -7,14 +7,14 @@ import logo from "./logo.png";
 export default function NavBar() {
   return (
     <>
-      <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg">
+      <Navbar bg="info" variant="dark" collapseOnSelect expand="lg">
         <Container>
           {/* LOGO */}
 
           <Navbar.Brand href="#home">
             <img
               src={logo}
-              width="100"
+              width="60"
               height="100"
               className="d-inline-block align-top"
               alt="Cultura Logo"
