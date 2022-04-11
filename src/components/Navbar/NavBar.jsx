@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import CartWidget from "./CartWidget";
-import logo from "./logo.png";
+import logo from "../Images/logo.png";
 
 export default function NavBar() {
   return (

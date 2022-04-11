@@ -1,20 +1,8 @@
-import React from "react"
-import Item from './Item'
+import React from "react";
+import Item from "./Item";
 
-export default function ItemList({products}) {
-
-    return(
-        products.map(p =>(
-          
-          <Item 
-
-          {...p}
-
-          />
-        ))
-    )
-     
-
+export default function ItemList({ products }) {
+  return products.map(p => <Item {...p} />);
 }
 
 // useEffect(() => {
@@ -34,12 +22,9 @@ export default function ItemList({products}) {
 //     pago.then((res) => {
 //         console.log('gracias por pagar ' + res)
 //     })
-    
+
 //     console.log(pago)
 
 //     //sigue....
 
-
 // }, [])
-
-
