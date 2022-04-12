@@ -7,12 +7,11 @@ export default function ItemDetailContainer() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    customFetch(2000, products)
+    customFetch(2000, products.filter(p=>p.id===1))
       .then((resultado) => setItems(resultado))
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(items);
 
   return (
     <>
