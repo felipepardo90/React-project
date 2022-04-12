@@ -2,7 +2,6 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import CartWidget from "./CartWidget";
-import logo from "../Images/logo.png";
 
 export default function NavBar() {
   return (
@@ -13,11 +12,11 @@ export default function NavBar() {
 
           <Navbar.Brand href="#home">
             <img
-              src={logo}
+              src="https://github.com/felipepardo90/React-project/blob/main/src/components/Images/logo.png?raw=true"
               width="60"
               height="100"
               className="d-inline-block align-top"
-              alt="Cultura Logo"
+              alt="alf logo"
             />
           </Navbar.Brand>
 
