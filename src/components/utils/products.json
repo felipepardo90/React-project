@@ -1,34 +1,38 @@
 [
   {
     "id": 1,
-    "name": "Cerveza Heineken",
-    "price": "$1.068",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_838997-MLA42766305706_072020-O.webp/100px180",
-    "stock": 10,
-    "description": "Original Pure Malt Lager Porrón 330ml 6u"
+    "category": "Caramels cookies",
+    "name": "Alfajores Halloween",
+    "price": "$100,00",
+    "stock": 15,
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Alfajores%20Halloween.jpg?raw=true",
+    "description": ""
   },
   {
     "id": 2,
-    "name": "Cerveza Andes",
-    "price": "$1.140",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_654410-MLA44839773937_022021-O.webp/100px180",
+    "category": "Pies",
+    "name": "Tarta de durazno",
+    "price": "$950,00",
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Tarta%20durazno.jpg?raw=true",
     "stock": 5,
-    "description": "Origen Roja Vienna Lager lata 473ml 6u"
+    "description": ""
   },
   {
     "id": 3,
-    "name": "Cerveza Imperial",
-    "price": "$812,98",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_884305-MLA45214205389_032021-O.webp/100px180",
-    "stock": 8,
-    "description": "Lager lata 473ml 6u"
+    "category": "Popsicles",
+    "name": "Paletas",
+    "price": "150,00",
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/paletas%20panda.jpg?raw=true",
+    "stock": 12,
+    "description": ""
   },
   {
     "id": 4,
-    "name": "Cerveza Temple",
-    "price": "$1.086,82",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_687361-MLA44839723921_022021-O.webp/100px180",
-    "stock": 12,
-    "description": "Scottish Ale roja lata 473ml 6u"
+    "name": "Torre de miga",
+    "category": "Varieties",
+    "price": "$750,00",
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/torre%20miga%201.jpg?raw=true",
+    "stock": 6,
+    "description": ""
   }
 ]
