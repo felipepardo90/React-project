@@ -10,9 +10,9 @@ export default function ItemDetail({ products }) {
       <div>
         <h2>{p.name}</h2>
         <h3>{p.price}</h3>
+        <section>{p.description}</section>
       </div>
       <section>
-        {p.description}
         <ItemCount stock={p.stock} initial={0}/>
       
       </section>
