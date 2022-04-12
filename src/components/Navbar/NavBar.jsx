@@ -24,17 +24,19 @@ export default function NavBar() {
 
           <Nav defaultActiveKey="/home" as="ul">
             <NavbarCollapse className="justify-content-end">
-              <Nav.Link href="#Cervecería">Cervecería</Nav.Link>
-              <Nav.Link href="#Vinería">Vinería</Nav.Link>
-              <Nav.Link href="#Licorería">Licorería</Nav.Link>
-              <Nav.Link href="#Accesorios">Accesorios</Nav.Link>
+              <Nav.Link href="#Pastelería">Pastelería</Nav.Link>
+              <Nav.Link href="#Paletas">Paletas</Nav.Link>
+              <Nav.Link href="#Variedades">Variedades</Nav.Link>
+              <Nav.Link href="#Nosotros">Nosotros</Nav.Link>
+              <CartWidget />
+          {/* ICON -- CART SHOPPING */}
             </NavbarCollapse>
+
+           
           </Nav>
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-          <CartWidget />
-          {/* ICON -- CART SHOPPING */}
         </Container>
       </Navbar>
     </>
