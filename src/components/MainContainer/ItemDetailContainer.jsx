@@ -15,7 +15,7 @@ export default function ItemDetailContainer() {
 
   return (
     <>
-     <ItemDetail products={items}/>
+     <ItemDetail products={items} to="/detail" />
 
     </>
   );

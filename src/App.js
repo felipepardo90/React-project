@@ -9,18 +9,14 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-        <NavBar>
-          <Routes>
-            <Route path="/" element={<ItemDetailContainer />}>
-              <Route  />
-            </Route>
-          </Routes>
-        </NavBar>
+        <NavBar />
+        <Routes>
+
+          <Route exact path="/" element={<ItemListContainer />} />
+          <Route exact path="/detail" element={<ItemDetailContainer />} />
+          
+        </Routes>
       </BrowserRouter>
-
-      <ItemDetailContainer />
-
-      <ItemListContainer />
     </>
   );
 }
