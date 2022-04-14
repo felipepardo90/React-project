@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.colorIcon {
+    color: violet;
+    width: 30px;
+    height: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: medium;
+    font-family: 'Lobster', cursive;;
+}
+
+.navbar-collapse {
+    gap: 10px;
+}

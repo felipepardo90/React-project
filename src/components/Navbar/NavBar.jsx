@@ -28,7 +28,7 @@ export default function NavBar() {
           <Nav defaultActiveKey="/home" as="ul">
             <NavbarCollapse className="justify-content-end">
               <Nav.Link>
-                <Link style={{ textDecoration: "none" }} to="/pastelería">
+                <Link to="/pastelería">
                   Pastelería
                 </Link>
               </Nav.Link>
