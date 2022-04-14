@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 export default function NavBar() {
@@ -10,33 +11,42 @@ export default function NavBar() {
         <Container>
           {/* LOGO */}
 
-          <Navbar.Brand href="#home">
-            <img
-              src="https://github.com/felipepardo90/React-project/blob/main/src/components/Images/logo.png?raw=true"
-              width="60"
-              height="100"
-              className="d-inline-block align-top"
-              alt="alf logo"
-            />
+          <Navbar.Brand>
+            <Link to="/">
+              <img
+                src="https://github.com/felipepardo90/React-project/blob/main/src/components/Images/logo.png?raw=true"
+                width="60"
+                height="100"
+                className="d-inline-block align-top"
+                alt="alf logo"
+              />
+            </Link>
           </Navbar.Brand>
 
           {/* NAV LINKS */}
 
           <Nav defaultActiveKey="/home" as="ul">
             <NavbarCollapse className="justify-content-end">
-              <Nav.Link href="#Pastelería">Pastelería</Nav.Link>
-              <Nav.Link href="#Paletas">Paletas</Nav.Link>
-              <Nav.Link href="#Variedades">Variedades</Nav.Link>
-              <Nav.Link href="#Nosotros">Nosotros</Nav.Link>
+              <Nav.Link>
+                <Link style={{ textDecoration: "none" }} to="/pastelería">
+                  Pastelería
+                </Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="/paletas">Paletas</Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="/variedades">Variedades</Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="/nosotros">Nosotros</Link>
+              </Nav.Link>
               <CartWidget />
-          {/* ICON -- CART SHOPPING */}
+              {/* ICON -- CART SHOPPING */}
             </NavbarCollapse>
-
-           
           </Nav>
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
         </Container>
       </Navbar>
     </>

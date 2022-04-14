@@ -6,7 +6,7 @@ import ItemCount from './ItemCount'
 export default function ItemDetail({ products }) {
   return products.map((p) => (
     <Container key={p.id} className={s.detailContainer}>
-      <img src={p.image} alt={p.name} width={250} height={250}/>
+      <img src={p.image} alt={p.name} className={s.card_img_detail}/>
       <div>
         <h2>{p.name}</h2>
         <h3>{p.price}</h3>
