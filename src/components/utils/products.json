@@ -20,7 +20,7 @@
   {
     "id": 3,
     "category": "popsicles",
-    "name": "Paletas",
+    "name": "Paletas Panda",
     "price": "150,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/paletas%20panda.jpg?raw=true",
     "stock": 12,
@@ -38,37 +38,37 @@
   {
     "id": 5,
     "category": "varieties",
-    "name": "Alfajores Halloween",
+    "name": "Alfajores Memes",
     "price": "$100,00",
-    "stock": 15,
-    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Alfajores%20Halloween.jpg?raw=true",
-    "description": "Alfajores HALLOWEEN artesanales con rellenos de dulce de leche, crema moca o frutos rojos"
+    "stock": 13,
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/alfajores%20meme.jpg?raw=true",
+    "description": "Alfajores MEMES artesanales con rellenos de dulce de leche, crema moca o frutos rojos"
   },
   {
     "id": 6,
-    "category": "pies",
-    "name": "Tarta de durazno",
-    "price": "$950,00",
-    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Tarta%20durazno.jpg?raw=true",
-    "stock": 5,
+    "category": "varieties",
+    "name": "Huevos de pascua unicornios",
+    "price": "$800,00",
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/huevos%20pascua%20unicornio.jpg?raw=true",
+    "stock": 23,
     "description": ""
   },
   {
     "id": 7,
     "category": "popsicles",
-    "name": "Paletas",
+    "name": "Paletas chocolate",
     "price": "150,00",
-    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/paletas%20panda.jpg?raw=true",
-    "stock": 12,
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/paletas%202.jpg?raw=true",
+    "stock": 14,
     "description": ""
   },
   {
     "id": 8,
-    "name": "Torre de miga",
-    "category": "varieties",
+    "name": "Tarta de frutilla",
+    "category": "pies",
     "price": "$750,00",
-    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/torre%20miga%201.jpg?raw=true",
-    "stock": 6,
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/tarta%20frutilla.jpg?raw=true",
+    "stock": 5,
     "description": ""
   }
 ]
