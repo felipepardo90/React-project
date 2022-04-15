@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Button} from "react-bootstrap";
+import { Link } from "react-router-dom";
 import s from "./ItemListContainer.module.css";
 
 export default function Item({ id, name, price, stock, image }) {
@@ -12,7 +13,7 @@ export default function Item({ id, name, price, stock, image }) {
           {stock} elementos en stock <br />
           {price} <br />
         </Card.Text>
-        <Button variant="primary">Ver producto</Button>{" "}
+        <Button variant="primary"><Link to="/item/:id">Ver producto</Link></Button>{" "}
       </Card.Body>
     </Card>
   );
