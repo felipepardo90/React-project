@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "category": "Varieties",
+    "category": "varieties",
     "name": "Alfajores Halloween",
     "price": "$100,00",
     "stock": 15,
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "category": "Pies",
+    "category": "pies",
     "name": "Tarta de durazno",
     "price": "$950,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Tarta%20durazno.jpg?raw=true",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "category": "Popsicles",
+    "category": "popsicles",
     "name": "Paletas",
     "price": "150,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/paletas%20panda.jpg?raw=true",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "Torre de miga",
-    "category": "Varieties",
+    "category": "varieties",
     "price": "$750,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/torre%20miga%201.jpg?raw=true",
     "stock": 6,
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "category": "Varieties",
+    "category": "varieties",
     "name": "Alfajores Halloween",
     "price": "$100,00",
     "stock": 15,
@@ -46,7 +46,7 @@
   },
   {
     "id": 6,
-    "category": "Pies",
+    "category": "pies",
     "name": "Tarta de durazno",
     "price": "$950,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Tarta%20durazno.jpg?raw=true",
@@ -55,7 +55,7 @@
   },
   {
     "id": 7,
-    "category": "Popsicles",
+    "category": "popsicles",
     "name": "Paletas",
     "price": "150,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/paletas%20panda.jpg?raw=true",
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "name": "Torre de miga",
-    "category": "Varieties",
+    "category": "varieties",
     "price": "$750,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/torre%20miga%201.jpg?raw=true",
     "stock": 6,
