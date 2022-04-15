@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "category": "Caramels cookies",
+    "category": "Varieties",
     "name": "Alfajores Halloween",
     "price": "$100,00",
     "stock": 15,
@@ -28,6 +28,42 @@
   },
   {
     "id": 4,
+    "name": "Torre de miga",
+    "category": "Varieties",
+    "price": "$750,00",
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/torre%20miga%201.jpg?raw=true",
+    "stock": 6,
+    "description": ""
+  },
+  {
+    "id": 5,
+    "category": "Varieties",
+    "name": "Alfajores Halloween",
+    "price": "$100,00",
+    "stock": 15,
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Alfajores%20Halloween.jpg?raw=true",
+    "description": "Alfajores HALLOWEEN artesanales con rellenos de dulce de leche, crema moca o frutos rojos"
+  },
+  {
+    "id": 6,
+    "category": "Pies",
+    "name": "Tarta de durazno",
+    "price": "$950,00",
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Tarta%20durazno.jpg?raw=true",
+    "stock": 5,
+    "description": ""
+  },
+  {
+    "id": 7,
+    "category": "Popsicles",
+    "name": "Paletas",
+    "price": "150,00",
+    "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/paletas%20panda.jpg?raw=true",
+    "stock": 12,
+    "description": ""
+  },
+  {
+    "id": 8,
     "name": "Torre de miga",
     "category": "Varieties",
     "price": "$750,00",

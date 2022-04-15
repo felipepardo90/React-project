@@ -4,6 +4,7 @@
     color: violet;
     width: 30px;
     height: 30px;
+    padding: 10px;
 }
 
 a{
@@ -11,6 +12,11 @@ a{
     color: aliceblue;
     font-size: medium;
     font-family: 'Lobster', cursive;
+}
+
+.navLinks{
+    margin: 0 12px;
+    right: 50px;
 }
 
 
