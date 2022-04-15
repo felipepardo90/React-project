@@ -4,18 +4,18 @@ import s from './ItemListContainer.module.css'
 import ItemCount from './ItemCount'
 
 export default function ItemDetail({ products }) {
-  return products.map((p) => (
-    <Container key={p.id} className={s.detailContainer} to={`/category/${p.category}`}>
-      <img src={p.image} alt={p.name} className={s.card_img_detail}/>
+  return  (
+    <Container key={products.id} className={s.detailContainer} to={`/category/${products.category}`}>
+      <img src={products.image} alt={products.name} className={s.card_img_detail}/>
       <div>
-        <h2>{p.name}</h2>
-        <h3>{p.price}</h3>
-        <section>{p.description}</section>
+        <h2>{products.name}</h2>
+        <h3>{products.price}</h3>
+        <section>{products.description}</section>
       </div>
       <section>
-        <ItemCount stock={p.stock} initial={1}/>
+        <ItemCount stock={products.stock} initial={1}/>
       
       </section>
     </Container>
-  ));
+  );
 }

@@ -39,7 +39,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
             -
           </Button>{" "}
           <div>
-            <p>{count}</p>
+            <p style={{margin:"5px 10px"}}>{count}</p>
           </div>
           <Button variant="primary" onClick={incNum}>
             +

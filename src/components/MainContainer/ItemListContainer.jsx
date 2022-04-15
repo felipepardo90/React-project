@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import { Container } from 'react-bootstrap'
 import ItemList from './ItemList'
 import customFetch from "../utils/customFetch"
-import products from '../utils/products.json'
+import productsJson from '../utils/products.json'
 import s from './ItemListContainer.module.css'
 import { useParams } from "react-router-dom"
 
@@ -15,7 +15,7 @@ export default function ItemListContainer() {
     console.log(category)
 
     useEffect(()=>{
-      customFetch (2000, products, 'C', category)
+      customFetch (2000, productsJson, 'C', category)
       .then(res => setPostres(res))
       .catch(error => console.log(error))
       .finally(()=>{
@@ -27,12 +27,17 @@ export default function ItemListContainer() {
 
     return(
 
-<Container className={s.mainContainer}>
+<>
 
-{ loading ? (<h1>CARGANDO ELEMENTOS...</h1>) : (<ItemList products={postres} />)}
+{ loading ? (<h1>CARGANDO ELEMENTOS...</h1>) : 
+(<Container className={s.mainContainer}>
+
+  <ItemList products={postres} />
   
+    
+  </Container>)}
   
-</Container>
+  </>
 
     )
 }
