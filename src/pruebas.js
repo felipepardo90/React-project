@@ -1,12 +1,12 @@
+// let personajes = ['Homer', 'Marge', 'Lisa', 'Bart', 'Maggie'];
+// let personajesConM = personajes.filter(nombre => nombre[0] === 'M');
 
+// console.log(personajesConM);
 
-const getData = async () => {
-    const data = await fetch ("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
-    const dolar = await data.json()
-    
-console.log (dolar)
-}
+// let personajes = ['Homer', 'Marge', 'Lisa', 'Bart', 'Maggie'];
+// let totalLetras = personajes.reduce((total, nombre) => total + nombre.length, 0);
 
+// console.log(totalLetras);
 
-
-
+let familia = ['Homer', 'Marge', 'Lisa', 'Bart', 'Maggie'];
+familia.includes('Mar') ? console.log('Barney es parte de la familia') : console.log('Barney no es parte de la familia')
