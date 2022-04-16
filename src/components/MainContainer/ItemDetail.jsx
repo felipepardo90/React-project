@@ -5,7 +5,7 @@ import ItemCount from './ItemCount'
 
 export default function ItemDetail({ products }) {
   return  (
-    <Container key={products.id} className={s.detailContainer} to={`/category/${products.category}`}>
+    <Container key={products.id} className={s.detailContainer}>
       <img src={products.image} alt={products.name} className={s.card_img_detail}/>
       <div>
         <h2>{products.name}</h2>
