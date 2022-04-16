@@ -18,6 +18,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
       }
     };
     const reset = () => {
+      onAdd(count)
       setCount(0);
     };
 
@@ -35,16 +36,16 @@ export default function ItemCount({ stock, initial, onAdd }) {
     <>
       <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
         <ButtonGroup className="me-2" aria-label="First group">
-          <Button variant="primary" onClick={decNum}>
+          <Button variant="danger" onClick={decNum}>
             -
           </Button>{" "}
           <div>
-            <p style={{margin:"5px 10px"}}>{count}</p>
+            <p style={{margin:"5px 10px", fontWeight:"50px"}}>{count}</p>
           </div>
           <Button variant="primary" onClick={incNum}>
             +
           </Button>{" "}
-          <Button variant="primary" onClick={reset}>
+          <Button variant="secondary" onClick={reset}>
             Agregar al carrito
           </Button>{" "}
         </ButtonGroup>

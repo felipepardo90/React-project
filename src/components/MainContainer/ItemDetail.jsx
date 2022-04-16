@@ -1,9 +1,16 @@
-import React from "react";
-import { Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Button } from "react-bootstrap";
 import s from './ItemListContainer.module.css'
 import ItemCount from './ItemCount'
+import { Link } from "react-router-dom";
 
 export default function ItemDetail({ products }) {
+
+  const [index, setIndex] = useState(0)
+
+  const onAdd = (index) => {
+    setIndex(index)
+  }
   return  (
     <Container key={products.id} className={s.detailContainer}>
       <img src={products.image} alt={products.name} className={s.card_img_detail}/>
@@ -13,7 +20,11 @@ export default function ItemDetail({ products }) {
         <section>{products.description}</section>
       </div>
       <section>
-        <ItemCount stock={products.stock} initial={1}/>
+
+        {
+          index === 0 ?  <ItemCount stock={products.stock} initial={1} onAdd={onAdd}/> : <Button variant="primary"><Link to='/cart'>Ver carrito</Link></Button>
+        }
+       
       
       </section>
     </Container>
