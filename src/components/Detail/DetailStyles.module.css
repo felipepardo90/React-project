@@ -1,0 +1,54 @@
+.detailContainer {
+  display: flex;
+  gap: 16px;
+  padding: 2rem;
+  background-color: #3e0595;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+}
+
+.card {
+  width: 18rem;
+}
+
+.card_img {
+  height: 220px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.card_img_detail {
+  height: 250px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.dec__button {
+  background-color: violet;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+
+.inc__button {
+  background-color: violet;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+
+.add__cart__btn {
+  background-color: violet;
+  font-weight: bold;
+  border: 2px solid #3e0595;
+}
+
+.dec__button:hover {
+    background-color: red;
+    color: white;
+}
+.inc__button:hover {
+    background-color: green;
+    color: white;
+}

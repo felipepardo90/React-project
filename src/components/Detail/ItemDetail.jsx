@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Button } from "react-bootstrap";
-import s from './ItemListContainer.module.css'
+import s from './DetailStyles.module.css'
 import ItemCount from './ItemCount'
 import { Link } from "react-router-dom";
 

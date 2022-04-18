@@ -6,25 +6,29 @@ import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer() {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true)
-  const {id} = useParams()
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
 
   useEffect(() => {
-    customFetch(2000, products, 'I', id)
+    customFetch(2000, products, "I", id)
       .then((resultado) => setItems(resultado))
       .catch((error) => console.log(error))
-      .finally(()=>{
-        setLoading(false)
-      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, [id]);
-
 
   return (
     <>
-
-{ loading ? (<h1>CARGANDO ELEMENTOS...</h1>) : (<ItemDetail products={items} />)}
-     
-
+      {loading ? (
+        
+        <section>
+          <h2>CARGANDO ELEMENTOS...</h2>
+        </section>
+        
+      ) : (
+        <ItemDetail products={items} />
+      )}
     </>
   );
 }

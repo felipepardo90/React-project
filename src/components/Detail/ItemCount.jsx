@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ButtonToolbar, ButtonGroup } from "react-bootstrap";
 import { useState } from "react";
-import "./ItemListContainer.module.css";
+import s from "./DetailStyles.module.css";
 
 export default function ItemCount({ stock, initial, onAdd }) {
   const Counter = (initial) => {
@@ -36,16 +36,16 @@ export default function ItemCount({ stock, initial, onAdd }) {
     <>
       <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
         <ButtonGroup className="me-2" aria-label="First group">
-          <Button style={{backgroundColor:"violet", fontWeight:"bold", border:"none", borderRadius:"5px 0 0 5px"}} onClick={decNum}>
+          <Button className={s.dec__button} onClick={decNum}>
             -
           </Button>{" "}
           <div style={{backgroundColor:"violet"}}>
             <p style={{margin:"5px 10px", fontWeight:"bold"}}>{count}</p>
           </div>
-          <Button style={{backgroundColor:"violet", fontWeight:"bold", border:"none", borderRadius:"0 5px 5px 0 "}} onClick={incNum}>
+          <Button style={{borderRadius:"0 5px 5px 0"}} className={s.inc__button} onClick={incNum}>
             +
           </Button>{" "}
-          <Button style={{marginLeft:"5px", border:"2px solid #3e0595", backgroundColor:"violet", fontWeight:"bold", borderRadius:"5px"}} onClick={reset}>
+          <Button className={s.add__cart__btn} style={{marginLeft:"2em", border:"none", borderRadius:"5px"}} onClick={reset}>
             Agregar al carrito
           </Button>{" "}
         </ButtonGroup>
