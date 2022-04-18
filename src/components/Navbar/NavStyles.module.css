@@ -12,11 +12,17 @@ a{
     color: aliceblue;
     font-size: medium;
     font-family: 'Lobster', cursive;
+    transition: 1s;
+}
+
+a:hover{
+    color: #ff8eaa;
 }
 
 .navLinks{
     margin: 0 12px;
     right: 50px;
+    color: #ff8eaa;
 }
 
 

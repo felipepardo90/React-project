@@ -8,7 +8,7 @@ import s from './NavStyles.module.css'
 export default function NavBar() {
   return (
     <>
-      <Navbar bg="info" variant="dark" collapseOnSelect expand="lg">
+      <Navbar collapseOnSelect expand="lg" style={{borderBottom:"5px solid pink", background:"#0fffe9"}}>
         <Container>
           {/* LOGO */}
 

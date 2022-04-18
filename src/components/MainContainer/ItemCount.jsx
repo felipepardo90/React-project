@@ -36,16 +36,16 @@ export default function ItemCount({ stock, initial, onAdd }) {
     <>
       <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
         <ButtonGroup className="me-2" aria-label="First group">
-          <Button variant="danger" onClick={decNum}>
+          <Button style={{backgroundColor:"violet", fontWeight:"bold", border:"none", borderRadius:"5px 0 0 5px"}} onClick={decNum}>
             -
           </Button>{" "}
-          <div>
-            <p style={{margin:"5px 10px", fontWeight:"50px"}}>{count}</p>
+          <div style={{backgroundColor:"violet"}}>
+            <p style={{margin:"5px 10px", fontWeight:"bold"}}>{count}</p>
           </div>
-          <Button variant="primary" onClick={incNum}>
+          <Button style={{backgroundColor:"violet", fontWeight:"bold", border:"none", borderRadius:"0 5px 5px 0 "}} onClick={incNum}>
             +
           </Button>{" "}
-          <Button variant="secondary" onClick={reset}>
+          <Button style={{marginLeft:"5px", border:"2px solid #3e0595", backgroundColor:"violet", fontWeight:"bold", borderRadius:"5px"}} onClick={reset}>
             Agregar al carrito
           </Button>{" "}
         </ButtonGroup>
