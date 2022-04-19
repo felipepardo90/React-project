@@ -47,11 +47,11 @@
   {
     "id": 6,
     "category": "varieties",
-    "name": "Huevos de pascua unicornios",
+    "name": "Huevos unicornios",
     "price": "$800,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/huevos%20pascua%20unicornio.jpg?raw=true",
     "stock": 23,
-    "description": ""
+    "description": "Huevitos de pascua de chocolate blanco y negro, rellenos con rocklets. Tipo'Unicornio'"
   },
   {
     "id": 7,
