@@ -1,5 +1,13 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ff8eaa;;
+}
+
 .cart-container  {
 overflow-x: auto;
+
   table{
     border-collapse: collapse;
     width: 100%;
@@ -10,7 +18,7 @@ overflow-x: auto;
   table thead {
     font-weight: 700;
     td {
-      background-color: #ff8eaa;
+      background-color: #3e0595;
       color: #fff;
       border: none;
       padding: 6px 0;
@@ -54,7 +62,7 @@ overflow-x: auto;
     border: 1px solid gray;
   }
   h5 {
-    background-color: #ff8eaa;
+    background-color: #3e0595;
     color: #fff;
     border: none;
     padding: 6px 0;
@@ -71,7 +79,7 @@ overflow-x: auto;
 
 .cart-bottom .total {
   h5 {
-    background-color: #ff8eaa;
+    background-color: #3e0595;
     color: #fff;
     border: none;
     padding: 6px 0;
@@ -85,7 +93,7 @@ overflow-x: auto;
     margin: 0 0 20px 12px;
   }
   h6 {
-    color: #ff8eaa;
+    color: #3e0595;
   }
 }
 
