@@ -15,7 +15,7 @@
     "price": "$950,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Tarta%20durazno.jpg?raw=true",
     "stock": 5,
-    "description": ""
+    "description": "Masa quebrada, crema chantilly y durazno fresco con decoraciones de dulce de leche"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "price": "150,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/paletas%20panda.jpg?raw=true",
     "stock": 12,
-    "description": ""
+    "description": "Paletas personalizadas, estilo pandita, con variedades de rellenos (consultar)"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "price": "$750,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/torre%20miga%201.jpg?raw=true",
     "stock": 6,
-    "description": ""
+    "description": "Torre de miga con lechuga, tomate, queso, aderezos, bondiola y diferentes variedades. (consultar)"
   },
   {
     "id": 5,
@@ -60,7 +60,7 @@
     "price": "150,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/paletas%202.jpg?raw=true",
     "stock": 14,
-    "description": ""
+    "description": "Paletas de chocolate en blanco y negro, con variedades de rellenos (consultar)"
   },
   {
     "id": 8,
@@ -69,6 +69,6 @@
     "price": "$750,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/tarta%20frutilla.jpg?raw=true",
     "stock": 5,
-    "description": ""
+    "description": "Masa quebrada, crema chantilly y frutillas frescas. Decorado con dulce de leche"
   }
 ]
