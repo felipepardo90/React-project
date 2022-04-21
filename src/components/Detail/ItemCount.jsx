@@ -26,10 +26,10 @@ export default function ItemCount({ stock, initial, products, addOn }) {
     const reset = () => {
       addOn(count)
       addItem({...products, count})
-      setCount(0);
+      setCount(1);
     };
 
-    console.log(reset)
+    console.log(addItem())
 
     return {
       count,
