@@ -5,21 +5,26 @@ import NavBar from "./components/Navbar/NavBar";
 import ItemListContainer from "./components/MainContainer/ItemListContainer";
 import Cart from "./components/Navbar/Cart";
 import ItemDetailContainer from "./components/Detail/ItemDetailContainer";
+import { CartProvider } from "./components/Navbar/CartContext";
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
-        <NavBar />
-        
-        <Routes>
+        <CartProvider>
+          <NavBar />
 
-          <Route exact path="/" element={<ItemListContainer />} />
-          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-          <Route exact path="/category/:category" element={<ItemListContainer />} />
-          <Route exact path="/cart" element={<Cart />} />
-          
-        </Routes>
+          <Routes>
+            <Route exact path="/" element={<ItemListContainer />} />
+            <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+            <Route
+              exact
+              path="/category/:category"
+              element={<ItemListContainer />}
+            />
+            <Route exact path="/cart" element={<Cart />} />
+          </Routes>
+        </CartProvider>
       </BrowserRouter>
     </>
   );

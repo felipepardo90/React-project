@@ -6,10 +6,10 @@ import CartWidget from "./CartWidget";
 import s from './NavStyles.module.css'
 
 const navlinks = [
-  {category: "Pastelería", toRoute: "/category/pies" },
-  {category: "Paletas", toRoute: "/category/popsicles" },
-  {category: "Variedades", toRoute: "/category/varieties" },
-  {category: "Nosotros", toRoute: "/category/about-us" }
+  {category: "Pastelería", toRoute: "/category/pies", id:1 },
+  {category: "Paletas", toRoute: "/category/popsicles", id:2 },
+  {category: "Variedades", toRoute: "/category/varieties", id:3 },
+  {category: "Nosotros", toRoute: "/category/about-us", id:4 }
 ]
 
 export default function NavBar() {
@@ -37,7 +37,7 @@ export default function NavBar() {
             <NavbarCollapse className="justify-content-end">
 
               {navlinks.map(nav =>
-                <Link to={nav.toRoute} className={s.navLinks}>{nav.category}</Link>
+                <Link key={nav.id} to={nav.toRoute} className={s.navLinks}>{nav.category}</Link>
               )}
               
               {/* <Link to="/category/pies" className={s.navLinks}>Pastelería</Link>

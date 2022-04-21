@@ -16,6 +16,7 @@
   height: 220px;
   max-width: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .card_img_detail {

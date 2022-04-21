@@ -12,7 +12,6 @@ export default function ItemListContainer() {
     const [loading, setLoading] = useState(true)
     const {category} = useParams()
 
-    console.log(category)
 
     useEffect(()=>{
       customFetch (2000, productsJson, 'C', category)
@@ -29,11 +28,12 @@ export default function ItemListContainer() {
 
 <>
 
-{ loading ? (<h1>CARGANDO ELEMENTOS...</h1>) : 
+{ loading ? (<div className="spinner-border text-danger" role="status">
+  <span className="visually-hidden">Loading...</span>
+</div>) : 
 (<Container className={s.mainContainer}>
 
   <ItemList products={postres} />
-  
     
   </Container>)}
   

@@ -21,11 +21,9 @@ export default function ItemDetailContainer() {
   return (
     <>
       {loading ? (
-        
-        <section>
-          <h2>CARGANDO ELEMENTOS...</h2>
-        </section>
-        
+        <div className="spinner-border text-danger" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
       ) : (
         <ItemDetail products={items} />
       )}
