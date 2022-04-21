@@ -8,9 +8,10 @@ export default function ItemDetail({ products }) {
 
   const [index, setIndex] = useState(0)
 
-  const onAdd = (index) => {
+  const addOn = (index) => {
     setIndex(index)
   }
+
   return  (
     <Container key={products.id} className={s.detailContainer}>
       <img src={products.image} alt={products.name} className={s.card_img_detail}/>
@@ -22,7 +23,7 @@ export default function ItemDetail({ products }) {
       <section>
 
         {
-          index === 0 ?  <ItemCount stock={products.stock} initial={1} onAdd={onAdd}/> : <Button variant="primary"><Link to='/cart'>Ver carrito</Link></Button>
+          index === 0 ?  <ItemCount stock={products.stock} initial={1} products={products} addOn={addOn}/> : <Button variant="primary"><Link to='/cart'>Ver carrito</Link></Button>
         }
        
       

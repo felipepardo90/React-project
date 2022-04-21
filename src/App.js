@@ -15,7 +15,7 @@ export default function App() {
           <NavBar />
 
           <Routes>
-            <Route exact path="/" element={<ItemListContainer />} />
+            <Route exact path="/React-project" element={<ItemListContainer />} />
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />
             <Route
               exact

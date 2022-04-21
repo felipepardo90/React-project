@@ -20,7 +20,7 @@ export default function NavBar() {
           {/* LOGO */}
 
           <Navbar.Brand>
-            <Link to="/">
+            <Link to="/React-project">
               <img
                 src="https://github.com/felipepardo90/React-project/blob/main/src/components/Images/logo.png?raw=true"
                 width="60"

@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, ButtonToolbar, ButtonGroup } from "react-bootstrap";
 import { useState } from "react";
 import s from "./DetailStyles.module.css";
+import { CartContext } from "../Navbar/CartContext";
 
-export default function ItemCount({ stock, initial, onAdd }) {
+export default function ItemCount({ stock, initial, products, addOn }) {
+
+  const {addItem} = useContext(CartContext);
+
+  console.log(addItem)
+
   const Counter = (initial) => {
     const [count, setCount] = useState(initial);
 
@@ -18,9 +24,12 @@ export default function ItemCount({ stock, initial, onAdd }) {
       }
     };
     const reset = () => {
-      onAdd(count)
+      addOn(count)
+      addItem({...products, count})
       setCount(0);
     };
+
+    console.log(reset)
 
     return {
       count,
