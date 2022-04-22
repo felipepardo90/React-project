@@ -42,7 +42,7 @@ export default function Cart() {
                     <FontAwesomeIcon
                       icon={faTrashAlt}
                       className="trash-icon"
-                      onClick={removeItem}
+                      onClick={() => removeItem(p.id)}
                     />
                   </td>
                   <td>

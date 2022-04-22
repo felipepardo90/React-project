@@ -8,8 +8,6 @@ export default function ItemCount({ stock, initial, products, addOn }) {
 
   const {addItem} = useContext(CartContext);
 
-  console.log(addItem)
-
   const Counter = (initial) => {
     const [count, setCount] = useState(initial);
 
@@ -27,10 +25,11 @@ export default function ItemCount({ stock, initial, products, addOn }) {
     const reset = () => {
       addOn(count)
       addItem({...products, count})
-      setCount(1);
+      setCount(0);
+      console.log(addItem)
     };
 
-    console.log(addItem)
+   
 
     return {
       count,
