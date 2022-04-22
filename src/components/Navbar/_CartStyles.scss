@@ -1,14 +1,14 @@
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ff8eaa;;
+  background-color: #ff8eaa;
 }
 
-.cart-container  {
-overflow-x: auto;
+.cart-container {
+  overflow-x: auto;
 
-  table{
+  table {
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
@@ -49,9 +49,12 @@ overflow-x: auto;
 
 .trash-icon {
   color: gray;
-  transition: 1s;
+  cursor: pointer;
+  transition: all 1s;
   :hover {
     color: red;
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
   }
 }
 

@@ -34,7 +34,7 @@ export default function Cart() {
             </tr>
           </thead>
 
-          {cart ? (
+          {cart !== 0 ? (
             cart.map((p) => (
               <tbody key={p.id}>
                 <tr>
