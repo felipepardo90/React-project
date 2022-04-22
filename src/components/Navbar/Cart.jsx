@@ -12,9 +12,10 @@ const checkBtn = {
 };
 
 export default function Cart() {
-  const {cart, clear, removeItem} = useContext(CartContext);
+  const { cart, clear, removeItem } = useContext(CartContext);
+  console.log(removeItem);
 
-  return ( 
+  return (
     <>
       <section className="container pt-5 mt-5">
         <h2 className="font-weight-bold pt-5">Shopping Cart</h2>
@@ -33,40 +34,42 @@ export default function Cart() {
             </tr>
           </thead>
 
-          {cart >= 1 ? cart.map(products=>(
-            <tbody key={products.id}>
+          {cart ? (
+            cart.map((p) => (
+              <tbody key={p.id}>
+                <tr>
+                  <td>
+                    <FontAwesomeIcon
+                      icon={faTrashAlt}
+                      className="trash-icon"
+                      onClick={removeItem}
+                    />
+                  </td>
+                  <td>
+                    <img src={p.image} alt="product" />
+                  </td>
+                  <td>
+                    <h5>{p.name}</h5>
+                  </td>
+                  <td>
+                    <h5>{p.price}</h5>
+                  </td>
+                  <td>
+                    <h5>{p.quantity}</h5>
+                  </td>
+                  <td>
+                    <h5>TOTAL</h5>
+                  </td>
+                </tr>
+              </tbody>
+            ))
+          ) : (
+            <tbody>
               <tr>
                 <td>
-                  <FontAwesomeIcon
-                    icon={faTrashAlt}
-                    className="trash-icon"
-                    onClick={removeItem}
-                  />
-                </td>
-                <td>
-                  <img src={products.image} alt="product" />
-                </td>
-                <td>
-                  <h5>{products.name}</h5>
-                </td>
-                <td>
-                  <h5>{products.price}</h5>
-                </td>
-                <td>
-                  <h5>{products.quantity}</h5>
-                </td>
-                <td>
-                  <h5>TOTAL</h5>
+                  <h1>Esto parece que está un poco vacío</h1>
                 </td>
               </tr>
-            </tbody>
-          )) : (
-            <tbody>
-            <tr>
-              <td>
-                <h1>Esto parece que está un poco vacío</h1>
-              </td>
-            </tr>
             </tbody>
           )}
         </table>
