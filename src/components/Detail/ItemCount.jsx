@@ -23,13 +23,14 @@ export default function ItemCount({ stock, initial, products, addOn }) {
         setCount(count - 1);
       }
     };
+    
     const reset = () => {
       addOn(count)
       addItem({...products, count})
       setCount(1);
     };
 
-    console.log(addItem())
+    console.log(addItem)
 
     return {
       count,
@@ -54,7 +55,7 @@ export default function ItemCount({ stock, initial, products, addOn }) {
           <Button style={{borderRadius:"0 5px 5px 0"}} className={s.inc__button} onClick={incNum}>
             +
           </Button>{" "}
-          <Button className={s.add__cart__btn} style={{marginLeft:"2em", border:"none", borderRadius:"5px"}} onClick={reset}>
+          <Button className={s.add__cart__btn} style={{marginLeft:"2em", border:"none", borderRadius:"5px"}} onClick={(reset)}>
             Agregar al carrito
           </Button>{" "}
         </ButtonGroup>
