@@ -26,35 +26,36 @@ body {
   }
   table td {
     border: 1px solid gray;
+    padding: 10px;
     text-align: center;
-    :nth-child(1) {
+    &:nth-child(1) {
       width: 100px;
     }
-    :nth-child(2),
-    :nth-child(3) {
+    &:nth-child(2),
+    &:nth-child(3) {
       width: 200px;
     }
-    :nth-child(4),
-    :nth-child(5),
-    :nth-child(6) {
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
       width: 170px;
     }
   }
   table tbody img {
-    width: 100px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
   }
 }
 
 .trash-icon {
-  color: gray;
+  color: #3e0595;
   cursor: pointer;
   transition: all 1s;
-  :hover {
+  &:hover {
     color: red;
-    -webkit-transform: translateY(50px);
-    transform: translateY(50px);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
   }
 }
 
@@ -111,4 +112,17 @@ second-hr {
   div {
     padding: 0 12px;
   }
+}
+
+.placeholder {
+  width: 67vw;
+  margin: 90px auto;
+  padding: 2em 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  background-color: #af8ee0;
+  opacity: 0.8;
+  align-items: center;
+  justify-content: center;
 }
