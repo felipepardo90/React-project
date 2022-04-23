@@ -26,7 +26,6 @@ export default function ItemCount({ stock, initial, products, addOn }) {
       addOn(count)
       addItem({...products, count})
       setCount(0);
-      console.log(addItem)
     };
 
    

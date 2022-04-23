@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function ItemDetail({ products }) {
   const [index, setIndex] = useState(0);
-  console.log(index);
+  
 
   const addOn = (index) => {
     setIndex(index);

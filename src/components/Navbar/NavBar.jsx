@@ -3,7 +3,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
-import s from './NavStyles.module.css'
+import './_NavbarStyles.scss'
 
 const navlinks = [
   {category: "Pastelería", toRoute: "/category/pies", id:1 },
@@ -37,7 +37,7 @@ export default function NavBar() {
             <NavbarCollapse className="justify-content-end">
 
               {navlinks.map(nav =>
-                <li><Link key={nav.id} to={nav.toRoute} className={s.navLinks}>{nav.category}</Link></li>
+                <li><Link key={nav.id} to={nav.toRoute} className="nav__links">{nav.category}</Link></li>
               )}
 
               <CartWidget />

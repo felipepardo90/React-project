@@ -1,7 +1,8 @@
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt, faTruck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
 import { Button, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import "./_CartStyles.scss";
 
@@ -13,40 +14,44 @@ const checkBtn = {
 
 export default function Cart() {
   const { cart, clear, removeItem } = useContext(CartContext);
-  console.log(removeItem);
+
+  console.log(cart);
 
   return (
     <>
       <section className="container pt-5 mt-5">
-        <h2 className="font-weight-bold pt-5">Shopping Cart</h2>
+        <h2 className="font-weight-bold pt-5">Carrito de compras</h2>
       </section>
-
       <section className="cart-container container my-5">
         <table width={"100%"}>
           <thead>
             <tr>
-              <td>Remove</td>
-              <td>Image</td>
-              <td>Product</td>
-              <td>Price</td>
-              <td>Quantity</td>
+              <td>Quitar</td>
+              <td>Imagen</td>
+              <td>Producto</td>
+              <td>Precio</td>
+              <td>Cantidad</td>
               <td>Total</td>
             </tr>
           </thead>
-
-          {cart !== 0 ? (
+          {cart.length !== 0 ? (
             cart.map((p) => (
               <tbody key={p.id}>
                 <tr>
                   <td>
                     <FontAwesomeIcon
                       icon={faTrashAlt}
+                      aria-hidden="true"
                       className="trash-icon"
                       onClick={() => removeItem(p.id)}
                     />
                   </td>
                   <td>
-                    <img src={p.image} alt="product" />
+                    <img
+                      src={p.image}
+                      alt="product"
+                      style={{ borderRadius: "50%", border:"2px dashed #3e0595" }}
+                    />
                   </td>
                   <td>
                     <h5>{p.name}</h5>
@@ -55,36 +60,40 @@ export default function Cart() {
                     <h5>$AR {p.price}</h5>
                   </td>
                   <td>
-                    <h5>{p.quantity}</h5>
+                    <h5>cantidad</h5>
                   </td>
                   <td>
-                    <h5>TOTAL</h5>
+                    <h5>$ {parseFloat(p.price) * parseFloat(p.count)}</h5>
                   </td>
                 </tr>
               </tbody>
             ))
           ) : (
-            <tbody>
-              <tr>
-                <td>
+            <>
+              <section>
+                <div className="container pt-5 mt-5 placeholder">
                   <h1>Esto parece que está un poco vacío</h1>
-                </td>
-              </tr>
-            </tbody>
+                  <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
+                  <Button>
+                    <Link to="/React-project">Volver al inicio</Link>
+                  </Button>
+                </div>
+              </section>
+            </>
           )}
         </table>
-      </section>
-
+      </section>{" "}
+      
       <section className="cart-bottom container">
         <Row>
           <div className="coupon col-lg-6 col-md-6 col-12 mb-4">
             <div>
-              <h5>COUPON</h5>
-              <p>If you have a coupon, enter here</p>
+              <h5>CUPÓN</h5>
+              <p>Si tienes un cupón, ingresalo aquí</p>
               <section style={checkBtn}>
-                <input type="text" placeholder="coupon code" />
+                <input type="text" placeholder="código del cupón" />
                 <Button variant="primary" style={checkBtn}>
-                  APPLY COUPON
+                  VALIDAR
                 </Button>
               </section>
             </div>
@@ -92,14 +101,16 @@ export default function Cart() {
 
           <div className="total col-lg-6 col-md-6 col-12">
             <div>
-              <h5>CART TOTAL</h5>
+              <h5>DETALLE TOTAL</h5>
               <div className="d-flex justify-content-between">
                 <h6>Subtotal</h6>
                 <p>---subtotal---</p>
               </div>
               <div className="d-flex justify-content-between">
-                <h6>Shipping</h6>
-                <p>---shipping---</p>
+                <h6>
+                  Envío <FontAwesomeIcon icon={faTruck} />
+                </h6>
+                <p>---envío---</p>
               </div>
 
               <hr className="second-hr" />
@@ -115,10 +126,15 @@ export default function Cart() {
                   className="ml-auto"
                   onClick={clear}
                 >
-                  EMPTY CART
+                  VACIAR CARRITO
                 </Button>
-                <Button variant="primary" style={checkBtn} className="ml-auto">
-                  PROCEED TO CHECKOUT
+                <Button
+                  variant="primary"
+                  style={checkBtn}
+                  className="ml-auto"
+                  onClick={clear}
+                >
+                  COMPRAR
                 </Button>
               </div>
             </div>
