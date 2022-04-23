@@ -11,7 +11,7 @@ export default function CartWidget() {
     <>
       <Link to="/cart">
         <FontAwesomeIcon icon={faCartShopping} className={s.colorIcon} />
-        <h6 style={{color:"black"}}>({parseInt(cart.count)})</h6>
+        {cart === 0?null: <span style={{zIndex:"1", background:"red", color:"white", borderRadius:"50%", width:"30px", height:"30px", padding:"2px 5px", fontSize:"0.8em",right:"20px", bottom:"25px", position:"relative"}}>{cart.length}</span>}
       </Link>
     </>
   );
