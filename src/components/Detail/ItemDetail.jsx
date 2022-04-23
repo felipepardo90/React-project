@@ -21,7 +21,7 @@ export default function ItemDetail({ products }) {
       />
       <div>
         <h2>{products.name}</h2>
-        <h3>{products.price}</h3>
+        <h3>$AR {products.price}</h3>
         <section>{products.description}</section>
       </div>
       <section>

@@ -3,7 +3,7 @@
     "id": 1,
     "category": "varieties",
     "name": "Alfajores Halloween",
-    "price": "$100,00",
+    "price": "100,00",
     "stock": 15,
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Alfajores%20Halloween.jpg?raw=true",
     "description": "Alfajores HALLOWEEN artesanales con rellenos de dulce de leche, crema moca o frutos rojos"
@@ -12,7 +12,7 @@
     "id": 2,
     "category": "pies",
     "name": "Tarta de durazno",
-    "price": "$950,00",
+    "price": "950,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/Tarta%20durazno.jpg?raw=true",
     "stock": 5,
     "description": "Masa quebrada, crema chantilly y durazno fresco con decoraciones de dulce de lechet"
@@ -30,7 +30,7 @@
     "id": 4,
     "name": "Torre de miga",
     "category": "varieties",
-    "price": "$750,00",
+    "price": "750,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/torre%20miga%201.jpg?raw=true",
     "stock": 6,
     "description": "Torre de miga con lechuga, tomate, queso, aderezos, bondiola y diferentes variedades. (consultar)"
@@ -39,7 +39,7 @@
     "id": 5,
     "category": "varieties",
     "name": "Alfajores Memes",
-    "price": "$100,00",
+    "price": "100,00",
     "stock": 13,
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/alfajores%20meme.jpg?raw=true",
     "description": "Alfajores MEMES artesanales con rellenos de dulce de leche, crema moca o frutos rojos"
@@ -48,7 +48,7 @@
     "id": 6,
     "category": "varieties",
     "name": "Huevos unicornios",
-    "price": "$800,00",
+    "price": "800,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/huevos%20pascua%20unicornio.jpg?raw=true",
     "stock": 23,
     "description": "Huevitos de pascua de chocolate blanco y negro, rellenos con rocklets. Tipo'Unicornio'"
@@ -66,7 +66,7 @@
     "id": 8,
     "name": "Tarta de frutilla",
     "category": "pies",
-    "price": "$750,00",
+    "price": "750,00",
     "image": "https://github.com/felipepardo90/React-project/blob/main/src/components/Images/tarta%20frutilla.jpg?raw=true",
     "stock": 5,
     "description": "Masa quebrada, crema chantilly y frutillas frescas. Decorado con dulce de leche"

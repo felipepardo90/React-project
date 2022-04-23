@@ -52,7 +52,7 @@ export default function Cart() {
                     <h5>{p.name}</h5>
                   </td>
                   <td>
-                    <h5>{p.price}</h5>
+                    <h5>$AR {p.price}</h5>
                   </td>
                   <td>
                     <h5>{p.quantity}</h5>

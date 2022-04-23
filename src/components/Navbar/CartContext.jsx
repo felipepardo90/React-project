@@ -7,6 +7,9 @@ export const CartProvider = ({ children }) => {
 
   const removeItem = (id) => setCart(cart.filter(p => p.id !== id));
   const clear = () => setCart([]);
+  const quantity = () => {
+     cart.reduce((total, item) => total + item.count, 0)
+}
   const addItem = (item) => {
     const indexCart = cart.findIndex( p => p.id === item.id);
     console.log(indexCart)
@@ -22,7 +25,7 @@ export const CartProvider = ({ children }) => {
   
   console.log(cart)
 
-  const data = { cart, addItem, removeItem, clear };
+  const data = { cart, addItem, removeItem, clear, quantity };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
