@@ -37,13 +37,8 @@ export default function NavBar() {
             <NavbarCollapse className="justify-content-end">
 
               {navlinks.map(nav =>
-                <Link key={nav.id} to={nav.toRoute} className={s.navLinks}>{nav.category}</Link>
+                <li><Link key={nav.id} to={nav.toRoute} className={s.navLinks}>{nav.category}</Link></li>
               )}
-              
-              {/* <Link to="/category/pies" className={s.navLinks}>Pastelería</Link>
-              <Link to="/category/popsicles" className={s.navLinks}>Paletas</Link>
-              <Link to="/category/varieties" className={s.navLinks}>Variedades</Link>
-              <Link to="/category/about-us" className={s.navLinks}>Nosotros</Link> */}
 
               <CartWidget />
               {/* ICON -- CART SHOPPING */}
