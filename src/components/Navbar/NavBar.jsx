@@ -19,6 +19,8 @@ export default function NavBar() {
         <Container>
           {/* LOGO */}
 
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
           <Navbar.Brand>
             <Link to="/React-project">
               <img
@@ -34,18 +36,15 @@ export default function NavBar() {
           {/* NAV LINKS */}
 
           <Nav defaultActiveKey="/home" as="ul">
-            <NavbarCollapse className="justify-content-end">
+            <NavbarCollapse className="collapse">
 
               {navlinks.map(nav =>
-                <li><Link key={nav.id} to={nav.toRoute} className="nav__links">{nav.category}</Link></li>
+                <li><Link to={nav.toRoute} className="nav__links dropdown-item">{nav.category}</Link></li>
               )}
-
-              <CartWidget />
-              {/* ICON -- CART SHOPPING */}
             </NavbarCollapse>
           </Nav>
-
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <CartWidget />
+  
         </Container>
       </Navbar>
     </>
