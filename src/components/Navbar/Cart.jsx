@@ -17,6 +17,7 @@ export default function Cart() {
 
   console.log(cart);
 
+
   return (
     <>
       <section className="container pt-5 mt-5">
@@ -36,6 +37,7 @@ export default function Cart() {
           </thead>
           {cart.length !== 0 ? (
             cart.map((p) => (
+
               <tbody key={p.id}>
                 <tr>
                   <td>
@@ -60,10 +62,10 @@ export default function Cart() {
                     <h5>$AR {p.price}</h5>
                   </td>
                   <td>
-                    <h5>cantidad</h5>
+                    <h5>{p.count}</h5>
                   </td>
                   <td>
-                    <h5>$ {parseFloat(p.price) * parseFloat(p.count)}</h5>
+                    <h5>$ {parseInt(p.count) * parseInt(p.price)}</h5>
                   </td>
                 </tr>
               </tbody>

@@ -10,13 +10,9 @@ export const CartProvider = ({ children }) => {
   //   const quantity = () => {
   //      cart.reduce((total, item) => total + item.count, 0)
   // }
-  const valorTotal = () => {
-    return cart.reduce(
-      (total, p) => total + p.count * p.price,
-      0, console.log(total)
-    );
-    
-  };
+  
+  
+
   const addItem = (item) => {
     const indexCart = cart.findIndex((p) => p.id === item.id);
 
@@ -29,7 +25,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const data = { cart, addItem, removeItem, clear, valorTotal };
+  const data = { cart, addItem, removeItem, clear };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };

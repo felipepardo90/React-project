@@ -40,7 +40,7 @@ export default function ItemDetail({ products }) {
                 la compra?
               </h4>
               <Button variant="primary">
-                <Link to="/cart">Ver carrito</Link>
+                <Link to="/cart">Terminar mi compra</Link>
               </Button>
               <Button variant="primary">
                 <Link to="/React-project">Seguir navegando</Link>
