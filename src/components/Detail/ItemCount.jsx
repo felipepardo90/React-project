@@ -7,8 +7,7 @@ import { CartContext } from "../Navbar/CartContext";
 export default function ItemCount({ stock, initial, products, addOn }) {
 
   const {addItem} = useContext(CartContext);
-
-  const Counter = (initial) => {
+  const useCounter = (initial) => {
     const [count, setCount] = useState(initial);
 
     const incNum = () => {
@@ -38,7 +37,7 @@ export default function ItemCount({ stock, initial, products, addOn }) {
     };
   };
 
-  let { count, incNum, decNum, reset } = Counter(initial);
+  let { count, incNum, decNum, reset } = useCounter(initial);
 
   return (
     <>
