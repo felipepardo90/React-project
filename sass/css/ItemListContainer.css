@@ -19,21 +19,21 @@
 }
 
 @media only screen and (max-width: 1400px) {
-  .mainContainer {
+  .main-container {
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  .mainContainer {
+  .main-container {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .mainContainer {
+  .main-container {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
