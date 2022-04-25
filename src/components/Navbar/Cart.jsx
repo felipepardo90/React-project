@@ -13,10 +13,8 @@ const checkBtn = {
 };
 
 export default function Cart() {
-  const { cart, clear, removeItem } = useContext(CartContext);
-
-  console.log(cart);
-
+  const { cart, clear, removeItem } = useContext(CartContext)
+  const total = [""]
 
   return (
     <>
@@ -36,7 +34,11 @@ export default function Cart() {
             </tr>
           </thead>
           {cart.length !== 0 ? (
-            cart.map((p) => (
+            cart.map((p) => { 
+              const subtotal = parseInt(p.count) * parseInt(p.price)
+              total.push(subtotal)
+            
+              return(
 
               <tbody key={p.id}>
                 <tr>
@@ -65,11 +67,11 @@ export default function Cart() {
                     <h5>{p.count}</h5>
                   </td>
                   <td>
-                    <h5>$ {parseInt(p.count) * parseInt(p.price)}</h5>
+                    <h5>$ {subtotal}</h5>
                   </td>
                 </tr>
               </tbody>
-            ))
+            )})
           ) : (
             <>
               <section>
@@ -106,7 +108,7 @@ export default function Cart() {
               <h5>DETALLE TOTAL</h5>
               <div className="d-flex justify-content-between">
                 <h6>Subtotal</h6>
-                <p>---subtotal---</p>
+                <p>---{total.reduce((prev, next) => (+prev) + (+next))}---</p>
               </div>
               <div className="d-flex justify-content-between">
                 <h6>
@@ -118,7 +120,7 @@ export default function Cart() {
               <hr className="second-hr" />
               <div className="d-flex justify-content-between">
                 <h6>Total</h6>
-                <p>---total---</p>
+                <p>---{total.reduce((prev, next) => (+prev) + (+next))}---</p>
               </div>
 
               <div style={checkBtn}>

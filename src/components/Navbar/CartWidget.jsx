@@ -11,7 +11,7 @@ export default function CartWidget() {
     <>
       <Link to="/cart">
         <FontAwesomeIcon icon={faCartShopping} className="cart__widget" />
-        {cart.length === 0?null: <span className="cart__length">{cart.length}</span>}
+        {cart.length > 0 && <span className="cart__length">{cart.length}</span>}
       </Link>
     </>
   );
