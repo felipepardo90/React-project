@@ -27,7 +27,7 @@ export default function NavBar() {
                 src="https://github.com/felipepardo90/React-project/blob/main/src/components/Images/logo.png?raw=true"
                 width="60"
                 height="100"
-                className="d-inline-block align-top"
+                className="d-inline-block align-top "
                 alt="alf logo"
               />
             </Link>
@@ -39,7 +39,7 @@ export default function NavBar() {
             <NavbarCollapse className="collapse">
 
               {navlinks.map(nav =>
-                <li><Link to={nav.toRoute} className="nav__links dropdown-item">{nav.category}</Link></li>
+                <li><Link to={nav.toRoute} className="nav__links">{nav.category}</Link></li>
               )}
             </NavbarCollapse>
           </Nav>

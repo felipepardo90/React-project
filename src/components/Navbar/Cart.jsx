@@ -114,7 +114,7 @@ export default function Cart() {
                 <h6>
                   Envío <FontAwesomeIcon icon={faTruck} />
                 </h6>
-                <p>---envío---</p>
+                <p>---shipping---</p>
               </div>
 
               <hr className="second-hr" />
