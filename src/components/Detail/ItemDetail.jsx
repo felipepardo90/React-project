@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import { Container, Button } from "react-bootstrap";
-import s from "./DetailStyles.module.css";
+import "./DetailStyles.scss";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
 export default function ItemDetail({ products }) {
   const [index, setIndex] = useState(0);
-  
 
   const addOn = (index) => {
     setIndex(index);
   };
 
   return (
-    <Container key={products.id} className={s.detailContainer}>
+    <Container key={products.id} className="detailContainer">
       <img
         src={products.image}
         alt={products.name}
-        className={s.card_img_detail}
+        className="card_img_detail"
       />
       <div>
         <h2>{products.name}</h2>

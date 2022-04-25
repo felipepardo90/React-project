@@ -6,12 +6,13 @@ import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 export default function CartWidget() {
-   let {cart} = useContext(CartContext)
+   let {cart, quantity } = useContext(CartContext)
+   console.log(quantity)
   return (
     <>
       <Link to="/cart">
         <FontAwesomeIcon icon={faCartShopping} className="cart__widget" />
-        {cart.length > 0 && <span className="cart__length">{cart.length}</span>}
+        {cart.length > 0 && <span className="cart__length">{quantity}</span>}
       </Link>
     </>
   );
