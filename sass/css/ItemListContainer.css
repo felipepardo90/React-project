@@ -1,0 +1,90 @@
+/* .color1 {color: #0fffe9;}
+.color2 {color: #baffa7;}
+.color3 {color: #3e0595;}
+.color4 {color: #ce2f9b;}
+.color5 {color: #ff8eaa;}
+ */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+.main-container {
+  background-color: #0fffe9;
+  padding: 2rem;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  gap: 16px;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media only screen and (max-width: 1400px) {
+  .mainContainer {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .mainContainer {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainContainer {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+}
+
+.detailContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  padding: 2rem;
+  background-color: #3e0595;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+}
+
+/*CARD*/
+.card {
+  width: 18rem;
+}
+
+.card__img {
+  height: 220px;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 4px dashed red;
+}
+
+.card__body {
+  background-color: #ff8eaa;
+  font-family: Lobster;
+}
+
+.card__body--title {
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+}
+
+.card__body--btn {
+  background-color: #ce2f9b;
+  border-radius: 10%;
+}
+
+.card__body--btn a {
+  text-decoration: none;
+  color: #0fffe9;
+}
+/*# sourceMappingURL=ItemListContainer.css.map */

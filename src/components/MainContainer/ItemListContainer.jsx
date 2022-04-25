@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import ItemList from './ItemList'
 import customFetch from "../utils/customFetch"
 import productsJson from '../utils/products.json'
-import s from './ItemListContainer.module.css'
+import './ItemListContainer.scss'
 import { useParams } from "react-router-dom"
 
 export default function ItemListContainer() {
@@ -31,7 +31,7 @@ export default function ItemListContainer() {
 { loading ? (<div className="spinner-border text-danger" role="status">
   <span className="visually-hidden">Loading...</span>
 </div>) : 
-(<Container className={s.mainContainer}>
+(<Container className="main-container">
 
   <ItemList products={postres} />
     

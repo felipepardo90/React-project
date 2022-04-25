@@ -5,7 +5,9 @@
 .color5 {color: #ff8eaa;}
  */
 
-.mainContainer {
+ @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+.main-container {
     background-color:#0fffe9 ;
     padding: 2rem;
     width: 100%;
@@ -50,20 +52,34 @@
 
 }
 
+/*CARD*/
+
 
 .card{
     width: 18rem;
+    &__img{
+        height: 220px;
+        max-width: 100%;
+        object-fit: cover;
+    border: 4px dashed red;
+    }
+    &__body{
+        background-color: #ff8eaa;
+        font-family: Lobster;
+        &--title{
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bolder;
+        }
+        &--btn{
+            background-color: #ce2f9b;
+            border-radius: 10%;
+            a{
+                text-decoration: none;
+                color: #0fffe9;
+            }
+        }
+    }
 }
 
-.card_img{
-    height: 220px;
-    max-width: 100%;
-    object-fit: cover;
 
-}
-
-.card_img_detail{
-    height: 250px;
-    max-width: 100%;
-    object-fit: cover;
-}
