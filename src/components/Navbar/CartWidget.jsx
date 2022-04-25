@@ -10,14 +10,9 @@ export default function CartWidget() {
   console.log(quantity);
   return (
     <>
-      <Link to="/cart" style={{textDecoration:"none"}}>
-        <FontAwesomeIcon icon={faCartShopping} className="cart__widget"/>
-          {cart.length > 0 && (
-            <span className="cart__length">
-              <p>{quantity}</p>
-            </span>
-          )}
-        
+      <Link to="/cart" style={{ textDecoration: "none" }}>
+        <FontAwesomeIcon icon={faCartShopping} className="cart__widget" />
+        {cart.length > 0 && <span className="cart__length">{quantity}</span>}
       </Link>
     </>
   );
