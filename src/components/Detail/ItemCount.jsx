@@ -39,7 +39,7 @@ export default function ItemCount({ stock, initial, products, addOn }) {
   return (
     <>
       <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
-        <ButtonGroup className="me-2" aria-label="First group">
+        <ButtonGroup className="me-2 area__button" aria-label="First group">
           <Button className="dec__button" onClick={decNum}>
             -
           </Button>{" "}

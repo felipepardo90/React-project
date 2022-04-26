@@ -38,10 +38,10 @@ export default function ItemDetail({ products }) {
                 Has añadido {products.name} a tu carrito. ¿Deseas continuar con
                 la compra?
               </h4>
-              <Button variant="primary">
+              <Button variant="danger">
                 <Link to="/cart">Terminar mi compra</Link>
               </Button>
-              <Button variant="primary">
+              <Button variant="danger">
                 <Link to="/React-project">Seguir navegando</Link>
               </Button>
             </section>
