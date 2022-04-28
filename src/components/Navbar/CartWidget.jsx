@@ -4,6 +4,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import "./_NavbarStyles.scss";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
+import 'animate.css';
 
 export default function CartWidget() {
   let { cart, quantity } = useContext(CartContext);
@@ -14,7 +15,7 @@ export default function CartWidget() {
       <Link to="/cart" style={{ textDecoration: "none" }}>
       <FontAwesomeIcon icon={faCartShopping} className="cart__icon"/>
       </Link>
-      {cart.length > 0 && <span className="cart__length">{quantity}</span>}
+      {cart.length > 0 && <span className="cart__length animate__animated animate__heartBeat">{quantity}</span>}
     </div>
     </>
   );

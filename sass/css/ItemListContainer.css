@@ -64,7 +64,6 @@
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border: 4px dashed red;
 }
 
 .card__body {
@@ -74,7 +73,7 @@
 
 .card__body--title {
   color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bolder;
 }
 
