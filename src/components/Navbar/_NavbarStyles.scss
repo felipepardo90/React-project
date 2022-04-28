@@ -13,7 +13,7 @@
 .cart__length {
   display: flex;
   align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   justify-content: center;
   width: 15px;
   height: 15px;
@@ -35,7 +35,25 @@
   text-decoration: none;
   font-family: "Lobster";
   transition: 1s;
+  text-shadow: 2px 2px 5px #3e0595;
   &:hover {
     color: #3e0595;
+    text-shadow: 2px 2px 5px #ff8eaa;
   }
+}
+
+.brand-logo {
+  color: #ff8eaa;
+  text-transform: uppercase;
+  font-family: Lobster;
+  font-weight: bold;
+  font-size: 2em;
+  text-shadow: 2px 2px #3e0595;
+}
+
+.cart-widget{
+  display: flex;
+  align-items: center;
+  
+margin-top: 10px;
 }
