@@ -9,7 +9,7 @@ export default function ItemDetailContainer() {
   const [items, setItems] = useState([]);
   // const [loading, setLoading] = useState(true);
   const { id } = useParams();
-
+console.log(id, "detail")
   useEffect(()=>{
 
 const db = getFirestore()
