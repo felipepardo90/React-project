@@ -16,24 +16,24 @@ import {
 export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { id } = useParams();
+  const { category } = useParams();
 
   useEffect(() => {
     const db = getFirestore();
     let productsRef;
-    !id
+    !category
       ? (productsRef = collection(db, "products"))
       : (productsRef = query(
           collection(db, "products"),
-          where("category", "==", id)
+          where("category", "==", category)
         ));
 
     getDocs(productsRef).then((res) => {
-      setProducts(res.docs.map((p) => ({ id: p.id, ...p.data() })));
+      setProducts(res.docs.map((p) => ({ category: p.category, ...p.data() })));
 
      
     });
-  }, []);
+  }, [category]);
 
   // useEffect(() => {
   //   // // const db = getFirestore();
