@@ -5,29 +5,38 @@ import customFetch from "../utils/customFetch";
 import productsJson from "../utils/products.json";
 import "./ItemListContainer.scss";
 import { useParams } from "react-router-dom";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
 
 export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
-  useEffect(()=>{
+  useEffect(() => {
+    const db = getFirestore();
+    let productsRef;
+    !id
+      ? (productsRef = collection(db, "products"))
+      : (productsRef = query(
+          collection(db, "products"),
+          where("category", "==", id)
+        ));
 
-const db = getFirestore()
-const productsRef = collection(db, "products")
-getDocs(productsRef).then(res=>{
-  console.log(res.docs)
-  setProducts(res.docs.map(p=>({id:p.id, ...p.data()})))
-})
-console.log(products)
+    getDocs(productsRef).then((res) => {
+      setProducts(res.docs.map((p) => ({ id: p.id, ...p.data() })));
 
-  },[])
+     
+    });
+  }, []);
 
   // useEffect(() => {
   //   // // const db = getFirestore();
-
-    
 
   //   customFetch(2000, productsJson, "C", category)
   //     .then((res) => setPostres(res))
@@ -50,8 +59,8 @@ console.log(products)
         </Container>
       )} */}
       <Container className="main-container">
-          <ItemList products={products} />
-        </Container>
+        <ItemList products={products} />
+      </Container>
     </>
   );
 }
