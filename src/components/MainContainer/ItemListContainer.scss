@@ -49,6 +49,7 @@
 
 .card {
   width: 18rem;
+  border: 5px dashed red;
   &__img {
     height: 220px;
     max-width: 100%;
@@ -64,11 +65,13 @@
       font-weight: bolder;
     }
     &--btn {
-      background-color: #ce2f9b;
-      border-radius: 10%;
+      background-color: #3e0595;
+      border: none;
+      
       a {
         text-decoration: none;
-        color: #0fffe9;
+        color: white;
+        
       }
     }
   }
