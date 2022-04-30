@@ -1,8 +1,6 @@
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import customFetch from "../utils/customFetch";
-// import products from "../utils/products.json";
 import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer() {
@@ -20,14 +18,6 @@ export default function ItemDetailContainer() {
     });
   }, [id]);
 
-  // useEffect(() => {
-  //   customFetch(2000, products, "I", id)
-  //     .then((resultado) => setItems(resultado))
-  //     .catch((error) => console.log(error))
-  //     .finally(() => {
-  //       setLoading(false);
-  //     });
-  // }, [id]);
 
   return (
     <>

@@ -10,30 +10,13 @@
 .main-container {
   background-color: #0fffe9;
   padding: 2rem;
-  width: 100%;
   display: grid;
-  gap: 16px;
-  grid-template-columns: auto auto auto auto;
-  justify-content: space-around;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  justify-content: space-evenly;
 }
 
-@media only screen and (max-width: 1400px) {
-  .main-container {
-    grid-template-columns: auto auto auto;
-  }
-}
 
-@media only screen and (max-width: 991px) {
-  .main-container {
-    grid-template-columns: auto auto;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .main-container {
-    grid-template-columns: auto;
-  }
-}
 
 .detailContainer {
   display: flex;
@@ -48,8 +31,6 @@
 /*CARD*/
 
 .card {
-  width: 18rem;
-  border: 5px dashed red;
   &__img {
     height: 220px;
     max-width: 100%;

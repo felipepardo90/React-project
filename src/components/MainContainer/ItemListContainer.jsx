@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import ItemList from "./ItemList";
-// import customFetch from "../utils/customFetch";
-// import productsJson from "../utils/products.json";
 import "./ItemListContainer.scss";
 import { useParams } from "react-router-dom";
 import {
@@ -15,7 +13,7 @@ import {
 
 export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const { id, category } = useParams();
 
   useEffect(() => {
@@ -27,36 +25,20 @@ export default function ItemListContainer() {
     if (category)
       q = getDocs(query(productsRef, where("category", "==", category)));
 
-    
+    q.then((res) => {
+      const documents = res.docs;
+      let myProducts = [];
 
-      q
-      .then(res => {
-          const documento = res.docs
-          let misProductos = []
-
-          documento.forEach(producto => {
-              const consultaFinal = {
-                  id: producto.id,
-                  ...producto.data()
-              }
-              misProductos.push(consultaFinal)
-          })
-          setProducts(misProductos)
-      })
-      .catch(err => console.log(err))
-}, [id])
-
-  // useEffect(() => {
-  //   // // const db = getFirestore();
-
-  //   customFetch(2000, productsJson, "C", category)
-  //     .then((res) => setPostres(res))
-  //     .catch((error) => console.log(error))
-  //     .finally(() => {
-  //       setLoading(false);
-  //     });
-
-  // }, [category]);
+      documents.forEach((producto) => {
+        const finalQuery = {
+          id: producto.id,
+          ...producto.data(),
+        };
+        myProducts.push(finalQuery);
+      });
+      setProducts(myProducts);
+    }).catch((err) => console.log(err));
+  }, [category, id]);
 
   return (
     <>
