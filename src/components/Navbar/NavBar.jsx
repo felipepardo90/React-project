@@ -30,7 +30,7 @@ export default function NavBar() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               {navlinks.map((nav) => (
-                <li style={{margin:"auto", padding:"10px 10px"}}>
+                <li key={nav.id} style={{margin:"auto", padding:"10px 10px"}}>
                   <Link to={nav.toRoute} className="nav__links">
                     {nav.category}
                   </Link>
