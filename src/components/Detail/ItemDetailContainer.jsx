@@ -14,7 +14,7 @@ export default function ItemDetailContainer() {
     const db = getFirestore();
     const detailRef = doc(db, "products", id);
     getDoc(detailRef).then((res) => {
-      setItems({ ...res.data() });
+      setItems({id:res.id, ...res.data() });
     });
   }, [id]);
 

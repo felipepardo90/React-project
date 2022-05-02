@@ -42,7 +42,7 @@ export default function ItemListContainer() {
     .finally(
       setLoading(true)
     );
-  }, [category, id]);
+  }, []);
 
   return (
     <>
