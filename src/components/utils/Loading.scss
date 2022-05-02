@@ -1,0 +1,11 @@
+.spinner {
+  background-color: pink;
+  height: 80vh;
+  opacity: 0.5;
+  display: flex;
+  &-border {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+}

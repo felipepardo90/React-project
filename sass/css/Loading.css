@@ -1,0 +1,15 @@
+.spinner {
+  background-color: pink;
+  height: 80vh;
+  opacity: 0.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.spinner-border {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+/*# sourceMappingURL=Loading.css.map */

@@ -1,9 +1,9 @@
-
+import './Loading.scss'
 
 const Loading = () => {
   return (
-    <div className="container" style={{backgroundColor:"pink", margin:"auto", height:"100vh", opacity:".5"}}>
-      <div className="spinner-border text-danger container" role="status" style={{display:"flex", width:"100px", height:"100px", margin:"auto"}} >
+    <div className="container spinner">
+      <div className="spinner-border text-danger container" role="status">
         
       </div>
       <span className="visually-hidden">Cargando productos...</span>
