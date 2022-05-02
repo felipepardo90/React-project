@@ -10,10 +10,11 @@ import {
   query,
   where,
 } from "firebase/firestore";
+import Loading from "../utils/Loading";
 
 export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { id, category } = useParams();
 
   useEffect(() => {
@@ -37,23 +38,18 @@ export default function ItemListContainer() {
         myProducts.push(finalQuery);
       });
       setProducts(myProducts);
-    }).catch((err) => console.log(err));
+    }).catch((err) => console.log(err))
+    .finally(
+      setLoading(true)
+    );
   }, [category, id]);
 
   return (
     <>
-      {/* {loading ? (
-        <div className="spinner-border text-danger" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      ) : (
-        <Container className="main-container">
-          <ItemList products={products} />
-        </Container>
-      )} */}
+      {!loading?<Loading />:
       <Container className="main-container">
         <ItemList products={products} />
-      </Container>
+      </Container>}
     </>
   );
 }
