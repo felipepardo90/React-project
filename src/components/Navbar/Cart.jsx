@@ -38,18 +38,17 @@ export default function Cart() {
 
   const sendOrder = () => {
     const order = {
-        buyer:{name, phone, email, address},
-        items:cart, 
-        total: total.reduce((prev, next) => +prev + +next)
-    }
+      buyer: { name, phone, email, address },
+      items: cart,
+      total: total.reduce((acc, adj) => +acc + +adj),
+    };
 
-    console.log(order)
-    
-    const db = getFirestore()
-    const ordersCollection = collection(db, "orders")
-     addDoc(ordersCollection, order).then(({id})=>setTicket(id))
-  
-    }
+    console.log(ticket);
+
+    const db = getFirestore();
+    const ticketCollection = collection(db, "tickets");
+    addDoc(ticketCollection, ticket).then(({ id }) => setTicket(id));
+  };
 
     ///
 
@@ -169,7 +168,7 @@ export default function Cart() {
               </div>
 
               <div style={checkBtn}>
-                <Button
+                {cart.length >0 ? <><Button
                   variant="primary"
                   style={checkBtn}
                   className="ml-auto"
@@ -184,7 +183,23 @@ export default function Cart() {
                   onClick={handleShow}
                 >
                   COMPRAR
-                </Button>
+                </Button></>:<>
+                <Button
+                variant="primary"
+                style={checkBtn}
+                className="ml-auto"
+                disabled
+              >
+                VACIAR CARRITO
+              </Button>
+              <Button
+                variant="primary"
+                style={checkBtn}
+                className="ml-auto"
+                disabled
+              >
+                COMPRAR
+              </Button></>}
               </div>
             </div>
           </div>
