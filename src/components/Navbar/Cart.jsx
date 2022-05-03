@@ -1,7 +1,7 @@
 import { faTrashAlt, faTruck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Form, Modal, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
@@ -14,7 +14,6 @@ const checkBtn = {
 };
 
 export default function Cart() {
-
   //CART CONTEXT
 
   const { cart, clear, removeItem } = useContext(CartContext);
@@ -25,7 +24,7 @@ export default function Cart() {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [ticket, setTicket] = useState("")
+  const [ticket, setTicket] = useState("");
 
   // MOSTRAR/OCULTAR MODAL
 
@@ -36,24 +35,24 @@ export default function Cart() {
 
   //FUNCION PARA ENVIAR DATOS A FIRESTORE
 
-  const sendOrder = (name, phone, email, address) => {
+  const sendOrder = () => {
     const order = {
-        buyer:{name, phone, email, address},
-        items:cart, 
-        total: total.reduce((prev, next) => +prev + +next)
-    }
+      buyer: { name, phone, email, address },
+      items: cart,
+      total: total.reduce((acc, adj) => +acc + +adj),
+    };
 
-    console.log(order)
-    
-    const db = getFirestore()
-    const ordersCollection = collection(db, "orders")
-     addDoc(ordersCollection, order).then(({id})=>setTicket(id))
-  
-    }
+    console.log(order);
 
-    ///
+    const db = getFirestore();
+    const ordersCollection = collection(db, "orders");
+    addDoc(ordersCollection, order).then(({ id }) => setTicket(id));
+  };
 
-    const total = [""];
+  ///
+
+
+  const total = [""];
 
   return (
     <>
@@ -117,21 +116,20 @@ export default function Cart() {
         </table>
       </section>{" "}
       {/* NO PRODUCTS */}
+      {cart.length !== 0 || (
+        <>
+          <section>
+            <div className="container pt-5 mt-5 placeholder">
+              <h1>Esto parece que está un poco vacío</h1>
+              <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
 
-
-      {cart.length !== 0 || <>
-        <section>
-          <div className="container pt-5 mt-5 placeholder">
-            <h1>Esto parece que está un poco vacío</h1>
-            <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
-            
-              <Link to="/React-project"><Button>Volver al inicio</Button></Link>
-            
-          </div>
-        </section>
-      </>}
-
-
+              <Link to="/React-project">
+                <Button>Volver al inicio</Button>
+              </Link>
+            </div>
+          </section>
+        </>
+      )}
       {/* BOTTOM SECTION */}
       <section className="cart-bottom container">
         <Row>
@@ -153,7 +151,7 @@ export default function Cart() {
               <h5>DETALLE TOTAL</h5>
               <div className="d-flex justify-content-between">
                 <h6>Subtotal</h6>
-                <p>---{total.reduce((prev, next) => +prev + +next)}---</p>
+                <p>---{total.reduce((acc, adj) => +acc + +adj)}---</p>
               </div>
               <div className="d-flex justify-content-between">
                 <h6>
@@ -165,7 +163,7 @@ export default function Cart() {
               <hr className="second-hr" />
               <div className="d-flex justify-content-between">
                 <h6>Total</h6>
-                <p>---{total.reduce((prev, next) => +prev + +next)}---</p>
+                <p>---{total.reduce((acc, adj) => +acc + +adj)}---</p>
               </div>
 
               <div style={checkBtn}>
@@ -182,6 +180,7 @@ export default function Cart() {
                   style={checkBtn}
                   className="ml-auto"
                   onClick={handleShow}
+                  disabled
                 >
                   COMPRAR
                 </Button>
@@ -242,7 +241,12 @@ export default function Cart() {
           <Button variant="secondary" onClick={handleClose}>
             Volver
           </Button>
-          <Button variant="primary" onClick={()=>{sendOrder()}}>
+          <Button
+            variant="primary"
+            onClick={() => {
+              sendOrder()
+            }}
+          >
             Finalizar compra
           </Button>
         </Modal.Footer>
