@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+// import { addDoc, collection, getFirestore, setDoc } from "firebase/firestore";
+import {  useState } from "react";
 import { Form, Modal, Button } from "react-bootstrap";
+// import { CartContext } from "../Navbar/CartContext";
 
-const FormOrder = () => {
+const FormOrder = (total) => {
+
+  // const {cart} = useContext(CartContext)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -11,9 +15,25 @@ const FormOrder = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  useEffect(() => {
-    console.log(name);
-  }, [name, email, phone]);
+
+  // const sendOrder = () => {
+
+  
+  // const order = {
+  //     buyer:{name, phone, email, address},
+  //     items:cart, 
+  //     total: 200
+  // }
+  
+  // const db = getFirestore()
+  // const ordersCollection = collection(db, "orders")
+  //  addDoc(ordersCollection, order).then(({id})=>setDoc(id))
+  
+  
+  //   return (
+  //     <div>sendOrder</div>
+  //   )
+  // }
 
   return (
     <>
@@ -28,20 +48,10 @@ const FormOrder = () => {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                autoFocus
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.currentTarget.value);
-                }}
-              />
               <Form.Label>Nombre y Apellido</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Nombre y Apellido"
+                placeholder="nombre y apellido"
                 value={name}
                 onChange={(e) => {
                   setName(e.currentTarget.value);
@@ -50,7 +60,7 @@ const FormOrder = () => {
               <Form.Label>Dirección</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Dirección"
+                placeholder="dirección"
                 value={address}
                 onChange={(e) => {
                   setAddress(e.currentTarget.value);
@@ -65,6 +75,16 @@ const FormOrder = () => {
                   setPhone(e.currentTarget.value);
                 }}
               />
+                <Form.Label>Correo Electrónico</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="ejemplo@ejemplo.com"
+                  autoFocus
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.currentTarget.value);
+                  }}
+                />
             </Form.Group>
             <Form.Group
               className="mb-3"

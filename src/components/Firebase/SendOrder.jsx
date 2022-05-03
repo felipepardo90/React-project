@@ -1,7 +1,7 @@
 import { collection, getFirestore } from 'firebase/firestore'
 import { useContext } from 'react'
 
-const SendOrder = () => {
+const sendOrder = () => {
 
   const {cart, buy} = useContext(CartContext)
 
@@ -21,4 +21,4 @@ const ordersCollection = collection(db, "orders")
   )
 }
 
-export default SendOrder
+export default sendOrder
