@@ -6,6 +6,7 @@ import ItemListContainer from "./components/MainContainer/ItemListContainer";
 import Cart from "./components/Navbar/Cart";
 import ItemDetailContainer from "./components/Detail/ItemDetailContainer";
 import { CartProvider } from "./components/Navbar/CartContext";
+import FormOrder from "./components/Firebase/FormOrder";
 
 export default function App() {
   return (
@@ -15,7 +16,12 @@ export default function App() {
           <NavBar />
 
           <Routes>
-            <Route exact path="/React-project" element={<ItemListContainer />} />
+            <Route exact path="/form-order" element={<FormOrder />} />
+            <Route
+              exact
+              path="/React-project"
+              element={<ItemListContainer />}
+            />
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />
             <Route
               exact

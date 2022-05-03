@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import ItemList from "./ItemList";
 import "./ItemListContainer.scss";
@@ -42,7 +42,7 @@ export default function ItemListContainer() {
     .finally(
       setLoading(true)
     );
-  }, []);
+  }, [id, category]);
 
   return (
     <>

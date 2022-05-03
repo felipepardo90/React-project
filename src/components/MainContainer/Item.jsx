@@ -13,7 +13,7 @@ export default function Item({ id, name, price, stock, image }) {
           {stock} elementos en stock <br />
           $AR {price} <br />
         </Card.Text>
-        <Button variant="primary" className="card__body--btn"><Link to={`/item/${id}`}>Ver producto</Link></Button>{" "}
+        <Link to={`/item/${id}`}><Button variant="primary" className="card__btn">Ver producto</Button></Link>{" "}
       </Card.Body>
     </Card>
   );
