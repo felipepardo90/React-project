@@ -42,11 +42,11 @@ export default function Cart() {
       total: total.reduce((acc, adj) => +acc + +adj),
     };
 
-    console.log(order);
+    console.log(ticket);
 
     const db = getFirestore();
-    const ordersCollection = collection(db, "orders");
-    addDoc(ordersCollection, order).then(({ id }) => setTicket(id));
+    const ticketCollection = collection(db, "tickets");
+    addDoc(ticketCollection, ticket).then(({ id }) => setTicket(id));
   };
 
   ///
@@ -167,7 +167,7 @@ export default function Cart() {
               </div>
 
               <div style={checkBtn}>
-                <Button
+                {cart.length >0 ? <><Button
                   variant="primary"
                   style={checkBtn}
                   className="ml-auto"
@@ -180,10 +180,25 @@ export default function Cart() {
                   style={checkBtn}
                   className="ml-auto"
                   onClick={handleShow}
-                  disabled
                 >
                   COMPRAR
-                </Button>
+                </Button></>:<>
+                <Button
+                variant="primary"
+                style={checkBtn}
+                className="ml-auto"
+                disabled
+              >
+                VACIAR CARRITO
+              </Button>
+              <Button
+                variant="primary"
+                style={checkBtn}
+                className="ml-auto"
+                disabled
+              >
+                COMPRAR
+              </Button></>}
               </div>
             </div>
           </div>
