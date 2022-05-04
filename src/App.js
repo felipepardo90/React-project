@@ -7,6 +7,7 @@ import Cart from "./components/Navbar/Cart";
 import ItemDetailContainer from "./components/Detail/ItemDetailContainer";
 import { CartProvider } from "./components/Navbar/CartContext";
 import FormOrder from "./components/Firebase/FormOrder";
+import MadePurchase from "./components/MainContainer/MadePurchase";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
 
           <Routes>
             <Route exact path="/form-order" element={<FormOrder />} />
+            <Route exact path="/purchase-made" element={<MadePurchase />} />
             <Route
               exact
               path="/React-project"

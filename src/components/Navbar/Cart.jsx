@@ -1,7 +1,7 @@
 import { faTrashAlt, faTruck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
-import React, { useContext, useEffect, useState } from "react";
+import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
+import React, { useContext, useState } from "react";
 import { Button, Form, Modal, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
@@ -24,7 +24,8 @@ export default function Cart() {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [ticket, setTicket] = useState("");
+  const [ticket, setTicket] = useState();
+  console.log(ticket);
 
   // MOSTRAR/OCULTAR MODAL
 
@@ -40,13 +41,16 @@ export default function Cart() {
       buyer: { name, phone, email, address },
       items: cart,
       total: total.reduce((acc, adj) => +acc + +adj),
+      date:serverTimestamp()
     };
 
-    console.log(ticket);
+    
 
     const db = getFirestore();
     const ticketCollection = collection(db, "tickets");
-    addDoc(ticketCollection, ticket).then(({ id }) => setTicket(id));
+    addDoc(ticketCollection, order).then(({ id }) => setTicket(id));
+
+    alert("acabas de realizar tu primera compra")
   };
 
   ///
@@ -91,10 +95,8 @@ export default function Cart() {
                       <img
                         src={p.image}
                         alt="product"
-                        style={{
-                          borderRadius: "50%",
-                          border: "2px dashed #3e0595",
-                        }}
+                        className="table-image"
+            
                       />
                     </td>
                     <td>
@@ -256,14 +258,18 @@ export default function Cart() {
           <Button variant="secondary" onClick={handleClose}>
             Volver
           </Button>
+          <Link to="/purchase-made">
+
           <Button
             variant="primary"
+            ticket={ticket}
             onClick={() => {
               sendOrder()
             }}
           >
             Finalizar compra
           </Button>
+          </Link>
         </Modal.Footer>
       </Modal>
     </>
