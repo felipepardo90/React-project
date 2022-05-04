@@ -14,6 +14,7 @@ const checkBtn = {
 };
 
 export default function Cart() {
+
   //CART CONTEXT
 
   const { cart, clear, removeItem } = useContext(CartContext);
@@ -53,10 +54,9 @@ export default function Cart() {
     alert("acabas de realizar tu primera compra")
   };
 
-  ///
+    ///
 
-
-  const total = [""];
+    const total = [""];
 
   return (
     <>
@@ -118,20 +118,21 @@ export default function Cart() {
         </table>
       </section>{" "}
       {/* NO PRODUCTS */}
-      {cart.length !== 0 || (
-        <>
-          <section>
-            <div className="container pt-5 mt-5 placeholder">
-              <h1>Esto parece que está un poco vacío</h1>
-              <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
 
-              <Link to="/React-project">
-                <Button>Volver al inicio</Button>
-              </Link>
-            </div>
-          </section>
-        </>
-      )}
+
+      {cart.length !== 0 || <>
+        <section>
+          <div className="container pt-5 mt-5 placeholder">
+            <h1>Esto parece que está un poco vacío</h1>
+            <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
+            
+              <Link to="/React-project"><Button>Volver al inicio</Button></Link>
+            
+          </div>
+        </section>
+      </>}
+
+
       {/* BOTTOM SECTION */}
       <section className="cart-bottom container">
         <Row>
@@ -153,7 +154,7 @@ export default function Cart() {
               <h5>DETALLE TOTAL</h5>
               <div className="d-flex justify-content-between">
                 <h6>Subtotal</h6>
-                <p>---{total.reduce((acc, adj) => +acc + +adj)}---</p>
+                <p>---{total.reduce((prev, next) => +prev + +next)}---</p>
               </div>
               <div className="d-flex justify-content-between">
                 <h6>
@@ -165,7 +166,7 @@ export default function Cart() {
               <hr className="second-hr" />
               <div className="d-flex justify-content-between">
                 <h6>Total</h6>
-                <p>---{total.reduce((acc, adj) => +acc + +adj)}---</p>
+                <p>---{total.reduce((prev, next) => +prev + +next)}---</p>
               </div>
 
               <div style={checkBtn}>
