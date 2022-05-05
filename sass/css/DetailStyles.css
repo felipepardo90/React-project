@@ -1,36 +1,42 @@
-.detailContainer {
+.detail__container {
+  padding: 4em;
+  background-color: #0fffe9;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: grey;
+}
+
+.detail {
+  background-color: #3e0595;
+  padding: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 16px;
-  padding: 2rem;
-  background-color: #3e0595;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: white;
+  gap: 16px;
 }
 
-.card {
-  width: 18rem;
-}
-
-.card_img {
-  height: 220px;
-  max-width: 100%;
+.detail__img {
+  height: 100px;
+  width: 100px;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
+  border: 1px solid red;
 }
 
-.card_img_detail {
-  height: 250px;
-  max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.detail__body {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+  -webkit-box-flex: inherit;
+      -ms-flex-positive: inherit;
+          flex-grow: inherit;
 }
 
 .dec__button {
@@ -44,22 +50,25 @@
   background-color: violet;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0 !important;
 }
 
 .add__cart__btn {
   background-color: violet;
   font-weight: bold;
-  border: 2px solid #3e0595;
+}
+
+.add__cart__btn:hover {
+  background-color: #3e0595;
 }
 
 .dec__button:hover {
-  background-color: red;
+  background-color: #3e0595;
   color: white;
 }
 
 .inc__button:hover {
-  background-color: green;
+  background-color: #3e0595;
   color: white;
 }
 /*# sourceMappingURL=DetailStyles.css.map */

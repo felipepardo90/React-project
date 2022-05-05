@@ -1,29 +1,33 @@
-.detailContainer {
-  display: flex;
-  gap: 16px;
-  padding: 2rem;
+.detail__container {
+  padding: 4em;
+  background-color: #0fffe9;
+  align-items: center;
+  color: grey;
+}
+
+.detail{
   background-color: #3e0595;
+  padding: 1em;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  color: white;
+  gap: 16px;
+  &__img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border: 1px solid red;
+  }
+  &__body{
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-grow: inherit;
+  }
+
 }
 
-.card {
-  width: 18rem;
-}
 
-.card_img {
-  height: 220px;
-  max-width: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-
-.card_img_detail {
-  height: 250px;
-  max-width: 100%;
-  object-fit: cover;
-}
 
 .dec__button {
   background-color: violet;
@@ -36,21 +40,24 @@
   background-color: violet;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0 !important;
 }
 
 .add__cart__btn {
   background-color: violet;
   font-weight: bold;
-  border: 2px solid #3e0595;
+  &:hover{
+    background-color: #3e0595;
+  }
+ 
 }
 
 .dec__button:hover {
-    background-color: red;
+    background-color: #3e0595;
     color: white;
 }
 .inc__button:hover {
-    background-color: green;
+    background-color: #3e0595;
     color: white;
 }
 

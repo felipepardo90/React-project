@@ -37,6 +37,7 @@
 .card {
   -webkit-box-shadow: 2px 5px 10px #ff8eaa;
           box-shadow: 2px 5px 10px #ff8eaa;
+  width: 18rem;
 }
 
 .card__img {
