@@ -25,8 +25,7 @@ export default function Cart() {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [ticket, setTicket] = useState();
-  console.log(ticket);
+  const [ticket, setTicket] = useState([]);
 
   // MOSTRAR/OCULTAR MODAL
 
@@ -38,22 +37,25 @@ export default function Cart() {
   //FUNCION PARA ENVIAR DATOS A FIRESTORE
 
   const sendOrder = () => {
+
+    
     const order = {
       buyer: { name, phone, email, address },
       items: cart,
       total: total.reduce((acc, adj) => +acc + +adj),
       date:serverTimestamp()
-    };
-
-    
+    }
 
     const db = getFirestore();
-    const ticketCollection = collection(db, "tickets");
-    addDoc(ticketCollection, order).then(({ id }) => setTicket(id));
+    const orderRef = collection(db, "tickets");
+    addDoc(orderRef, order).then(res => {setTicket(res.id)})
+    clear()
 
-    alert("acabas de realizar tu primera compra")
+    alert("se confirmó tu pedido con el N° de ticket"+ ticket)
+
   };
 
+  
     ///
 
     const total = [""];
@@ -154,19 +156,19 @@ export default function Cart() {
               <h5>DETALLE TOTAL</h5>
               <div className="d-flex justify-content-between">
                 <h6>Subtotal</h6>
-                <p>---{total.reduce((prev, next) => +prev + +next)}---</p>
+                <p>---{total.reduce((acc, adj) => +acc + +adj)}---</p>
               </div>
               <div className="d-flex justify-content-between">
                 <h6>
                   Envío <FontAwesomeIcon icon={faTruck} />
                 </h6>
-                <p>---shipping---</p>
+                <p>---Shipping---</p>
               </div>
 
               <hr className="second-hr" />
               <div className="d-flex justify-content-between">
                 <h6>Total</h6>
-                <p>---{total.reduce((prev, next) => +prev + +next)}---</p>
+                <p>---{total.reduce((acc, adj) => +acc + +adj)}---</p>
               </div>
 
               <div style={checkBtn}>
@@ -263,10 +265,9 @@ export default function Cart() {
 
           <Button
             variant="primary"
-            ticket={ticket}
             onClick={() => {
               sendOrder()
-            }}
+              handleClose()}}
           >
             Finalizar compra
           </Button>
