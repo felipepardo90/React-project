@@ -12,16 +12,18 @@ export default function ItemDetail({ products }) {
   };
 
   return (
-    <Container key={products.id} className="detailContainer">
+    <Container key={products.id} className="detail__container">
+      <section className="detail">
+
       <img
         src={products.image}
         alt={products.name}
-        className="card_img_detail"
+        className="detail__img"
       />
-      <div>
-        <h2>{products.name}</h2>
-        <h3>$AR {products.price}</h3>
-        <section>{products.description}</section>
+      <div className="detail__body">
+        <h2 className="detail__body--title">{products.name}</h2>
+        <h3 className="detail__body--price">$AR {products.price}</h3>
+        <section className="detail__body--description">{products.description}</section>
       </div>
       <section>
         {index === 0 ? (
@@ -47,6 +49,8 @@ export default function ItemDetail({ products }) {
             </section>
           </>
         )}
+      </section>
+
       </section>
     </Container>
   );
