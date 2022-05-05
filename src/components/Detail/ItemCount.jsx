@@ -42,24 +42,23 @@ export default function ItemCount({ stock, initial, products, addOn }) {
         <ButtonGroup className="me-2 area__button" aria-label="First group">
           <Button className="dec__button" onClick={decNum}>
             -
-          </Button>{" "}
+          </Button>
           <div style={{ backgroundColor: "violet" }}>
             <p style={{ margin: "5px 10px", fontWeight: "bold" }}>{count}</p>
           </div>
           <Button
-            style={{ borderRadius: "0 5px 5px 0" }}
             className="inc__button"
             onClick={incNum}
           >
             +
-          </Button>{" "}
+          </Button>
           <Button
             className="add__cart__btn"
             style={{ marginLeft: "2em", border: "none", borderRadius: "5px" }}
             onClick={reset}
           >
             Agregar al carrito
-          </Button>{" "}
+          </Button>
         </ButtonGroup>
       </ButtonToolbar>
     </>
