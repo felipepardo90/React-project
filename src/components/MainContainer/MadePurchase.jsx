@@ -1,23 +1,35 @@
-import React from "react";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-function MadePurchase({ticket}) {
+function MadePurchase() {
+  const [products, setProducts] = useState([]);
+  const { id } = useParams();
 
-    console.log(ticket)
+  useEffect(() => {
+    const db = getFirestore();
+    const detailRef = doc(db, "tickets", id);
+    getDoc(detailRef).then((res) => {
+      setProducts({ id: res.id, ...res.data() });
+    });
+  }, [id]);
+
   return (
     <>
-      <section>
-        <div className="container pt-5 mt-5 placeholder">
-          <h1>¡FELICITACIONES!</h1>
-          <p>Acaba de finalizar su compra</p>
-          <p>{}Su número de ticket es {}</p>
+      {products.map((product) => (
+        <section>
+          <div className="container pt-5 mt-5 placeholder">
+            <h1>¡FELICITACIONES!</h1>
+            <p>Acaba de finalizar su compra</p>
+            <p>Su número de ticket es {product.id}</p>
 
-          <Link to="/React-project">
-            <Button>Volver al inicio</Button>
-          </Link>
-        </div>
-      </section>
+            <Link to="/React-project">
+              <Button>Volver al inicio</Button>
+            </Link>
+          </div>
+        </section>
+      ))}
     </>
   );
 }
