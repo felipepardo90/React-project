@@ -1,11 +1,8 @@
-// import { addDoc, collection, getFirestore, setDoc } from "firebase/firestore";
+
 import {  useState } from "react";
 import { Form, Modal, Button } from "react-bootstrap";
-// import { CartContext } from "../Navbar/CartContext";
 
-const FormOrder = (total) => {
-
-  // const {cart} = useContext(CartContext)
+const FormOrder = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -15,25 +12,6 @@ const FormOrder = (total) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
-  // const sendOrder = () => {
-
-  
-  // const order = {
-  //     buyer:{name, phone, email, address},
-  //     items:cart, 
-  //     total: 200
-  // }
-  
-  // const db = getFirestore()
-  // const ordersCollection = collection(db, "orders")
-  //  addDoc(ordersCollection, order).then(({id})=>setDoc(id))
-  
-  
-  //   return (
-  //     <div>sendOrder</div>
-  //   )
-  // }
 
   return (
     <>
@@ -105,40 +83,6 @@ const FormOrder = (total) => {
         </Modal.Footer>
       </Modal>
     </>
-    // <>
-
-    //   <input
-    //     type={"text"}
-    //     value={name}
-    //     onChange={(e) => {
-    //       setName(e.currentTarget.value);
-    //     }}
-    //   />
-
-    //   <input
-    //     type={"text"}
-    //     value={email}
-    //     onChange={(e) => {
-    //       setEmail(e.currentTarget.value);
-    //     }}
-    //   />
-
-    //   <input
-    //     type={"text"}
-    //     value={phone}
-    //     onChange={(e) => {
-    //         setPhone(e.currentTarget.value);
-    //     }}
-    //   />
-
-    //   <button
-    //     onClick={() => {
-    //       finishOrder();
-    //     }}
-    //   >
-    //     COMPRAR
-    //   </button>
-    // </>
   );
 };
 
