@@ -8,6 +8,7 @@ import ItemDetailContainer from "./components/Detail/ItemDetailContainer";
 import { CartProvider } from "./components/Navbar/CartContext";
 import FormOrder from "./components/Firebase/FormOrder";
 import MadePurchase from "./components/MainContainer/MadePurchase";
+import NotFound from "./components/utils/NotFound";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
               element={<ItemListContainer />}
             />
             <Route exact path="/cart" element={<Cart />} />
+            <Route  path="*" element={<NotFound />} />
           </Routes>
         </CartProvider>
       </BrowserRouter>
