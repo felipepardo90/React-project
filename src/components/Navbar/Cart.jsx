@@ -22,7 +22,15 @@ const checkBtn = {
 export default function Cart() {
   //CART CONTEXT
 
-  const { cart, clear, removeItem } = useContext(CartContext);
+  const {
+    cart,
+    clear,
+    removeItem,
+    totalPerItem,
+    subTotal,
+    totalWithShipping,
+    Shipping,
+  } = useContext(CartContext);
 
   //DATOS OBTENIDOS DE FORM
 
@@ -59,8 +67,6 @@ export default function Cart() {
 
   ///
 
-  const total = [""];
-
   return (
     <>
       <section className="container pt-5 mt-5">
@@ -80,8 +86,6 @@ export default function Cart() {
           </thead>
           {cart.length !== 0 &&
             cart.map((p) => {
-              const subtotal = parseInt(p.count) * parseInt(p.price);
-              total.push(subtotal);
 
               return (
                 <tbody key={p.id}>
@@ -111,7 +115,9 @@ export default function Cart() {
                       <h5>{p.count}</h5>
                     </td>
                     <td>
-                      <h5>$ {subtotal}</h5>
+                      <h5>
+                        $ {totalPerItem(parseInt(p.price), parseInt(p.count))}
+                      </h5>
                     </td>
                   </tr>
                 </tbody>
@@ -155,19 +161,26 @@ export default function Cart() {
               <h5>DETALLE TOTAL</h5>
               <div className="d-flex justify-content-between">
                 <h6>Subtotal</h6>
-                <p>---{total.reduce((acc, adj) => +acc + +adj)}---</p>
+                <p>$ {subTotal} </p>
               </div>
               <div className="d-flex justify-content-between">
-                <h6>
-                  Envío <FontAwesomeIcon icon={faTruck} />
-                </h6>
-                <p>---Shipping---</p>
+                <section>
+                  <h6>
+                    Envío +12% <FontAwesomeIcon icon={faTruck} />
+                  </h6>
+                  <span
+                    style={{ color: "black", opacity: ".5", fontSize: "15px" }}
+                  >
+                    gratis para compras mayores a $3000
+                  </span>
+                </section>
+               {subTotal < 3000 ? <p>$ {Shipping}</p> : <p>Envío gratis</p>}
               </div>
 
               <hr className="second-hr" />
               <div className="d-flex justify-content-between">
                 <h6>Total</h6>
-                <p>---{total.reduce((acc, adj) => +acc + +adj)}---</p>
+                {subTotal < 3000 ? <p>$ {totalWithShipping}</p> : <p>$ {subTotal}</p>}
               </div>
 
               <div style={checkBtn}>

@@ -2,7 +2,7 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function MadePurchase(props) {
+function MadePurchase({orderID}) {
 
 
   return (
@@ -12,7 +12,7 @@ function MadePurchase(props) {
           <div className="container pt-5 mt-5 placeholder">
             <h1>¡FELICITACIONES!</h1>
             <p>Acaba de finalizar su compra</p>
-            <p>Su número de ticket es {props.orderID} </p>
+            <p>Su número de ticket es {orderID} </p>
 
             <Link to="/React-project">
               <Button>Volver al inicio</Button>
