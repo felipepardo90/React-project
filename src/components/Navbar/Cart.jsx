@@ -1,9 +1,15 @@
 import { faTrashAlt, faTruck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  getFirestore,
+  serverTimestamp,
+} from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { Button, Form, Modal, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import MadePurchase from "../MainContainer/MadePurchase";
 import { CartContext } from "./CartContext";
 import "./_CartStyles.scss";
 
@@ -14,7 +20,6 @@ const checkBtn = {
 };
 
 export default function Cart() {
-
   //CART CONTEXT
 
   const { cart, clear, removeItem } = useContext(CartContext);
@@ -25,7 +30,7 @@ export default function Cart() {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [ticket, setTicket] = useState([]);
+  const [orderID, setOrderID] = useState();
 
   // MOSTRAR/OCULTAR MODAL
 
@@ -37,28 +42,24 @@ export default function Cart() {
   //FUNCION PARA ENVIAR DATOS A FIRESTORE
 
   const sendOrder = () => {
-
-    
     const order = {
       buyer: { name, phone, email, address },
       items: cart,
+      date: serverTimestamp(),
       total: total.reduce((acc, adj) => +acc + +adj),
-      date:serverTimestamp()
-    }
+    };
 
     const db = getFirestore();
     const orderRef = collection(db, "tickets");
-    addDoc(orderRef, order).then(res => {setTicket(res.id)})
-    clear()
-
-    alert("se confirmó tu pedido con el N° de ticket"+ ticket)
-
+    addDoc(orderRef, order).then(({ id }) => {
+      setOrderID(id);
+      clear();
+    });
   };
 
-  
-    ///
+  ///
 
-    const total = [""];
+  const total = [""];
 
   return (
     <>
@@ -98,7 +99,6 @@ export default function Cart() {
                         src={p.image}
                         alt="product"
                         className="table-image"
-            
                       />
                     </td>
                     <td>
@@ -120,21 +120,20 @@ export default function Cart() {
         </table>
       </section>{" "}
       {/* NO PRODUCTS */}
+      {cart.length !== 0 || (
+        <>
+          <section>
+            <div className="container pt-5 mt-5 placeholder">
+              <h1>Esto parece que está un poco vacío</h1>
+              <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
 
-
-      {cart.length !== 0 || <>
-        <section>
-          <div className="container pt-5 mt-5 placeholder">
-            <h1>Esto parece que está un poco vacío</h1>
-            <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
-            
-              <Link to="/React-project"><Button>Volver al inicio</Button></Link>
-            
-          </div>
-        </section>
-      </>}
-
-
+              <Link to="/React-project">
+                <Button>Volver al inicio</Button>
+              </Link>
+            </div>
+          </section>
+        </>
+      )}
       {/* BOTTOM SECTION */}
       <section className="cart-bottom container">
         <Row>
@@ -172,38 +171,45 @@ export default function Cart() {
               </div>
 
               <div style={checkBtn}>
-                {cart.length >0 ? <><Button
-                  variant="primary"
-                  style={checkBtn}
-                  className="ml-auto"
-                  onClick={clear}
-                >
-                  VACIAR CARRITO
-                </Button>
-                <Button
-                  variant="primary"
-                  style={checkBtn}
-                  className="ml-auto"
-                  onClick={handleShow}
-                >
-                  COMPRAR
-                </Button></>:<>
-                <Button
-                variant="primary"
-                style={checkBtn}
-                className="ml-auto"
-                disabled
-              >
-                VACIAR CARRITO
-              </Button>
-              <Button
-                variant="primary"
-                style={checkBtn}
-                className="ml-auto"
-                disabled
-              >
-                COMPRAR
-              </Button></>}
+                {cart.length > 0 ? (
+                  <>
+                    <Button
+                      variant="primary"
+                      style={checkBtn}
+                      className="ml-auto"
+                      onClick={clear}
+                    >
+                      VACIAR CARRITO
+                    </Button>
+                    <Button
+                      variant="primary"
+                      style={checkBtn}
+                      className="ml-auto"
+                      onClick={handleShow}
+                    >
+                      COMPRAR
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button
+                      variant="primary"
+                      style={checkBtn}
+                      className="ml-auto"
+                      disabled
+                    >
+                      VACIAR CARRITO
+                    </Button>
+                    <Button
+                      variant="primary"
+                      style={checkBtn}
+                      className="ml-auto"
+                      disabled
+                    >
+                      COMPRAR
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -261,19 +267,18 @@ export default function Cart() {
           <Button variant="secondary" onClick={handleClose}>
             Volver
           </Button>
-          <Link to="/purchase-made">
-
           <Button
             variant="primary"
             onClick={() => {
-              sendOrder()
-              handleClose()}}
+              sendOrder();
+              handleClose();
+            }}
           >
             Finalizar compra
           </Button>
-          </Link>
         </Modal.Footer>
       </Modal>
+      {orderID && <MadePurchase orderID={orderID} />}
     </>
   );
 }
