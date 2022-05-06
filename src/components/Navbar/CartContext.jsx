@@ -20,6 +20,8 @@ export const CartProvider = ({ children }) => {
     (acc, p) => acc + +p.count * parseInt(p.price) * 0.12,
     0
   );
+
+
   const totalWithShipping = cart.reduce(
     (acc, p) => acc + +p.count * parseInt(p.price) * 1.12,
     0

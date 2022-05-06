@@ -13,11 +13,7 @@ import MadePurchase from "../MainContainer/MadePurchase";
 import { CartContext } from "./CartContext";
 import "./_CartStyles.scss";
 
-const checkBtn = {
-  margin: "0 12px 20px 0",
-  display: "flex",
-  justifyContent: "flex-end",
-};
+
 
 export default function Cart() {
   //CART CONTEXT
@@ -54,7 +50,7 @@ export default function Cart() {
       buyer: { name, phone, email, address },
       items: cart,
       date: serverTimestamp(),
-      total: total.reduce((acc, adj) => +acc + +adj),
+      total: subTotal < 3000 ? totalWithShipping : subTotal,
     };
 
     const db = getFirestore();
@@ -86,7 +82,6 @@ export default function Cart() {
           </thead>
           {cart.length !== 0 &&
             cart.map((p) => {
-
               return (
                 <tbody key={p.id}>
                   <tr>
@@ -129,7 +124,7 @@ export default function Cart() {
       {cart.length !== 0 || (
         <>
           <section>
-            <div className="container pt-5 mt-5 placeholder">
+            <div className="container p-5 mt-5 placeholder">
               <h1>Esto parece que está un poco vacío</h1>
               <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
 
@@ -147,9 +142,9 @@ export default function Cart() {
             <div>
               <h5>CUPÓN</h5>
               <p>Si tienes un cupón, ingresalo aquí</p>
-              <section style={checkBtn}>
+              <section className="check__btn">
                 <input type="text" placeholder="código del cupón" />
-                <Button variant="primary" style={checkBtn}>
+                <Button variant="primary" className="check__btn">
                   VALIDAR
                 </Button>
               </section>
@@ -169,35 +164,37 @@ export default function Cart() {
                     Envío +12% <FontAwesomeIcon icon={faTruck} />
                   </h6>
                   <span
-                    style={{ color: "black", opacity: ".5", fontSize: "15px" }}
+                    style={{ color: "black", opacity: ".5", fontSize: "12px" }}
                   >
-                    gratis para compras mayores a $3000
+                    (gratis para compras mayores a $3000)
                   </span>
                 </section>
-               {subTotal < 3000 ? <p>$ {Shipping}</p> : <p>Envío gratis</p>}
+                {subTotal < 3000 ? <p>$ {Shipping}</p> : <p>Envío gratis</p>}
               </div>
 
               <hr className="second-hr" />
               <div className="d-flex justify-content-between">
                 <h6>Total</h6>
-                {subTotal < 3000 ? <p>$ {totalWithShipping}</p> : <p>$ {subTotal}</p>}
+                {subTotal < 3000 ? (
+                  <p>$ {totalWithShipping}</p>
+                ) : (
+                  <p>$ {subTotal}</p>
+                )}
               </div>
 
-              <div style={checkBtn}>
+              <div className="check__btn">
                 {cart.length > 0 ? (
                   <>
                     <Button
                       variant="primary"
-                      style={checkBtn}
-                      className="ml-auto"
+                      className="ml-auto check__btn"
                       onClick={clear}
                     >
                       VACIAR CARRITO
                     </Button>
                     <Button
                       variant="primary"
-                      style={checkBtn}
-                      className="ml-auto"
+                      className="ml-auto check__btn"
                       onClick={handleShow}
                     >
                       COMPRAR
@@ -206,17 +203,15 @@ export default function Cart() {
                 ) : (
                   <>
                     <Button
-                      variant="primary"
-                      style={checkBtn}
-                      className="ml-auto"
+                      variant="secondary"
+                      className="ml-auto check__btn"
                       disabled
                     >
                       VACIAR CARRITO
                     </Button>
                     <Button
-                      variant="primary"
-                      style={checkBtn}
-                      className="ml-auto"
+                      variant="secondary"
+                      className="ml-auto check__btn"
                       disabled
                     >
                       COMPRAR
@@ -228,6 +223,8 @@ export default function Cart() {
           </div>
         </Row>
       </section>
+
+    
       {/* MODAL FORM */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
