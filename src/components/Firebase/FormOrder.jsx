@@ -1,27 +1,59 @@
 
-import {  useState } from "react";
+import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
+import {  useContext, useState } from "react";
 import { Form, Modal, Button } from "react-bootstrap";
+import MadePurchase from "../MainContainer/MadePurchase";
+import { CartContext } from "../Navbar/CartContext";
 
 const FormOrder = () => {
+  //CART CONTEXT
+
+  const {
+    cart,
+    clear,
+    subTotal,
+    totalWithShipping,
+  } = useContext(CartContext);
+  //DATOS OBTENIDOS DE FORM
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
+  const [orderID, setOrderID] = useState();
+
+  // MOSTRAR/OCULTAR MODAL
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  //FUNCION PARA ENVIAR DATOS A FIRESTORE
+
+  const sendOrder = () => {
+    const order = {
+      buyer: { name, phone, email, address },
+      items: cart,
+      date: serverTimestamp(),
+      total: subTotal < 3000 ? totalWithShipping : subTotal,
+    };
+
+    const db = getFirestore();
+    const orderRef = collection(db, "tickets");
+    addDoc(orderRef, order).then(({ id }) => {
+      setOrderID(id);
+      clear();
+    });
+  };
+
+
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
+       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Estás a punto de terminar tu compra</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -53,23 +85,16 @@ const FormOrder = () => {
                   setPhone(e.currentTarget.value);
                 }}
               />
-                <Form.Label>Correo Electrónico</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="ejemplo@ejemplo.com"
-                  autoFocus
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.currentTarget.value);
-                  }}
-                />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Example textarea</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Label>Correo Electrónico</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="ejemplo@ejemplo.com"
+                autoFocus
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.currentTarget.value);
+                }}
+              />
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -77,11 +102,18 @@ const FormOrder = () => {
           <Button variant="secondary" onClick={handleClose}>
             Volver
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button
+            variant="primary"
+            onClick={() => {
+              sendOrder();
+              handleClose();
+            }}
+          >
             Finalizar compra
           </Button>
         </Modal.Footer>
       </Modal>
+      {orderID && <MadePurchase orderID={orderID} />}
     </>
   );
 };
