@@ -16,16 +16,15 @@ export const CartProvider = ({ children }) => {
     (acc, p) => acc + +p.count * parseInt(p.price),
     0
   );
+
   const Shipping = cart.reduce(
     (acc, p) => acc + +p.count * parseInt(p.price) * 0.12,
     0
   );
 
-
-  const totalWithShipping = cart.reduce(
-    (acc, p) => acc + +p.count * parseInt(p.price) * 1.12,
-    0
-  ).toFixed(2);
+  const totalWithShipping = cart
+    .reduce((acc, p) => acc + +p.count * parseInt(p.price) * 1.12, 0)
+    .toFixed(2);
 
   const addItem = (item) => {
     const indexCart = cart.findIndex((p) => p.id === item.id);
