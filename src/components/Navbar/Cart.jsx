@@ -1,15 +1,9 @@
 import { faTrashAlt, faTruck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  addDoc,
-  collection,
-  getFirestore,
-  serverTimestamp,
-} from "firebase/firestore";
 import React, { useContext, useState } from "react";
-import { Button, Form, Modal, Row } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import MadePurchase from "../MainContainer/MadePurchase";
+import FormOrder from "../Firebase/FormOrder";
 import { CartContext } from "./CartContext";
 import "./_CartStyles.scss";
 
@@ -28,40 +22,11 @@ export default function Cart() {
     Shipping,
   } = useContext(CartContext);
 
-  //DATOS OBTENIDOS DE FORM
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
-  const [orderID, setOrderID] = useState();
-
   // MOSTRAR/OCULTAR MODAL
 
-  const [show, setShow] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  //FUNCION PARA ENVIAR DATOS A FIRESTORE
-
-  const sendOrder = () => {
-    const order = {
-      buyer: { name, phone, email, address },
-      items: cart,
-      date: serverTimestamp(),
-      total: subTotal < 3000 ? totalWithShipping : subTotal,
-    };
-
-    const db = getFirestore();
-    const orderRef = collection(db, "tickets");
-    addDoc(orderRef, order).then(({ id }) => {
-      setOrderID(id);
-      clear();
-    });
-  };
-
-  ///
+  const openModalForm = () => setIsOpenModal(true);
 
   return (
     <>
@@ -135,6 +100,7 @@ export default function Cart() {
           </section>
         </>
       )}
+
       {/* BOTTOM SECTION */}
       <section className="cart-bottom container">
         <Row>
@@ -195,7 +161,7 @@ export default function Cart() {
                     <Button
                       variant="primary"
                       className="ml-auto check__btn"
-                      onClick={handleShow}
+                      onClick={openModalForm}
                     >
                       COMPRAR
                     </Button>
@@ -223,72 +189,9 @@ export default function Cart() {
           </div>
         </Row>
       </section>
-
     
-      {/* MODAL FORM */}
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Estás a punto de terminar tu compra</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Nombre y Apellido</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="nombre y apellido"
-                value={name}
-                onChange={(e) => {
-                  setName(e.currentTarget.value);
-                }}
-              />
-              <Form.Label>Dirección</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="dirección"
-                value={address}
-                onChange={(e) => {
-                  setAddress(e.currentTarget.value);
-                }}
-              />
-              <Form.Label>Teléfono</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="teléfono"
-                value={phone}
-                onChange={(e) => {
-                  setPhone(e.currentTarget.value);
-                }}
-              />
-              <Form.Label>Correo Electrónico</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="ejemplo@ejemplo.com"
-                autoFocus
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.currentTarget.value);
-                }}
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Volver
-          </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              sendOrder();
-              handleClose();
-            }}
-          >
-            Finalizar compra
-          </Button>
-        </Modal.Footer>
-      </Modal>
-      {orderID && <MadePurchase orderID={orderID} />}
+
+       {isOpenModal && <><FormOrder /> </>}
     </>
   );
 }
