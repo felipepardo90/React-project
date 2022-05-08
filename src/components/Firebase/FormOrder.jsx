@@ -2,10 +2,15 @@
 import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
 import {  useContext, useState } from "react";
 import { Form, Modal, Button } from "react-bootstrap";
-import MadePurchase from "../MainContainer/MadePurchase";
+import { useForm } from "react-hook-form";
 import { CartContext } from "../Navbar/CartContext";
 
 const FormOrder = () => {
+
+  // FORM HOOK - 
+  const {register, handleSubmit} = useForm()
+  const onSubmit = data => console.log(data);
+  
   //CART CONTEXT
 
   const {
@@ -17,6 +22,7 @@ const FormOrder = () => {
   //DATOS OBTENIDOS DE FORM
 
   const [name, setName] = useState("");
+  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
@@ -24,16 +30,16 @@ const FormOrder = () => {
 
   // MOSTRAR/OCULTAR MODAL
 
-  const [show, setShow] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(true);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  const closeModalForm = () => setIsOpenModal(false);
+  
   //FUNCION PARA ENVIAR DATOS A FIRESTORE
+  
 
   const sendOrder = () => {
     const order = {
-      buyer: { name, phone, email, address },
+      buyer: { name, lastname, phone, email, address },
       items: cart,
       date: serverTimestamp(),
       total: subTotal < 3000 ? totalWithShipping : subTotal,
@@ -51,20 +57,29 @@ const FormOrder = () => {
 
   return (
     <>
-       <Modal show={show} onHide={handleClose}>
+       <Modal show={isOpenModal} onHide={closeModalForm}>
         <Modal.Header closeButton>
           <Modal.Title>Estás a punto de terminar tu compra</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Nombre y Apellido</Form.Label>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" onSubmit={handleSubmit(onSubmit)}>
+              <Form.Label>Nombre/s</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="nombre y apellido"
+                placeholder="nombre/s"
                 value={name}
                 onChange={(e) => {
                   setName(e.currentTarget.value);
+                }}
+              />
+              <Form.Label>Apellido</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="apellido"
+                value={lastname}
+                onChange={(e) => {
+                  setLastname(e.currentTarget.value);
                 }}
               />
               <Form.Label>Dirección</Form.Label>
@@ -99,21 +114,20 @@ const FormOrder = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={closeModalForm}>
             Volver
           </Button>
           <Button
             variant="primary"
             onClick={() => {
               sendOrder();
-              handleClose();
+              closeModalForm()
             }}
           >
             Finalizar compra
           </Button>
         </Modal.Footer>
       </Modal>
-      {orderID && <MadePurchase orderID={orderID} />}
     </>
   );
 };
