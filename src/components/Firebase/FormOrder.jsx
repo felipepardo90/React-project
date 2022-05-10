@@ -7,7 +7,7 @@ import {
 import { useContext, useState } from "react";
 import { Form, Modal, Button } from "react-bootstrap";
 // import { useForm } from "react-hook-form";
-import MadePurchase from "../MainContainer/MadePurchase";
+// import MadePurchase from "../MainContainer/MadePurchase";
 import { CartContext } from "../Navbar/CartContext";
 
 const FormOrder = () => {
@@ -72,12 +72,17 @@ const FormOrder = () => {
     setValidated(true);
   };
 
+  console.log(orderID, "orderID")
+
   return (
     <>
-      <Button variant="primary" className="ml-auto check__btn" onClick={openModalForm}>
+      <Button
+        variant="primary"
+        className="ml-auto check__btn"
+        onClick={openModalForm}
+      >
         COMPRAR
       </Button>
-
 
       <Modal show={openModal} onHide={closeModalForm}>
         <Modal.Header closeButton>
@@ -88,13 +93,13 @@ const FormOrder = () => {
             <Form.Group className="mb-3" controlId="validationCustom01">
               <Form.Label>Nombre/s</Form.Label>
               <Form.Control
-                required
                 type="text"
                 placeholder="nombre/s"
                 value={name}
                 onChange={(e) => {
                   setName(e.currentTarget.value);
                 }}
+                required
               />
               <Form.Control.Feedback>¡Luce bien!</Form.Control.Feedback>
               <Form.Label>Apellido</Form.Label>
