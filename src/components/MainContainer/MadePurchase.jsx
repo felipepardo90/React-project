@@ -1,24 +1,38 @@
+import { useState } from "react";
+import { Button, Modal } from "react-bootstrap";
 
-import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+function MadePurchase({ orderID }) {
+  
+  const [purchaseMade, setPurchaseMade] = useState(false);
 
-function MadePurchase({orderID}) {
-
-
+  const confirmed = () =>setPurchaseMade(true)
+  const notConfirmed = () =>setPurchaseMade(false)
   return (
     <>
-      
-        <section>
-          <div className="container pt-5 mt-5 placeholder">
-            <h1>¡FELICITACIONES!</h1>
-            <p>Acaba de finalizar su compra</p>
-            <p>Su número de ticket es {orderID} </p>
+      <Button variant="primary" onClick={confirmed}>
+        Launch static backdrop modal
+      </Button>
 
-            <Link to="/React-project">
-              <Button>Volver al inicio</Button>
-            </Link>
-          </div>
-        </section>
+      <Modal
+        show={purchaseMade}
+        onHide={notConfirmed}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>¡FELICITACIONES!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Acaba de finalizar su compra</p>
+          <p>Orden de compra: {orderID} </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={notConfirmed}>
+            Close
+          </Button>
+          <Button variant="primary">Understood</Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }
