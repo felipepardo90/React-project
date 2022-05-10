@@ -37,7 +37,9 @@
 .card {
   -webkit-box-shadow: 2px 5px 10px #ff8eaa;
           box-shadow: 2px 5px 10px #ff8eaa;
+  border: 7px solid #ce2f9b;
   width: 18rem;
+  border-radius: 12px 0 12px 0;
 }
 
 .card__img {
@@ -45,11 +47,15 @@
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border: 2px solid white;
+  border-top-left-radius: 12px;
 }
 
 .card__body {
   background-color: #ff8eaa;
   font-family: Lobster;
+  border: 2px solid white;
+  border-bottom-right-radius: 12px;
 }
 
 .card__body--title {

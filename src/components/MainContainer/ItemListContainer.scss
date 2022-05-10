@@ -30,15 +30,22 @@
 
 .card {
   box-shadow: 2px 5px 10px #ff8eaa;
+  border: 7px solid #ce2f9b;
   width: 18rem;
+  border-radius: 12px 0 12px 0;
   &__img {
     height: 220px;
     max-width: 100%;
     object-fit: cover;
+    border: 2px solid white;
+    
+    border-top-left-radius: 12px;
   }
   &__body {
     background-color: #ff8eaa;
     font-family: Lobster;
+    border: 2px solid white;
+    border-bottom-right-radius: 12px;
     &--title {
       color: white;
       font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
