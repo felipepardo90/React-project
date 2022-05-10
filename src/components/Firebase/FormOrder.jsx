@@ -1,24 +1,28 @@
-
-import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
-import {  useContext, useState } from "react";
+import {
+  addDoc,
+  collection,
+  getFirestore,
+  serverTimestamp,
+} from "firebase/firestore";
+import { useContext, useState } from "react";
 import { Form, Modal, Button } from "react-bootstrap";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
+import MadePurchase from "../MainContainer/MadePurchase";
 import { CartContext } from "../Navbar/CartContext";
 
 const FormOrder = () => {
+  // // FORM HOOK -
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   watch,
+  //   formState: { errors },
+  // } = useForm();
+  // const onSubmit = (data) => console.log(data);
 
-  // FORM HOOK - 
-  const {register, handleSubmit} = useForm()
-  const onSubmit = data => console.log(data);
-  
   //CART CONTEXT
 
-  const {
-    cart,
-    clear,
-    subTotal,
-    totalWithShipping,
-  } = useContext(CartContext);
+  const { cart, clear, subTotal, totalWithShipping } = useContext(CartContext);
   //DATOS OBTENIDOS DE FORM
 
   const [name, setName] = useState("");
@@ -26,16 +30,17 @@ const FormOrder = () => {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
+
   const [orderID, setOrderID] = useState();
 
   // MOSTRAR/OCULTAR MODAL
 
-  const [isOpenModal, setIsOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
 
-  const closeModalForm = () => setIsOpenModal(false);
-  
+  const openModalForm = () => setOpenModal(true);
+  const closeModalForm = () => setOpenModal(false);
+
   //FUNCION PARA ENVIAR DATOS A FIRESTORE
-  
 
   const sendOrder = () => {
     const order = {
@@ -53,19 +58,37 @@ const FormOrder = () => {
     });
   };
 
+  // VALIDACION FORM
 
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (e) => {
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    setValidated(true);
+  };
 
   return (
     <>
-       <Modal show={isOpenModal} onHide={closeModalForm}>
+      <Button variant="primary" className="ml-auto check__btn" onClick={openModalForm}>
+        COMPRAR
+      </Button>
+
+
+      <Modal show={openModal} onHide={closeModalForm}>
         <Modal.Header closeButton>
           <Modal.Title>Estás a punto de terminar tu compra</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" onSubmit={handleSubmit(onSubmit)}>
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="validationCustom01">
               <Form.Label>Nombre/s</Form.Label>
               <Form.Control
+                required
                 type="text"
                 placeholder="nombre/s"
                 value={name}
@@ -73,6 +96,7 @@ const FormOrder = () => {
                   setName(e.currentTarget.value);
                 }}
               />
+              <Form.Control.Feedback>¡Luce bien!</Form.Control.Feedback>
               <Form.Label>Apellido</Form.Label>
               <Form.Control
                 type="text"
@@ -81,7 +105,9 @@ const FormOrder = () => {
                 onChange={(e) => {
                   setLastname(e.currentTarget.value);
                 }}
+                required
               />
+              <Form.Control.Feedback>¡Luce bien!</Form.Control.Feedback>
               <Form.Label>Dirección</Form.Label>
               <Form.Control
                 type="text"
@@ -90,7 +116,11 @@ const FormOrder = () => {
                 onChange={(e) => {
                   setAddress(e.currentTarget.value);
                 }}
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Por favor, escriba una dirección válida
+              </Form.Control.Feedback>
               <Form.Label>Teléfono</Form.Label>
               <Form.Control
                 type="text"
@@ -99,7 +129,11 @@ const FormOrder = () => {
                 onChange={(e) => {
                   setPhone(e.currentTarget.value);
                 }}
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                El teléfono proporcionado no es válido
+              </Form.Control.Feedback>
               <Form.Label>Correo Electrónico</Form.Label>
               <Form.Control
                 type="email"
@@ -109,7 +143,11 @@ const FormOrder = () => {
                 onChange={(e) => {
                   setEmail(e.currentTarget.value);
                 }}
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Por favor, escriba una dirección correcta
+              </Form.Control.Feedback>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -121,7 +159,7 @@ const FormOrder = () => {
             variant="primary"
             onClick={() => {
               sendOrder();
-              closeModalForm()
+              closeModalForm();
             }}
           >
             Finalizar compra
