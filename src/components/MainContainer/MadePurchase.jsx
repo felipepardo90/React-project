@@ -1,21 +1,17 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
-function MadePurchase({ orderID }) {
-  
-  const [purchaseMade, setPurchaseMade] = useState(false);
+function MadePurchase({orderID}) {
+  const [purchaseMade, setPurchaseMade] = useState(true);
 
-  const confirmed = () =>setPurchaseMade(true)
-  const notConfirmed = () =>setPurchaseMade(false)
+  const close = () => setPurchaseMade(false);
+
+  console.log(orderID, "orderID Made Purchase");
   return (
     <>
-      <Button variant="primary" onClick={confirmed}>
-        Launch static backdrop modal
-      </Button>
-
       <Modal
         show={purchaseMade}
-        onHide={notConfirmed}
+        onHide={close}
         backdrop="static"
         keyboard={false}
       >
@@ -27,7 +23,7 @@ function MadePurchase({ orderID }) {
           <p>Orden de compra: {orderID} </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={notConfirmed}>
+          <Button variant="secondary" onClick={close}>
             Close
           </Button>
           <Button variant="primary">Understood</Button>

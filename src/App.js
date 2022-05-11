@@ -3,12 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/Navbar/NavBar";
 import ItemListContainer from "./components/MainContainer/ItemListContainer";
-import Cart from "./components/Navbar/Cart";
 import ItemDetailContainer from "./components/Detail/ItemDetailContainer";
-import { CartProvider } from "./components/Navbar/CartContext";
-import FormOrder from "./components/Firebase/FormOrder";
-import MadePurchase from "./components/MainContainer/MadePurchase";
 import NotFound from "./components/utils/NotFound";
+import FormOrder from "./components/Cart/FormOrder";
+import MadePurchase from "./components/MainContainer/MadePurchase";
+import Cart from "./components/Cart/Cart";
+import { CartProvider } from "./components/Cart/CartContext";
 
 export default function App() {
   return (

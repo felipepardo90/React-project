@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Button, ButtonToolbar, ButtonGroup } from "react-bootstrap";
 import { useState } from "react";
 import "./DetailStyles.scss";
-import { CartContext } from "../Navbar/CartContext";
+import { CartContext } from "../Cart/CartContext";
 
 export default function ItemCount({ stock, initial, products, addOn }) {
   const { addItem } = useContext(CartContext);
