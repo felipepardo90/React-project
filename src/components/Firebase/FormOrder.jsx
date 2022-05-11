@@ -72,7 +72,7 @@ const FormOrder = () => {
     setValidated(true);
   };
 
-  console.log(orderID, "orderID")
+  console.log(orderID, "orderID");
 
   return (
     <>
@@ -154,22 +154,22 @@ const FormOrder = () => {
                 Por favor, escriba una dirección correcta
               </Form.Control.Feedback>
             </Form.Group>
+            <Button variant="secondary" onClick={closeModalForm}>
+              Volver
+            </Button>
+            <Button
+              type="submit"
+              variant="primary"
+              onClick={() => {
+
+                closeModalForm();
+                sendOrder();
+              }}
+            >
+              Finalizar compra
+            </Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={closeModalForm}>
-            Volver
-          </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              sendOrder();
-              closeModalForm();
-            }}
-          >
-            Finalizar compra
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
