@@ -10,7 +10,6 @@ import MadePurchase from "../MainContainer/MadePurchase";
 import { CartContext } from "./CartContext";
 
 const FormOrder = () => {
-
   //CART CONTEXT
 
   const { cart, clear, subTotal, totalWithShipping } = useContext(CartContext);
@@ -58,11 +57,9 @@ const FormOrder = () => {
     if (form.checkValidity() === false) {
       e.preventDefault();
       e.stopPropagation();
-      setValidated(true)
-    }else{
-      sendOrder()
     }
-    
+    setValidated(true);
+    sendOrder();
   };
 
   console.log(orderID, "orderID");
@@ -153,10 +150,7 @@ const FormOrder = () => {
               <Button variant="secondary" onClick={closeModalForm}>
                 Volver
               </Button>
-              <Button
-                type="submit"
-                variant="primary"
-              >
+              <Button type="submit" variant="primary">
                 Finalizar compra
               </Button>
             </Form>
