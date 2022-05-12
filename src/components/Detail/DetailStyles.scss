@@ -1,5 +1,5 @@
 .detail__container {
-  padding: 4em;
+  padding: 2em;
   background-color: #0fffe9;
   align-items: center;
   color: grey;
@@ -9,20 +9,33 @@
   background-color: #3e0595;
   padding: 1em;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 1em;
   &__img{
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 50%;
     object-fit: cover;
-    border: 1px solid red;
+    border: 5px solid #0fffe9;
+    border-radius: 10px;
   }
   &__body{
-    background-color: transparent;
+    padding: 24px 16px;
+    width: 30%;
+    text-align: left;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
-    flex-grow: inherit;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    border: 1px solid rgba($color: white, $alpha: .1);
+    border-radius: 8px;
+    &--title{
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: white;
+      font-size: 3em;
+    }
   }
 
 }
@@ -47,18 +60,25 @@
   background-color: violet;
   font-weight: bold;
   &:hover{
-    background-color: #3e0595;
+    background-color: #0fffe9;
   }
  
 }
 
 .dec__button:hover {
-    background-color: #3e0595;
+    background-color: #0fffe9;
     color: white;
 }
 .inc__button:hover {
-    background-color: #3e0595;
+    background-color: #0fffe9;
     color: white;
+}
+
+.count{
+  padding: 10px;
+  button p{
+    background-color: transparent;
+  }
 }
 
 
