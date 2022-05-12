@@ -31,7 +31,7 @@ export default function App() {
               path="/category/:category"
               element={<ItemListContainer />}
             />
-            <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/cart" element={<><Cart /><MadePurchase /></>} />
             <Route  path="*" element={<NotFound />} />
           </Routes>
         </CartProvider>
