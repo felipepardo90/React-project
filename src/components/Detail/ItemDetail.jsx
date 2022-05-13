@@ -14,7 +14,9 @@ export default function ItemDetail({ products }) {
   return (
     <Container key={products.id} className="detail__container">
       <section className="detail">
-        <img src={products.image} alt={products.name} className="detail__img" />
+        <aside className="img__container">
+          <img src={products.image} alt={products.name} className="img__pic" />
+        </aside>
         <div className="detail__body">
           <h2 className="detail__body--title">{products.name}</h2>
           <h3 className="detail__body--price">$AR {products.price}</h3>
@@ -31,17 +33,20 @@ export default function ItemDetail({ products }) {
               />
             ) : (
               <>
-                <section style={{ padding: "10px 5px" }}>
+                <section
+                  style={{ padding: "5px 2px", gap:"1em" }}
+                  className="hover_section"
+                >
                   <h4>
                     Has añadido {products.name} a tu carrito. ¿Deseas continuar
                     con la compra?
                   </h4>
-                  <Button variant="danger">
-                    <Link to="/cart">Terminar mi compra</Link>
-                  </Button>
-                  <Button variant="danger">
-                    <Link to="/React-project">Seguir navegando</Link>
-                  </Button>
+                  <Link to="/cart">
+                    <Button>Terminar mi compra</Button>
+                  </Link>
+                  <Link to="/React-project">
+                    <Button>Seguir navegando</Button>
+                  </Link>
                 </section>
               </>
             )}

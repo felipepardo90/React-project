@@ -7,7 +7,6 @@ import "./_CartStyles.scss";
 
 export default function Cart() {
 
-
   return (
     <>
       <section className="container pt-5 mt-5">

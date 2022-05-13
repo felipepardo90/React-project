@@ -3,7 +3,7 @@ import { faTruck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
-import FormOrder from "./FormOrder";
+import { Link } from "react-router-dom";
 
 
 const CartBottom = () => {
@@ -76,7 +76,7 @@ const CartBottom = () => {
                     >
                       VACIAR CARRITO
                     </Button>
-                    <FormOrder />
+                    <Link to="/checkout"><Button>COMPRAR</Button></Link>
                   </>
                 ) : (
                   <>

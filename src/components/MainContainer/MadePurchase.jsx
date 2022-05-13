@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
-function MadePurchase({orderID}) {
-  const [purchaseMade, setPurchaseMade] = useState(true);
+function MadePurchase({ orderID }) {
+  const [openModal, setOpenModal] = useState(true);
+  const close = () => setOpenModal(false);
 
-  const close = () => setPurchaseMade(false);
-
-  console.log(orderID, "orderID Made Purchase");
   return (
     <>
       <Modal
-        show={purchaseMade}
+        show={openModal}
         onHide={close}
         backdrop="static"
         keyboard={false}
