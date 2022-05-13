@@ -1,0 +1,76 @@
+.detail__container {
+  padding: 2em;
+  background-color: #0fffe9;
+  align-items: center;
+  color: grey;
+}
+
+.detail {
+  background-color: #0fffe9;
+  padding: 4em 7em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  img {
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px red;
+  }
+}
+
+.counter-section {
+  color: white;
+  .button-section {
+    .dec__button,
+    .inc__button {
+      background-color: violet;
+      border: none;
+      width: 20px;
+      height: 20px;
+      transition: all 0.8s;
+      display: flex;
+      color: inherit;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+
+  .add__cart__btn {
+    background-color: violet;
+    padding: 0 10px;
+    opacity: 1;
+    transition: 0.8s all;
+    border: none;
+    height: 40px;
+    color: inherit;
+
+    font-weight: bold;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.input-count {
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: none;
+}
+
+
+
+.hover__section {
+  color: red !important;
+  background-color: red !important;
+  display: flex;
+}

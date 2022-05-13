@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import ItemList from "./ItemList";
-import "./ItemListContainer.scss";
+import "./_ItemListContainer.scss";
 import { useParams } from "react-router-dom";
 import {
   collection,
@@ -38,18 +38,20 @@ export default function ItemListContainer() {
         myProducts.push(finalQuery);
       });
       setProducts(myProducts);
-    }).catch((err) => console.log(err))
-    .finally(
-      setLoading(true)
-    );
+    })
+      .catch((err) => console.log(err))
+      .finally(setLoading(true));
   }, [id, category]);
 
   return (
     <>
-      {!loading?<Loading />:
-      <Container className="main-container">
-        <ItemList products={products} />
-      </Container>}
+      {!loading ? (
+        <Loading />
+      ) : (
+        <Container className="main-container">
+          <ItemList products={products} />
+        </Container>
+      )}
     </>
   );
 }

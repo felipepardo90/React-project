@@ -1,7 +1,7 @@
 import React from "react";
-import { Card, Button} from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import  "./ItemListContainer.scss";
+import "./_ItemListContainer.scss";
 
 export default function Item({ id, name, price, stock, image }) {
   return (
@@ -13,7 +13,11 @@ export default function Item({ id, name, price, stock, image }) {
           {stock} elementos en stock <br />
           $AR {price} <br />
         </Card.Text>
-        <Link to={`/item/${id}`}><Button variant="primary" className="card__btn">Ver producto</Button></Link>{" "}
+        <Link to={`/item/${id}`}>
+          <Button variant="primary" className="card__btn">
+            Ver producto
+          </Button>
+        </Link>{" "}
       </Card.Body>
     </Card>
   );

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Container, Button } from "react-bootstrap";
-import "./DetailStyles.scss";
+import "./_DetailStyles.scss";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
@@ -12,18 +11,29 @@ export default function ItemDetail({ products }) {
   };
 
   return (
-    <Container key={products.id} className="detail__container">
-      <section className="detail">
-        <aside className="img__container">
-          <img src={products.image} alt={products.name} className="img__pic" />
-        </aside>
-        <div className="detail__body">
-          <h2 className="detail__body--title">{products.name}</h2>
-          <h3 className="detail__body--price">$AR {products.price}</h3>
-          <section className="detail__body--description">
-            {products.description}
-          </section>
-          <section className="count">
+    <section key={products.id} className="container detail my-5 pt-5">
+      <div className="row mt-5">
+        <div className="col-lg-5 col-md-12 col-12">
+          <img
+            src={products.image}
+            alt={products.name}
+            className="img__pic w-100"
+          />
+        </div>
+        <div className="detail__body col-lg-6 col-md-12 col-12">
+          <h6
+            style={{
+              opacity: ".4",
+              fontWeight: "bold",
+              textTransform: "capitalize",
+            }}
+          >
+            {" "}
+            Home / {products.category}
+          </h6>
+          <h3 className="detail__body--title py-4">{products.name}</h3>
+          <h2 className="detail__body--price">$AR {products.price}</h2>
+          <section>
             {index === 0 ? (
               <ItemCount
                 stock={products.stock}
@@ -33,26 +43,30 @@ export default function ItemDetail({ products }) {
               />
             ) : (
               <>
-                <section
-                  style={{ padding: "5px 2px", gap:"1em" }}
-                  className="hover_section"
-                >
+                <section className="hover_section">
                   <h4>
                     Has añadido {products.name} a tu carrito. ¿Deseas continuar
                     con la compra?
                   </h4>
                   <Link to="/cart">
-                    <Button>Terminar mi compra</Button>
+                    <button>Terminar mi compra</button>
                   </Link>
                   <Link to="/React-project">
-                    <Button>Seguir navegando</Button>
+                    <button>Seguir navegando</button>
                   </Link>
                 </section>
               </>
             )}
           </section>
+          <span className="detail__body--description mt-5 mb-5">
+            {products.description}
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vitae
+            harum blanditiis distinctio ab praesentium, dolor eum expedita
+            ducimus molestias quisquam dignissimos voluptas facilis, ipsum
+            doloremque nihil odit cupiditate. Ullam!
+          </span>
         </div>
-      </section>
-    </Container>
+      </div>
+    </section>
   );
 }

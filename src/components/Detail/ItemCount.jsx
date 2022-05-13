@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { Button, ButtonToolbar, ButtonGroup } from "react-bootstrap";
 import { useState } from "react";
-import "./DetailStyles.scss";
+import "./_DetailStyles.scss";
 import { CartContext } from "../Cart/CartContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 export default function ItemCount({ stock, initial, products, addOn }) {
   const { addItem } = useContext(CartContext);
@@ -38,29 +39,20 @@ export default function ItemCount({ stock, initial, products, addOn }) {
 
   return (
     <>
-      <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
-        <ButtonGroup className="me-2 area__button" aria-label="First group">
-          <Button className="dec__button" onClick={decNum}>
-            -
-          </Button>
-          <div style={{ backgroundColor: "violet" }}>
-            <p style={{ margin: "5px 10px", fontWeight: "bold" }}>{count}</p>
-          </div>
-          <Button
-            className="inc__button"
-            onClick={incNum}
-          >
+      <section className="counter-section d-flex">
+        <input value={count} className="input-count" />
+        <div className="button-section d-flex flex-column">
+          <button className="inc__button" onClick={incNum}>
             +
-          </Button>
-          <Button
-            className="add__cart__btn"
-            style={{ marginLeft: "2em", border: "none", borderRadius: "5px" }}
-            onClick={reset}
-          >
-            Agregar al carrito
-          </Button>
-        </ButtonGroup>
-      </ButtonToolbar>
+          </button>
+          <button className="dec__button" onClick={decNum}>
+            -
+          </button>
+        </div>
+        <button className="add__cart__btn" onClick={reset}>
+          Agregar <FontAwesomeIcon icon={faCartShopping} />
+        </button>
+      </section>
     </>
   );
 }
