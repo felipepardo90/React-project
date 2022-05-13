@@ -5,10 +5,11 @@ import NavBar from "./components/Navbar/NavBar";
 import ItemListContainer from "./components/MainContainer/ItemListContainer";
 import ItemDetailContainer from "./components/Detail/ItemDetailContainer";
 import NotFound from "./components/utils/NotFound";
-import FormOrder from "./components/Cart/FormOrder";
+import FormOrder from "./components/Cart/CheckOut";
 import MadePurchase from "./components/MainContainer/MadePurchase";
 import Cart from "./components/Cart/Cart";
 import { CartProvider } from "./components/Cart/CartContext";
+import CheckOut from "./components/Cart/CheckOut";
 
 export default function App() {
   return (
@@ -18,8 +19,6 @@ export default function App() {
           <NavBar />
 
           <Routes>
-            <Route exact path="/form-order" element={<FormOrder />} />
-            <Route exact path="/purchase-made" element={<MadePurchase />} />
             <Route
               exact
               path="/React-project"
@@ -31,8 +30,9 @@ export default function App() {
               path="/category/:category"
               element={<ItemListContainer />}
             />
-            <Route exact path="/cart" element={<><Cart /><MadePurchase /></>} />
-            <Route  path="*" element={<NotFound />} />
+            <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/checkout" element={<CheckOut />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </CartProvider>
       </BrowserRouter>
