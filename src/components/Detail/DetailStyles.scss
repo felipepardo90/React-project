@@ -5,42 +5,44 @@
   color: grey;
 }
 
-.detail{
+.detail {
   background-color: #3e0595;
-  padding: 1em;
+  padding: 4em 7em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1em;
-  &__img{
-    height: 100%;
+  aside {
     width: 50%;
-    object-fit: cover;
-    border: 5px solid #0fffe9;
-    border-radius: 10px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border: 5px solid #0fffe9;
+      border-radius: 10px;
+    }
   }
-  &__body{
+  &__body {
     padding: 24px 16px;
-    width: 30%;
+    width: 40%;
     text-align: left;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    color: white;
     gap: 1em;
-    border: 1px solid rgba($color: white, $alpha: .1);
+    border: 1px solid rgba($color: #0fffe9, $alpha: 0.9);
     border-radius: 8px;
-    &--title{
-      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    &--title {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
       color: white;
       font-size: 3em;
     }
   }
-
 }
-
-
 
 .dec__button {
   background-color: violet;
@@ -59,26 +61,30 @@
 .add__cart__btn {
   background-color: violet;
   font-weight: bold;
-  &:hover{
+  &:hover {
     background-color: #0fffe9;
   }
- 
 }
 
 .dec__button:hover {
-    background-color: #0fffe9;
-    color: white;
+  background-color: #0fffe9;
+  color: white;
 }
 .inc__button:hover {
-    background-color: #0fffe9;
-    color: white;
+  background-color: #0fffe9;
+  color: white;
 }
 
-.count{
+.count {
   padding: 10px;
-  button p{
+  button p {
     background-color: transparent;
   }
 }
 
-
+.hover__section {
+  color: white;
+  a {
+    text-decoration: none;
+  }
+}
