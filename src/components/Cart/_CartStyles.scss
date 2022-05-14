@@ -1,4 +1,3 @@
-
 .cart__title {
   color: #3e0595;
   font-family: Lobster;
@@ -51,7 +50,7 @@
   }
 }
 
-.check__btn{
+.check__btn {
   margin: 0 12px 20px 0;
   display: flex;
   justify-content: flex-end;
@@ -136,7 +135,107 @@ second-hr {
   text-align: center;
 }
 
-.table-image{
+.table-image {
   border-radius: 50%;
   box-shadow: 4px 4px 10px black;
+}
+
+//FORM
+
+.container-form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 100px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../Images/form.jpg) no-repeat center;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(50px);
+  }
+}
+
+.form-box {
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, .2);
+  .image-box {
+    height: 100%;
+    background: url(../Images/form.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .contact-form {
+    padding: 25px 40px;
+    h2 {
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        height: 4px;
+        width: 50px;
+        border-radius: 2px;
+      }
+    }
+    .field{
+      width: 100%;
+      padding: 0.5rem 1rem;
+      outline: none;
+      border: 2px solid rgba(0,0,0,0);
+      background-color: rgba(230,230,230, .6);
+      font-size: 1.1rem;
+      margin-bottom: 22px;
+      transition: .3s;
+      &:hover{
+        background-color: rgba(0,0,0,.1);
+      }
+      &:focus{
+        background-color: white;
+        border: 2px solid rgba(30, 85, 250, .5);
+      }
+    }
+  }
+  .btn{
+    width: 100%;
+    padding: .5rem 1rem;
+    font-size: 1.1rem;
+    background-color: pink;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: white;
+    transition: .3s;
+    &:hover{
+      background-color: rgb(240, 164, 177);
+    }
+  }
+}
+
+@media screen and (max-width:880px){
+  .form-box{
+    grid-template-columns: 1fr;
+    .image-box{
+      height: 200px;
+    }
+  }
+  
 }
