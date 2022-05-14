@@ -1,6 +1,6 @@
 .footer {
   padding: 40px 0;
-  background-color: #0fffe9;
+  background-color: #ce2f9b;
   align-self: flex-end;
   width: 100%;
   position: absolute;
@@ -8,14 +8,14 @@
   .social {
     text-align: center;
     padding-bottom: 25px;
-    color: black;
+    color: white;
     text-decoration: none;
     a {
       font-size: 24px;
       color: inherit;
       border: 1px solid white;
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       line-height: 38px;
       display: inline-block;
       text-align: center;
@@ -37,6 +37,7 @@
     line-height: 1.6;
     margin-bottom: 0;
     text-align: center;
+    color: white;
     a {
       color: inherit;
       text-decoration: none;
@@ -55,6 +56,6 @@
     margin-top: 15px;
     text-align: center;
     font-size: 13px;
-    color: darkslategrey;
+    color: gray;
   }
 }
