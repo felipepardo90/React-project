@@ -4,4 +4,12 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+body {
+  background-color: #ff8eaa;
+  background-image: linear-gradient(19deg, #ff8eaa 0%, #ddd6f3 100%);
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 20em;
+}
 /*# sourceMappingURL=styles.css.map */
