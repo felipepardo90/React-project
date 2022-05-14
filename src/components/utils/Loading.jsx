@@ -1,12 +1,12 @@
-import './_Loading.scss'
+import "./_Loading.scss";
 
 const Loading = () => {
   return (
-    <div className="container spinner">
-      <div className="spinner-border text-danger container" role="status">
-        
-      </div>
-      <span className="visually-hidden">Cargando productos...</span>
+    <div className="container loader">
+      <div className=" text-danger container ball"></div>
+      <div className=" text-danger container ball"></div>
+      <div className=" text-danger container ball"></div>
+      <span>Cargando productos...</span>
     </div>
   );
 };
