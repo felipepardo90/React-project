@@ -43,10 +43,10 @@ export default function ItemCount({ stock, initial, products, addOn }) {
         <input value={count} className="input-count" />
         <div className="button-section d-flex flex-column">
           <button className="inc__button" onClick={incNum}>
-            +
+          🠹
           </button>
           <button className="dec__button" onClick={decNum}>
-            -
+          🠻
           </button>
         </div>
         <button className="add__cart__btn" onClick={reset}>
