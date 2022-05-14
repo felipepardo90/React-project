@@ -1,6 +1,7 @@
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../utils/Loading";
 import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer() {
@@ -16,15 +17,13 @@ export default function ItemDetailContainer() {
         setItems({ id: res.id, ...res.data() });
       })
       .catch((err) => console.log(err))
-      .finally(setLoading(false));
+      .finally(setLoading(true));
   }, [id]);
 
   return (
     <>
-      {loading ? (
-        <div className="spinner-border text-danger" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
+      {!loading ? (
+        <Loading />
       ) : (
         <ItemDetail products={items} />
       )}

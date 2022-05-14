@@ -1,5 +1,5 @@
 .detail__container {
-  padding: 2em;
+  padding: 1em;
   background-color: #0fffe9;
   align-items: center;
   color: grey;
@@ -7,14 +7,14 @@
 
 .detail {
   background-color: #0fffe9;
-  padding: 4em 7em;
+  padding: 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1em;
   img {
     object-fit: cover;
-    border: 3px solid white;
+    border: 2px solid white;
     border-radius: 15px;
     box-shadow: 2px 2px 10px red;
   }
@@ -65,12 +65,4 @@
   padding-left: 10px;
   font-size: 16px;
   border: none;
-}
-
-
-
-.hover__section {
-  color: red !important;
-  background-color: red !important;
-  display: flex;
 }

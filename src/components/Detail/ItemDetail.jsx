@@ -21,7 +21,7 @@ export default function ItemDetail({ products }) {
           />
         </div>
         <div className="detail__body col-lg-6 col-md-12 col-12">
-          <h6
+          <h6 className="py-2"
             style={{
               opacity: ".4",
               fontWeight: "bold",
@@ -31,8 +31,8 @@ export default function ItemDetail({ products }) {
             {" "}
             Home / {products.category}
           </h6>
-          <h3 className="detail__body--title py-4">{products.name}</h3>
-          <h2 className="detail__body--price">$AR {products.price}</h2>
+          <h1 className="py-4">{products.name}</h1>
+          <h4 className="py-2">$AR {products.price}</h4>
           <section>
             {index === 0 ? (
               <ItemCount
@@ -43,7 +43,7 @@ export default function ItemDetail({ products }) {
               />
             ) : (
               <>
-                <section className="hover_section">
+                <section className="py-4">
                   <h4>
                     Has añadido {products.name} a tu carrito. ¿Deseas continuar
                     con la compra?
@@ -58,7 +58,7 @@ export default function ItemDetail({ products }) {
               </>
             )}
           </section>
-          <span className="detail__body--description mt-5 mb-5">
+          <span className="mt-5 mb-5">
             {products.description}
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vitae
             harum blanditiis distinctio ab praesentium, dolor eum expedita
