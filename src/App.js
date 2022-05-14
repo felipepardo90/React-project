@@ -20,7 +20,7 @@ export default function App() {
           <Routes>
             <Route
               exact
-              path="/React-project"
+              path="/"
               element={<ItemListContainer />}
             />
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />

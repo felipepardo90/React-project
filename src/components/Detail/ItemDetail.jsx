@@ -51,7 +51,7 @@ export default function ItemDetail({ products }) {
                   <Link to="/cart">
                     <button>Terminar mi compra</button>
                   </Link>
-                  <Link to="/React-project">
+                  <Link to="/">
                     <button>Seguir navegando</button>
                   </Link>
                 </section>

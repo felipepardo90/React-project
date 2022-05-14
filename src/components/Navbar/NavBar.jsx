@@ -21,7 +21,7 @@ export default function NavBar() {
       >
         <Container>
           <Navbar.Brand>
-            <Link to="/React-project" style={{ textDecoration: "none" }}>
+            <Link to="/" style={{ textDecoration: "none" }}>
               <p className="brand-logo">Alf Paletas</p>
             </Link>
           </Navbar.Brand>
