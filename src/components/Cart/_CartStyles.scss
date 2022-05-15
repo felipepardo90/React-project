@@ -231,6 +231,9 @@ second-hr {
 }
 
 @media screen and (max-width:880px){
+  .container-form{
+    padding: 20px 20px;
+  }
   .form-box{
     grid-template-columns: 1fr;
     .image-box{
