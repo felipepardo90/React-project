@@ -8,7 +8,7 @@ const navlinks = [
   { category: "Pastelería", toRoute: "/category/pies", id: 1 },
   { category: "Paletas", toRoute: "/category/popsicles", id: 2 },
   { category: "Variedades", toRoute: "/category/varieties", id: 3 },
-  { category: "Nosotros", toRoute: "/category/about-us", id: 4 },
+  { category: "Nosotros", toRoute: "*", id: 4 },
 ];
 
 export default function NavBar() {

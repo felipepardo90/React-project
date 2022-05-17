@@ -2,7 +2,7 @@ import React from 'react'
 
 const NotFound = () => (
 
-    <body>
+    <section>
     <div id="message">
       <h2>404</h2>
       <h1>Página no encontrada</h1>
@@ -10,7 +10,7 @@ const NotFound = () => (
       <h3>¿Por qué estoy viendo esto?</h3>
       <p>Esta página fue generada porque no se encuentra la ruta que está buscando.</p>
     </div>
-  </body>
+  </section>
 )
   
   

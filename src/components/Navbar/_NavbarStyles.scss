@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 .cart__icon {
   color: #ff8eaa;
@@ -28,13 +29,14 @@
 }
 
 .nav__links {
+  font-size: 1.3rem;
   margin: 0 12px;
   right: 50px;
   color: #ff8eaa;
   text-decoration: none;
-  font-family: "Lobster";
-  transition: 1s;
-  text-shadow: 2px 2px 5px #3e0595;
+  font-family: "Righteous";
+  transition: .9s;
+  text-shadow: 1px 1px 2px #3e0595;
   &:hover {
     color: #3e0595;
     text-shadow: 2px 2px 5px #ff8eaa;
