@@ -71,7 +71,7 @@ const CartProducts = () => {
               <h1>Esto parece que está un poco vacío</h1>
               <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
 
-              <Link to="/React-project">
+              <Link to="/">
                 <Button>Volver al inicio</Button>
               </Link>
             </div>

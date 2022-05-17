@@ -12,20 +12,19 @@
 }
 .cart__length {
   display: flex;
-  align-items: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   justify-content: center;
-  width: 15px;
-  height: 15px;
-  font-size: 10px;
+  text-align: center;
+  width: 16px;
+  height: 16px;
+  font-size: 9px;
   font-weight: bold;
   border-radius: 50%;
   background-color: red;
   color: white;
   border: 1px solid white;
   position: relative;
-  bottom: 52px;
-  left: 37px;
+  bottom: 20px;
+  left: 32px;
 }
 
 .nav__links {
