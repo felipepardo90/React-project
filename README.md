@@ -1,22 +1,20 @@
 <h1>Proyecto React - CODERHOUSE</h1>
 
-ALF Paletas y Pattisserie
+#ALF Paletas y Pattisserie
 
+##DEMO
 <br>
-
-
 ![image](https://github.com/felipepardo90/React-project/blob/main/src/components/Images/AlfPaletas.gif?raw=true)
-
 <br>
 
 ## Features
 
 - Soporte en español [ES]
-- Support En and pt-BR languages;
-- git sta
-- Generates a link to your Github profile;
+- Repositorio [https://github.com/felipepardo90/React-project]
 
-## Settings
+Primero debe clonar el repositorio, y para el correcto funcionamiento instalar las dependencias del proyecto.
+
+<!-- ## Settings
 
 You can add these settings in your settings.json
 
@@ -32,26 +30,30 @@ You can add these settings in your settings.json
 
 * `simple.readme.settings.github`: To add links for you Github profile and to get your repository badges;
 * `simple.readme.settings.name`: To put your name on the file end;
-* `simple.readme.settings.lang`: The template language;
+* `simple.readme.settings.lang`: The template language; -->
+
+##Dependencias
+- Bootstrap 5/React Bootstrap
+```js
+"npm install react-bootstrap bootstrap"
+
+ "npm i bootstrap@5.2.0-beta"
+```
+
 
 ## Template
 
 - App gif/image;
-- Title;
+- Alf Paletas;
 - Badges;
 - Status;
 - Menu content;
 
 - sections
-  - About your project;
-  - Features;
-  - Technologies;
-  - Requirements;
-  - Starting;
-  - License;
+  - Paletas;
+  - Pastelería;
+  - Variedades;
+  - Nosotros;
 
-To see the markdown template, [click here](./templates/en/default.md)
-
-To see how the resulting final looks like,  [click here](https://github.com/maurodesouza/weather-react-app);
 
 
