@@ -5,7 +5,9 @@
 ##DEMO
 
 <br>
+
 ![image](https://github.com/felipepardo90/React-project/blob/main/src/components/Images/AlfPaletas.gif?raw=true)
+
 <br>
 
 ## Features
