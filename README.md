@@ -4,9 +4,8 @@ ALF Paletas y Pattisserie
 
 <br>
 
-<div align="center">
+
 ![image](https://github.com/felipepardo90/React-project/blob/main/src/components/Images/AlfPaletas.gif?raw=true)
-</div>
 
 <br>
 
@@ -14,7 +13,7 @@ ALF Paletas y Pattisserie
 
 - Soporte en español [ES]
 - Support En and pt-BR languages;
-- Generates title and  badges by reading the name of the project on the package.json or the root folder;
+- git sta
 - Generates a link to your Github profile;
 
 ## Settings
