@@ -26,7 +26,7 @@
   .button-section {
     .dec__button,
     .inc__button {
-      background-color: violet;
+      background-color: white;
       border: none;
       width: 20px;
       height: 20px;
@@ -37,25 +37,21 @@
       align-items: center;
       justify-content: center;
       &:hover {
-        background-color: white;
-        color: black;
+        transform: translateY(.5px);
       }
     }
   }
 
   .add__cart__btn {
-    background-color: violet;
+    color: red;
     padding: 0 10px;
-    opacity: 1;
     transition: 0.8s all;
     border: none;
     height: 40px;
-    color: inherit;
 
     font-weight: bold;
     &:hover {
-      background-color: white;
-      color: black;
+      transform: translateY(.5px);
     }
   }
 }
