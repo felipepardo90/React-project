@@ -1,70 +1,58 @@
-# Proyecto React para CODERHOUSE -  Felipe Pardo
+<h1>Proyecto React - CODERHOUSE</h1>
 
-El siguiente proyecto fue creado para la entrega final del curso de React Js de CODERHOUSE
+ALF Paletas y Pattisserie
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+<div align="center">
+![image](https://github.com/felipepardo90/React-project/blob/main/src/components/Images/AlfPaletas.gif?raw=true)
+</div>
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Soporte en español [ES]
+- Support En and pt-BR languages;
+- Generates title and  badges by reading the name of the project on the package.json or the root folder;
+- Generates a link to your Github profile;
 
-### `npm test`
+## Settings
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can add these settings in your settings.json
 
-### `npm run build`
+```js
+ "simple.readme.settings.github": "YOUR GITHUB USERNAME"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ "simple.readme.settings.name": "YOUR GITHUB NAME"
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ "simple.readme.settings.lang": "THE TEMPLATE LANGUAGE" // Default en
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+* `simple.readme.settings.github`: To add links for you Github profile and to get your repository badges;
+* `simple.readme.settings.name`: To put your name on the file end;
+* `simple.readme.settings.lang`: The template language;
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Template
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- App gif/image;
+- Title;
+- Badges;
+- Status;
+- Menu content;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- sections
+  - About your project;
+  - Features;
+  - Technologies;
+  - Requirements;
+  - Starting;
+  - License;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To see the markdown template, [click here](./templates/en/default.md)
 
-## Learn More
+To see how the resulting final looks like,  [click here](https://github.com/maurodesouza/weather-react-app);
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
