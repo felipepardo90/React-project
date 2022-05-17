@@ -62,13 +62,7 @@ function MadePurchase({ orderID }) {
                         <td>
                           <Link
                             to={`/item/${item.id}`}
-                            className="ticket-total"
-                            style={{
-                              textTransform: "Capitalize",
-                              textDecoration: "none",
-                              color: "white",
-                              textShadow: "1px 1px 2px #000",
-                            }}
+                            className="ticket-navs"
                           >
                             {item.name} x{item.count}
                           </Link>

@@ -30,7 +30,7 @@
 
 .card {
   box-shadow: 2px 5px 10px #ff8eaa;
-  border: 7px solid hsl(319, 64%, 50%);
+  border: 7px solid #d12e9d;
   width: 18rem;
   border-radius: 12px 0 12px 0;
   &__img {
@@ -38,7 +38,7 @@
     max-width: 100%;
     object-fit: cover;
     border: 2px solid white;
-    
+
     border-top-left-radius: 12px;
   }
   &__body {
@@ -64,24 +64,37 @@
 
 //TICKET
 
-.ticket-total{
-text-transform: uppercase;
-font-weight: bold;
-font-size: 1em;
-.span-ticket{
-  float: right;
-  margin-right: 1em;
-}
+.ticket-total {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+  .span-ticket {
+    float: right;
+    margin-right: 1em;
+  }
 }
 
-.copy-icon{
-cursor: pointer;
-background-color: rgba(319,63,50, .2);
-border-radius: 5px;
-padding: 3px;
-transition: 1s;
-&:hover{
-  transform: translateY(-1px);
-  background-color:  rgba(319,63,50, .8);
+.ticket-navs {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  text-shadow: 1px 1px 2px #000;
+  transition: 1s;
+  &:hover {
+    color: #d12e9d;
+    text-shadow: 1px 1px 2px #fff;
+  }
 }
+
+.copy-icon {
+  cursor: pointer;
+  background-color: rgba(319, 63, 50, 0.2);
+  border-radius: 5px;
+  padding: 3px;
+  transition: 1s;
+  &:hover {
+    transform: translateY(-1px);
+    background-color: rgba(319, 63, 50, 0.8);
+  }
 }
