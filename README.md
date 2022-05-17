@@ -31,6 +31,9 @@ Deberá instalar los paquetes, una vez clonado el proyecto, con el siguiente com
 - Al momento de realizar el checkout, se deberá completar un formulario que será validado y este nos permitirá realizar la compra y acceder al ticket de compra, con los detalles del/los producto/s adquirido/s.
 - Alf Paletas es un E-Commerce que existe en realidad y, por el momento, solamente se encuentra en Instagram. Es por eso que en las social-media-section del footer solo se puede acceder a esta dirección, las demás solo serán dirigidas al home de las webs (Se uso href debido a que Link de React.Router solo se puede usar para navegación interna)
 
+React - -Github Page[https://felipepardo90.github.io/React-project/]
+(Aclaración: se accede a la home(proporcionada por GITHUB), que es 404)
+
 ##Dependencias
 - React Bootstrap
 ```js
@@ -57,16 +60,16 @@ npm install react-bootstrap bootstrap
 ## Template
 
 - App gif/image;
-- Alf Paletas;
+- Alf Paletas (brand);
 - Productos;
 - Redes sociales;
 
-- sections
+- secciones
   - Paletas;
   - Pastelería;
   - Variedades;
   - Nosotros;
   
-  #Proyecto creado por Felipe Pardo, para CODERHOUSE -- 
+ #Proyecto creado por Felipe Pardo, para CODERHOUSE -- 
 
 
