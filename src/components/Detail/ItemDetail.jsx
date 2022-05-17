@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import "./_DetailStyles.scss";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import { Button, Modal } from "react-bootstrap";
 
 export default function ItemDetail({ products }) {
   const [index, setIndex] = useState(0);
+  const [openModal, setOpenModal] = useState(true);
+
+  const close = () => setOpenModal(false);
 
   const addOn = (index) => {
     setIndex(index);
@@ -21,7 +25,8 @@ export default function ItemDetail({ products }) {
           />
         </div>
         <div className="detail__body col-lg-6 col-md-12 col-12">
-          <h6 className="py-2"
+          <h6
+            className="py-2"
             style={{
               opacity: ".4",
               fontWeight: "bold",
@@ -43,18 +48,27 @@ export default function ItemDetail({ products }) {
               />
             ) : (
               <>
-                <section className="py-4">
-                  <h4>
-                    Has añadido {products.name} a tu carrito. ¿Deseas continuar
-                    con la compra?
-                  </h4>
-                  <Link to="/cart">
-                    <button>Terminar mi compra</button>
-                  </Link>
-                  <Link to="/">
-                    <button>Seguir navegando</button>
-                  </Link>
-                </section>
+                <Modal
+                  show={openModal}
+                  onHide={close}
+                  backdrop="static"
+                  keyboard={false}
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title>
+                      ALF Paletas
+                    </Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body> Añadiste {products.name} al carrito. ¿qué deseas hacer ahora?</Modal.Body>
+                  <Modal.Footer>
+                    <Link to="/cart">
+                      <Button variant="success" onClick={close}>Terminar mi compra</Button>
+                    </Link>
+                    <Link to="/">
+                      <Button variant="primary">Seguir comprando</Button>
+                    </Link>
+                  </Modal.Footer>
+                </Modal>
               </>
             )}
           </section>
