@@ -1,6 +1,6 @@
 # Proyecto React para CODERHOUSE -  Felipe Pardo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El siguiente proyecto fue creado para la entrega final del curso de React Js de CODERHOUSE
 
 ## Available Scripts
 
