@@ -1,4 +1,4 @@
-import { faPrint } from "@fortawesome/free-solid-svg-icons";
+import { faCopy, faPrint } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
@@ -10,7 +10,6 @@ function MadePurchase({ orderID }) {
   const [ticket, setTicket] = useState({});
   const [buyer, setBuyer] = useState({});
   const [items, setItems] = useState([]);
-
   const close = () => setOpenModal(false);
 
   useEffect(() => {
@@ -38,7 +37,7 @@ function MadePurchase({ orderID }) {
   return (
     <>
       <Modal show={openModal} onHide={close} backdrop="static" keyboard={false}>
-        <Modal.Header style={{ background: "#ce2f9b" }}>
+        <Modal.Header style={{ background: "#ce2f9b", color:"white"}}>
           <Modal.Title>
             ¡FELICITACIONES! {buyer.name}
             <p>Acaba de finalizar su compra</p>
@@ -63,11 +62,12 @@ function MadePurchase({ orderID }) {
                         <td>
                           <Link
                             to={`/item/${item.id}`}
+                            className="ticket-total"
                             style={{
-                              textTransform: "uppercase",
+                              textTransform: "Capitalize",
                               textDecoration: "none",
                               color: "white",
-                              textShadow: "1px 1px 5px #000",
+                              textShadow: "1px 1px 2px #000",
                             }}
                           >
                             {item.name} x{item.count}
@@ -92,7 +92,10 @@ function MadePurchase({ orderID }) {
                   {subtotal > 3000 ? subtotal : total}
                 </span>
               </p>
-              <p>Orden de compra: {orderID} </p>
+              <div>
+                <p>Orden de compra: {orderID} <FontAwesomeIcon icon={faCopy} style={{cursor:"pointer", color:"white"}} className="copy-icon" /> </p>
+                
+              </div>
               <p>Muchas gracias por ser nuestro cliente favorito</p>
             </div>
           </div>

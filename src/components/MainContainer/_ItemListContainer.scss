@@ -30,7 +30,7 @@
 
 .card {
   box-shadow: 2px 5px 10px #ff8eaa;
-  border: 7px solid #ce2f9b;
+  border: 7px solid hsl(319, 64%, 50%);
   width: 18rem;
   border-radius: 12px 0 12px 0;
   &__img {
@@ -55,7 +55,7 @@
   }
 }
 .card__btn {
-  background-color: #3e0595;
+  background-color: hsl(264, 94%, 30%);
   border: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
@@ -71,5 +71,17 @@ font-size: 1em;
 .span-ticket{
   float: right;
   margin-right: 1em;
+}
+}
+
+.copy-icon{
+cursor: pointer;
+background-color: rgba(319,63,50, .2);
+border-radius: 5px;
+padding: 3px;
+transition: 1s;
+&:hover{
+  transform: translateY(-1px);
+  background-color:  rgba(319,63,50, .8);
 }
 }
