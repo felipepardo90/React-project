@@ -12,7 +12,12 @@
 - Soporte en español [ES]
 - Repositorio [https://github.com/felipepardo90/React-project]
 
-Primero debe clonar el repositorio, y para el correcto funcionamiento instalar las dependencias del proyecto.
+#Primero debe clonar el repositorio, y para el correcto funcionamiento instalar las dependencias del proyecto.
+Deberá instalar los paquetes, una vez clonado el proyecto, con el siguiente comando:
+
+```js
+"npm install"
+```
 
 <!-- ## Settings
 
@@ -33,12 +38,29 @@ You can add these settings in your settings.json
 * `simple.readme.settings.lang`: The template language; -->
 
 ##Dependencias
-- Bootstrap 5/React Bootstrap
+- React Bootstrap
 ```js
 "npm install react-bootstrap bootstrap"
-
+```
+- Bootstrap 5/
+```js
  "npm i bootstrap@5.2.0-beta"
 ```
+- Font Awesome
+```js
+ "$ npm i --save @fortawesome/free-solid-svg-icons" // íconos sólidos
+ "$ npm i --save @fortawesome/free-brands-svg-icons" // brand íconos
+```
+- React Router Dom
+```js
+ "$ npm install --save react@* react-dom@* react-router@*" //
+```
+- Firebase
+```js
+ "$ npm install --save firebase" //
+```
+
+
 
 
 ## Template
