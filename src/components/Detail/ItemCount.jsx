@@ -16,9 +16,7 @@ export default function ItemCount({ stock, initial, products, addOn }) {
         : alert("No hay más elementos en stock");
     };
     const decNum = () => {
-      if (count > 0) {
-        setCount(count - 1);
-      }
+      count > 0 && setCount(count - 1);
     };
 
     const reset = () => {
@@ -40,13 +38,17 @@ export default function ItemCount({ stock, initial, products, addOn }) {
   return (
     <>
       <section className="counter-section d-flex">
-        <input value={count} className="input-count" />
+        <input
+          value={count}
+          className="input-count"
+          onChange={(e) => console.log(e.target.value)}
+        ></input>
         <div className="button-section d-flex flex-column">
           <button className="inc__button" onClick={incNum}>
-          🠹
+            🔺
           </button>
           <button className="dec__button" onClick={decNum}>
-          🠻
+            🔻
           </button>
         </div>
         <button className="add__cart__btn" onClick={reset}>
