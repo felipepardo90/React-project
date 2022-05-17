@@ -1,8 +1,8 @@
 <h1>Proyecto React - CODERHOUSE</h1>
 
-#ALF Paletas y Pattisserie
+# ALF Paletas y Pattisserie
 
-##DEMO
+# DEMO
 
 <br>
 
@@ -10,19 +10,19 @@
 
 <br>
 
-## Features
+# Features
 
 - Soporte en español [ES]
 - Repositorio [https://github.com/felipepardo90/React-project]
 
-#Primero debe clonar el repositorio, y para el correcto funcionamiento instalar las dependencias del proyecto.
+- Primero debe clonar el repositorio, y para el correcto funcionamiento instalar las dependencias del proyecto.
 Deberá instalar los paquetes, una vez clonado el proyecto, con el siguiente comando:
 
 ```js
 "npm install"
 ```
 
-## Guía para navegar en el proyecto E-Commerce creado con React
+# Guía para navegar en el proyecto E-Commerce creado con React
 - Al ingresar a la Home visualizará los productos en venta, con su precio correspondiente
 - En el detalle de cada producto, la web renderizará el item en concreto, el cual poséé un ID dentro de una base de datos en Firebase
 - En esa misma página, se va a incorporar un counter para sumar o restar la cantidad de productos que se quiera comprar, los cuales serán añadidos a un array del componente Cart Context.
@@ -34,7 +34,7 @@ Deberá instalar los paquetes, una vez clonado el proyecto, con el siguiente com
 React - -Github Page[https://felipepardo90.github.io/React-project/]
 (Aclaración: se accede a la home(proporcionada por GITHUB), que es 404)
 
-##Dependencias
+# Dependencias
 - React Bootstrap
 ```js
 npm install react-bootstrap bootstrap
@@ -57,7 +57,7 @@ npm install react-bootstrap bootstrap
  "$ npm install --save firebase" //
 ```
 
-## Template
+# Template
 
 - App gif/image;
 - Alf Paletas (brand);
@@ -70,6 +70,6 @@ npm install react-bootstrap bootstrap
   - Variedades;
   - Nosotros;
   
- #Proyecto creado por Felipe Pardo, para CODERHOUSE -- 
+ ## Proyecto creado por Felipe Pardo, para CODERHOUSE -- 
 
 
