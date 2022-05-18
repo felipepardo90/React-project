@@ -43,15 +43,15 @@ npm i bootstrap@5.2.0-beta
 - Font Awesome
 ```js
 npm i --save @fortawesome/free-solid-svg-icons // íconos sólidos
- $ npm i --save @fortawesome/free-brands-svg-icons // brand íconos
+npm i --save @fortawesome/free-brands-svg-icons // brand íconos
 ```
 - React Router Dom
 ```js
- "$ npm install --save react@* react-dom@* react-router@*" //
+ npm install --save react@* react-dom@* react-router@* //
 ```
 - Firebase
 ```js
- "$ npm install --save firebase" //
+ npm install --save firebase //
 ```
 
 # Template
