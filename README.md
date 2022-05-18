@@ -16,7 +16,7 @@
 Deberá instalar los paquetes, una vez clonado el proyecto, con el siguiente comando:
 
 ```js
-"npm install"
+npm install
 ```
 
 # Guía para navegar en el proyecto E-Commerce creado con React
