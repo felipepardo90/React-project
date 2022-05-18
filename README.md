@@ -38,12 +38,12 @@ npm install react-bootstrap bootstrap
 ```
 - Bootstrap 5/
 ```js
- npm i bootstrap@5.2.0-beta
+npm i bootstrap@5.2.0-beta
 ```
 - Font Awesome
 ```js
- "$npm i --save @fortawesome/free-solid-svg-icons" // íconos sólidos
- "$ npm i --save @fortawesome/free-brands-svg-icons" // brand íconos
+npm i --save @fortawesome/free-solid-svg-icons // íconos sólidos
+ $ npm i --save @fortawesome/free-brands-svg-icons // brand íconos
 ```
 - React Router Dom
 ```js
