@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/React-project/static/css/main.11a6c3cc.css",
-    "main.js": "/React-project/static/js/main.a9d74330.js",
-    "static/media/form.jpg": "/React-project/static/media/form.afc9fcc4542829b9bde6.jpg",
-    "index.html": "/React-project/index.html",
-    "main.11a6c3cc.css.map": "/React-project/static/css/main.11a6c3cc.css.map",
-    "main.a9d74330.js.map": "/React-project/static/js/main.a9d74330.js.map"
+    "main.css": "/alf-paletas-react/static/css/main.3cb3f42c.css",
+    "main.js": "/alf-paletas-react/static/js/main.a9d74330.js",
+    "static/media/form.jpg": "/alf-paletas-react/static/media/form.afc9fcc4542829b9bde6.jpg",
+    "index.html": "/alf-paletas-react/index.html",
+    "main.3cb3f42c.css.map": "/alf-paletas-react/static/css/main.3cb3f42c.css.map",
+    "main.a9d74330.js.map": "/alf-paletas-react/static/js/main.a9d74330.js.map"
   },
   "entrypoints": [
-    "static/css/main.11a6c3cc.css",
+    "static/css/main.3cb3f42c.css",
     "static/js/main.a9d74330.js"
   ]
 }
