@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/alf-paletas-react/static/css/main.b07782e0.css",
-    "main.js": "/alf-paletas-react/static/js/main.483d3794.js",
+    "main.css": "/alf-paletas-react/static/css/main.d463ed2d.css",
+    "main.js": "/alf-paletas-react/static/js/main.c20ad25d.js",
     "static/media/form.jpg": "/alf-paletas-react/static/media/form.afc9fcc4542829b9bde6.jpg",
     "index.html": "/alf-paletas-react/index.html",
-    "main.b07782e0.css.map": "/alf-paletas-react/static/css/main.b07782e0.css.map",
-    "main.483d3794.js.map": "/alf-paletas-react/static/js/main.483d3794.js.map"
+    "main.d463ed2d.css.map": "/alf-paletas-react/static/css/main.d463ed2d.css.map",
+    "main.c20ad25d.js.map": "/alf-paletas-react/static/js/main.c20ad25d.js.map"
   },
   "entrypoints": [
-    "static/css/main.b07782e0.css",
-    "static/js/main.483d3794.js"
+    "static/css/main.d463ed2d.css",
+    "static/js/main.c20ad25d.js"
   ]
 }
