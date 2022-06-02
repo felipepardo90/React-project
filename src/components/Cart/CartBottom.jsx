@@ -26,7 +26,7 @@ const CartBottom = () => {
               <p>Si tienes un cupón, ingresalo aquí</p>
               <section className="check__btn">
                 <input type="text" placeholder="código del cupón" />
-                <Button variant="primary" className="check__btn">
+                <Button variant="warning">
                   VALIDAR
                 </Button>
               </section>
@@ -70,13 +70,13 @@ const CartBottom = () => {
                 {cart.length > 0 ? (
                   <>
                     <Button
-                      variant="primary"
+                      variant="danger"
                       className="ml-auto check__btn"
                       onClick={clear}
                     >
                       VACIAR CARRITO
                     </Button>
-                    <Link to="/checkout"><Button>COMPRAR</Button></Link>
+                    <Link to="/checkout" style={{textDecoration:"none"}}><Button className="ml-auto check__btn" variant="warning" >COMPRAR</Button></Link>
                   </>
                 ) : (
                   <>

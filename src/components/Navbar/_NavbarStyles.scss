@@ -1,14 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import "../../settings";
 
+.navbar-bg {
+  border-bottom: 5px solid $bread;
+  background-color: $darkBrown;
+}
 .cart__icon {
-  color: #ff8eaa;
+  color: #fff;
   width: 40px;
   height: 40px;
   padding: 5px;
-  transition: 1s;
+  transition: 0.8s;
   &:hover {
-    color: #3e0595;
+    color: $goldie;
   }
 }
 .cart__length {
@@ -17,12 +20,11 @@
   text-align: center;
   width: 16px;
   height: 16px;
-  font-size: 9px;
-  font-weight: bold;
+  font-size: 10px;
   border-radius: 50%;
-  background-color: red;
-  color: white;
-  border: 1px solid white;
+  background-color: $bread;
+  color: #fff;
+  border: 1px solid #fff;
   position: relative;
   bottom: 20px;
   left: 32px;
@@ -32,24 +34,23 @@
   font-size: 1.3rem;
   margin: 0 12px;
   right: 50px;
-  color: #ff8eaa;
+  color: $goldie;
   text-decoration: none;
-  font-family: "Righteous";
-  transition: .9s;
-  text-shadow: 1px 1px 2px #3e0595;
+  font-family: $righteousFont;
+  transition: 0.9s;
   &:hover {
-    color: #3e0595;
-    text-shadow: 2px 2px 5px #ff8eaa;
+    color: #fff;
+    text-shadow: 2px 2px 10px $bread;
   }
 }
 
 .brand-logo {
-  color: #ff8eaa;
+  color: $goldie;
   text-transform: uppercase;
-  font-family: Lobster;
+  font-family: $lobsterFont;
   font-weight: bold;
   font-size: 2em;
-  text-shadow: 2px 2px #3e0595;
+  text-shadow: 2px 2px 10px $bread;
 }
 
 .cart-widget {
@@ -57,4 +58,3 @@
   align-items: center;
   margin-top: 10px;
 }
-

@@ -4,6 +4,11 @@ import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import { Button, Modal } from "react-bootstrap";
 
+const modalStyle = {
+  background: "#d3a855",
+  color: "#492d1a",
+};
+
 export default function ItemDetail({ products }) {
   const [index, setIndex] = useState(0);
   const [openModal, setOpenModal] = useState(true);
@@ -54,18 +59,22 @@ export default function ItemDetail({ products }) {
                   backdrop="static"
                   keyboard={false}
                 >
-                  <Modal.Header closeButton>
-                    <Modal.Title>
-                      ALF Paletas
-                    </Modal.Title>
+                  <Modal.Header closeButton style={modalStyle}>
+                    <Modal.Title>ALF Paletas</Modal.Title>
                   </Modal.Header>
-                  <Modal.Body> Añadiste {products.name} al carrito. ¿qué deseas hacer ahora?</Modal.Body>
-                  <Modal.Footer>
+                  <Modal.Body style={{ background: "#492d1a", color: "white" }}>
+                    {" "}
+                    Añadiste {products.name} al carrito. ¿qué deseas hacer
+                    ahora?
+                  </Modal.Body>
+                  <Modal.Footer style={modalStyle}>
                     <Link to="/cart">
-                      <Button variant="success" onClick={close}>Terminar mi compra</Button>
+                      <Button variant="primary" onClick={close}>
+                        Terminar mi compra
+                      </Button>
                     </Link>
-                    <Link to="/">
-                      <Button variant="primary">Seguir comprando</Button>
+                    <Link to="/alf-paletas-react">
+                      <Button variant="warning">Seguir comprando</Button>
                     </Link>
                   </Modal.Footer>
                 </Modal>
@@ -74,6 +83,7 @@ export default function ItemDetail({ products }) {
           </section>
           <span className="mt-5 mb-5">
             {products.description}
+            <br />
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vitae
             harum blanditiis distinctio ab praesentium, dolor eum expedita
             ducimus molestias quisquam dignissimos voluptas facilis, ipsum

@@ -37,13 +37,13 @@ function MadePurchase({ orderID }) {
   return (
     <>
       <Modal show={openModal} onHide={close} backdrop="static" keyboard={false}>
-        <Modal.Header style={{ background: "#ce2f9b", color:"white"}}>
+        <Modal.Header style={{ background: "#704c29", color:"white"}}>
           <Modal.Title>
             ¡FELICITACIONES! {buyer.name}
             <p>Acaba de finalizar su compra</p>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{ backgroundColor: "pink" }}>
+        <Modal.Body style={{ backgroundColor: "#9e753d" }}>
           <div className="col-25">
             <div className="container">
               <h3>Resumen de compra</h3>
@@ -95,12 +95,12 @@ function MadePurchase({ orderID }) {
           </div>
         </Modal.Body>
 
-        <Modal.Footer style={{ background: "#ce2f9b" }}>
-          <Button variant="primary">
+        <Modal.Footer style={{ background: "#704c29" }}>
+          <Button variant="light">
             <FontAwesomeIcon icon={faPrint} />
           </Button>
-          <Link to="/">
-            <Button variant="primary">Inicio</Button>
+          <Link to="/alf-paletas-react">
+            <Button variant="warning">Inicio</Button>
           </Link>
         </Modal.Footer>
       </Modal>

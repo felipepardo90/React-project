@@ -71,8 +71,8 @@ const CartProducts = () => {
               <h1>Esto parece que está un poco vacío</h1>
               <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
 
-              <Link to="/">
-                <Button>Volver al inicio</Button>
+              <Link to="/alf-paletas-react">
+                <Button variant='warning'>Volver al inicio</Button>
               </Link>
             </div>
           </section>

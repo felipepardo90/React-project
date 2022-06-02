@@ -1,19 +1,9 @@
-.spinner {
-  background-color: pink;
-  height: 80vh;
-  opacity: 0.5;
-  display: flex;
-  &-border {
-    width: 100px;
-    height: 100px;
-    margin: auto;
-  }
-}
+@import "../../settings";
+
 
 .loader {
-  width: 120px;
+  width: 200px;
   height: 80vh;
-  opacity: 0.5;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -22,12 +12,12 @@
     font-size: 22px;
     text-transform: uppercase;
     margin: auto;
-    color: white;
+    color: $bread;
   }
 }
 
 .ball {
-  background-color: white;
+  background-color: $milkCaramel;
   width: 25px;
   height: 25px;
   border-radius: 50%;

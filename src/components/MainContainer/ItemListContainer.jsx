@@ -14,7 +14,7 @@ import Loading from "../utils/Loading";
 
 export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const { id, category } = useParams();
 
   useEffect(() => {
@@ -40,12 +40,12 @@ export default function ItemListContainer() {
       setProducts(myProducts);
     })
       .catch((err) => console.log(err))
-      .finally(setLoading(true));
+      .finally(setLoading(false));
   }, [id, category]);
 
   return (
     <>
-      {!loading ? (
+      {loading ? (
         <Loading />
       ) : (
         <Container className="main-container">

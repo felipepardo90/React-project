@@ -6,7 +6,7 @@ import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer() {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
@@ -17,12 +17,12 @@ export default function ItemDetailContainer() {
         setItems({ id: res.id, ...res.data() });
       })
       .catch((err) => console.log(err))
-      .finally(setLoading(true));
+      .finally(setLoading(false));
   }, [id]);
 
   return (
     <>
-      {!loading ? (
+      {loading ? (
         <Loading />
       ) : (
         <ItemDetail products={items} />

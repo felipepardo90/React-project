@@ -1,9 +1,11 @@
+@import "../../settings";
+
 .cart__title {
-  color: #3e0595;
-  font-family: Lobster;
+  color: $coffee;
+  font-family: $lobsterFont;
   font-weight: bold;
   font-size: 3em;
-  text-shadow: 1px 1px 4px #fff;
+  text-shadow: 2px 2px 7px $bread;
   text-align: center;
 }
 
@@ -20,14 +22,14 @@
   table thead {
     font-weight: 700;
     td {
-      background-color: #3e0595;
-      color: #fff;
+      background-color: $coffee;
+      color: $goldie;
       border: none;
       padding: 6px 0;
     }
   }
   table td {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid $bread;
     padding: 10px;
     text-align: center;
     &:nth-child(1) {
@@ -51,13 +53,19 @@
 }
 
 .check__btn {
-  margin: 0 12px 20px 0;
   display: flex;
   justify-content: flex-end;
+  input {
+    border: none;
+  }
+  button{
+    margin: 0 12px 20px 0;
+    border-radius: 1px;
+  }
 }
 
 .trash-icon {
-  color: #3e0595;
+  color: $coffee;
   cursor: pointer;
   transition: all 1s;
   &:hover {
@@ -71,11 +79,11 @@
 
 .cart-bottom .coupon {
   div {
-    border: 1px solid gray;
+    border: 1px solid $bread;
   }
   h5 {
-    background-color: #3e0595;
-    color: #fff;
+    background-color: $coffee;
+    color: $goldie;
     border: none;
     padding: 6px 10px;
   }
@@ -91,8 +99,8 @@
 
 .cart-bottom .total {
   h5 {
-    background-color: #3e0595;
-    color: #fff;
+    background-color: $coffee;
+    color: $goldie;
     border: none;
     padding: 6px 10px;
   }
@@ -105,18 +113,18 @@
     margin: 0 0 20px 12px;
   }
   h6 {
-    color: #3e0595;
+    color: $coffee;
   }
 }
 
 second-hr {
-  background: gray;
+  background: $bread;
   width: 100%;
   height: 1px;
 }
 
 .cart-bottom .total > div {
-  border: 1px solid gray;
+  border: 1px solid $bread;
   div {
     padding: 0 12px;
   }
@@ -129,7 +137,7 @@ second-hr {
   color: white;
   display: flex;
   flex-direction: column;
-  background-color: #af8ee0;
+  background-color: $milkCaramel;
   opacity: 0.8;
   align-items: center;
   text-align: center;
@@ -137,7 +145,7 @@ second-hr {
 
 .table-image {
   border-radius: 50%;
-  box-shadow: 4px 4px 10px black;
+  box-shadow: 2px 2px 5px black;
 }
 
 //FORM
@@ -161,7 +169,7 @@ second-hr {
     background: url(../Images/form.jpg) no-repeat center;
     background-size: cover;
     z-index: -1;
-    filter: blur(50px);
+    filter: blur(30px);
   }
 }
 
@@ -173,7 +181,7 @@ second-hr {
   align-items: center;
   text-align: center;
   background-color: white;
-  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, .2);
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.2);
   .image-box {
     height: 100%;
     background: url(../Images/form.jpg) no-repeat center;
@@ -196,49 +204,48 @@ second-hr {
         border-radius: 2px;
       }
     }
-    .field{
+    .field {
       width: 100%;
       padding: 0.5rem 1rem;
       outline: none;
-      border: 2px solid rgba(0,0,0,0);
-      background-color: rgba(230,230,230, .6);
+      border: 2px solid rgba(0, 0, 0, 0);
+      background-color: rgba(230, 230, 230, 0.6);
       font-size: 1.1rem;
       margin-bottom: 22px;
-      transition: .3s;
-      &:hover{
-        background-color: rgba(0,0,0,.1);
+      transition: 0.3s;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
       }
-      &:focus{
+      &:focus {
         background-color: white;
-        border: 2px solid rgba(30, 85, 250, .5);
+        border: 2px solid rgba(30, 85, 250, 0.5);
       }
     }
   }
-  .btn{
+  .btn {
     width: 100%;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     font-size: 1.1rem;
     background-color: pink;
     cursor: pointer;
     outline: none;
     border: none;
     color: white;
-    transition: .3s;
-    &:hover{
+    transition: 0.3s;
+    &:hover {
       background-color: rgb(240, 164, 177);
     }
   }
 }
 
-@media screen and (max-width:880px){
-  .container-form{
+@media screen and (max-width: 880px) {
+  .container-form {
     padding: 20px 20px;
   }
-  .form-box{
+  .form-box {
     grid-template-columns: 1fr;
-    .image-box{
+    .image-box {
       height: 200px;
     }
   }
-  
 }

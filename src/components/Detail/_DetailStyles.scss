@@ -1,23 +1,26 @@
+@import "../../settings";
+
 .detail__container {
   padding: 1em;
-  background-color: #0fffe9;
   align-items: center;
   color: grey;
 }
 
 .detail {
-  background-color: #0fffe9;
-  padding: 30px;
+  padding: 40px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1em;
   img {
     object-fit: cover;
-    border: 2px solid white;
-    border-radius: 15px;
-    box-shadow: 2px 2px 10px red;
+    border: 2px solid $milkCaramel;
+    border-radius: 5px;
     max-height: 500px;
+    transition: 1s;
+    &:hover {
+      box-shadow: 1px 1px $darkBrown;
+    }
   }
 }
 
@@ -26,7 +29,7 @@
   .button-section {
     .dec__button,
     .inc__button {
-      background-color: white;
+      background-color: $darkBrown;
       border: none;
       width: 20px;
       height: 20px;
@@ -37,21 +40,20 @@
       align-items: center;
       justify-content: center;
       &:hover {
-        transform: translateY(.5px);
+        color: #fff;
       }
     }
   }
 
   .add__cart__btn {
-    color: red;
+    background-color: $darkBrown;
+    color: $goldie;
     padding: 0 10px;
     transition: 0.8s all;
     border: none;
     height: 40px;
-
-    font-weight: bold;
     &:hover {
-      transform: translateY(.5px);
+      color: #fff;
     }
   }
 }

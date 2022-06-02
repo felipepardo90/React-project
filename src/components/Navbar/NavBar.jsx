@@ -17,17 +17,18 @@ export default function NavBar() {
       <Navbar
         collapseOnSelect
         expand="lg"
-        style={{ borderBottom: "5px solid pink", background: "#0fffe9" }}
+        variant="dark"
+        className="navbar-bg"
       >
         <Container>
           <Navbar.Brand>
-            <Link to="/" style={{ textDecoration: "none" }}>
+            <Link to="/alf-paletas-react" style={{ textDecoration: "none" }}>
               <p className="brand-logo">Alf Paletas</p>
             </Link>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" variant="light" />
 
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Collapse id="responsive-navbar-nav" style={{color:"white"}}>
             <Nav className="me-auto">
               {navlinks.map((nav) => (
                 <li key={nav.id} style={{margin:"auto", padding:"10px 10px"}}>
